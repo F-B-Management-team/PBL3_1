@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ban">
+    <Key>
+      <PropertyRef Name="IDBan" />
+    </Key>
+    <Property Name="IDBan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoaiBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.fk_hoadon_idban" FromRole="Ban" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="Custommer">
+    <Key>
+      <PropertyRef Name="IDCustommer" />
+    </Key>
+    <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NameCustomer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__IDCustom__45F365D3" FromRole="Custommer" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="IDDanhMuc" />
+    </Key>
+    <Property Name="IDDanhMuc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenDanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MonAn" Relationship="Self.fk_monan_iddanhmuc" FromRole="DanhMuc" ToRole="MonAn" />
+  </EntityType>
+  <EntityType Name="DatMon">
+    <Key>
+      <PropertyRef Name="IDDatMon" />
+    </Key>
+    <Property Name="IDDatMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IDHoaDon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <NavigationProperty Name="MonAn" Relationship="Self.fk_danhsachmon_idmon" FromRole="DatMon" ToRole="MonAn" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.fk_hoadon_idhoadon" FromRole="DatMon" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="IDHoaDon" />
+    </Key>
+    <Property Name="IDHoaDon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDBan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NgayXuat" Type="DateTime" Precision="0" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="TongTien" Type="Double" />
+    <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DonGia" Type="Double" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ban" Relationship="Self.fk_hoadon_idban" FromRole="HoaDon" ToRole="Ban" />
+    <NavigationProperty Name="Custommer" Relationship="Self.FK__HoaDon__IDCustom__45F365D3" FromRole="HoaDon" ToRole="Custommer" />
+    <NavigationProperty Name="DatMon" Relationship="Self.fk_hoadon_idhoadon" FromRole="HoaDon" ToRole="DatMon" />
+    <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.FK__HoaDon__IDNguoiD__46E78A0C" FromRole="HoaDon" ToRole="ThongTinNguoiDung" />
+  </EntityType>
+  <EntityType Name="MonAn">
+    <Key>
+      <PropertyRef Name="IDMon" />
+    </Key>
+    <Property Name="IDMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDDanhMuc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="DanhMuc" Relationship="Self.fk_monan_iddanhmuc" FromRole="MonAn" ToRole="DanhMuc" />
+    <NavigationProperty Name="DatMon" Relationship="Self.fk_danhsachmon_idmon" FromRole="MonAn" ToRole="DatMon" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="IDNguoiDung" />
+    </Key>
+    <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Chucvu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.pk_taikhoan_idnguoidung" FromRole="TaiKhoan" ToRole="ThongTinNguoiDung" />
+  </EntityType>
+  <EntityType Name="ThongTinNguoiDung">
+    <Key>
+      <PropertyRef Name="IDNguoiDung" />
+    </Key>
+    <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNguoiDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__IDNguoiD__46E78A0C" FromRole="ThongTinNguoiDung" ToRole="HoaDon" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.pk_taikhoan_idnguoidung" FromRole="ThongTinNguoiDung" ToRole="TaiKhoan" />
+  </EntityType>
+  <Association Name="fk_hoadon_idban">
+    <End Role="Ban" Type="Self.Ban" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ban">
+        <PropertyRef Name="IDBan" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="IDBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__IDCustom__45F365D3">
+    <End Role="Custommer" Type="Self.Custommer" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Custommer">
+        <PropertyRef Name="IDCustommer" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="IDCustommer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_monan_iddanhmuc">
+    <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
+    <End Role="MonAn" Type="Self.MonAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="IDDanhMuc" />
+      </Principal>
+      <Dependent Role="MonAn">
+        <PropertyRef Name="IDDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_danhsachmon_idmon">
+    <End Role="MonAn" Type="Self.MonAn" Multiplicity="0..1" />
+    <End Role="DatMon" Type="Self.DatMon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonAn">
+        <PropertyRef Name="IDMon" />
+      </Principal>
+      <Dependent Role="DatMon">
+        <PropertyRef Name="IDMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadon_idhoadon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="DatMon" Type="Self.DatMon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="IDHoaDon" />
+      </Principal>
+      <Dependent Role="DatMon">
+        <PropertyRef Name="IDHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__IDNguoiD__46E78A0C">
+    <End Role="ThongTinNguoiDung" Type="Self.ThongTinNguoiDung" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinNguoiDung">
+        <PropertyRef Name="IDNguoiDung" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="IDNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pk_taikhoan_idnguoidung">
+    <End Role="ThongTinNguoiDung" Type="Self.ThongTinNguoiDung" Multiplicity="1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinNguoiDung">
+        <PropertyRef Name="IDNguoiDung" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="IDNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FANDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ban" EntityType="Self.Ban" />
+    <EntitySet Name="Custommer" EntityType="Self.Custommer" />
+    <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" />
+    <EntitySet Name="DatMon" EntityType="Self.DatMon" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" />
+    <EntitySet Name="MonAn" EntityType="Self.MonAn" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" />
+    <EntitySet Name="ThongTinNguoiDung" EntityType="Self.ThongTinNguoiDung" />
+    <AssociationSet Name="fk_hoadon_idban" Association="Self.fk_hoadon_idban">
+      <End Role="Ban" EntitySet="Ban" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__IDCustom__45F365D3" Association="Self.FK__HoaDon__IDCustom__45F365D3">
+      <End Role="Custommer" EntitySet="Custommer" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_monan_iddanhmuc" Association="Self.fk_monan_iddanhmuc">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="MonAn" EntitySet="MonAn" />
+    </AssociationSet>
+    <AssociationSet Name="fk_danhsachmon_idmon" Association="Self.fk_danhsachmon_idmon">
+      <End Role="MonAn" EntitySet="MonAn" />
+      <End Role="DatMon" EntitySet="DatMon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadon_idhoadon" Association="Self.fk_hoadon_idhoadon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="DatMon" EntitySet="DatMon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__IDNguoiD__46E78A0C" Association="Self.FK__HoaDon__IDNguoiD__46E78A0C">
+      <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDung" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="pk_taikhoan_idnguoidung" Association="Self.pk_taikhoan_idnguoidung">
+      <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDung" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

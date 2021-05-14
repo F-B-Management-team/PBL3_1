@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f2889b357684486a7f2cebe67b09002" Name="Diagram1">
+        <EntityTypeShape EntityType="MVH_08Model.Ban" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.Customer" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.DanhMuc" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.DatMon" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.HoaDon" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.MonAn" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.sysdiagram" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.TaiKhoan" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVH_08Model.ThongTinNguoiDung" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="MVH_08Model.fk_hoadon_idban" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.FK__HoaDon__IDCustom__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.fk_monan_iddanhmuc" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.fk_danhsachmon_idmon" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.fk_hoadon_idhoadon" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.FK__HoaDon__IDNguoiD__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="MVH_08Model.pk_taikhoan_idnguoidung" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
