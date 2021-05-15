@@ -99,6 +99,7 @@ namespace PBL3.Views
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.numberTable = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
@@ -1381,12 +1382,25 @@ namespace PBL3.Views
             this.bunifuElipse6.ElipseRadius = 35;
             this.bunifuElipse6.TargetControl = this.bunifuPanel4;
             // 
+            // numberTable
+            // 
+            this.bunifuTransition3.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.numberTable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberTable.Location = new System.Drawing.Point(556, 26);
+            this.numberTable.Name = "numberTable";
+            this.numberTable.Size = new System.Drawing.Size(100, 23);
+            this.numberTable.TabIndex = 15;
+            this.numberTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.numberTable);
             this.Controls.Add(this.bunifuRating1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bunifuPanel4);
@@ -1474,5 +1488,6 @@ namespace PBL3.Views
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
+        private System.Windows.Forms.Label numberTable;
     }
 }

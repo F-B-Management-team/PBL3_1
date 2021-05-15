@@ -22,13 +22,17 @@ namespace PBL3.Views
             loadDrink();
             loadFood();
         }
+        public void statusOder(string m)
+        {
+            numberTable.Text = m;
+        }
         public void ColumnDataOrder()
         {
-            //dataOder.ColumnCount = 3;
-            //dataOder.Columns[0].Name = "TenMon";
-            //dataOder.Columns[1].Name = "SoLuong";
-            //dataOder.Columns[2].Name = "Gia";
-            //dataOder.Rows.Clear();
+            dataOder.ColumnCount = 3;
+            dataOder.Columns[0].Name = "TenMon";
+            dataOder.Columns[1].Name = "SoLuong";
+            dataOder.Columns[2].Name = "Gia";
+            dataOder.Rows.Clear();
         }
         void loadFood()
         {
