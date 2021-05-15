@@ -55,6 +55,7 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@ namespace PBL3.Views
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.numberTable = new System.Windows.Forms.Label();
+            this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
@@ -1388,11 +1390,105 @@ namespace PBL3.Views
             this.bunifuTransition2.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.numberTable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberTable.ForeColor = System.Drawing.Color.Firebrick;
             this.numberTable.Location = new System.Drawing.Point(556, 26);
             this.numberTable.Name = "numberTable";
             this.numberTable.Size = new System.Drawing.Size(100, 23);
             this.numberTable.TabIndex = 15;
+            this.numberTable.Text = "Table?Takeout";
             this.numberTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnPay
+            // 
+            this.btnPay.AllowAnimations = true;
+            this.btnPay.AllowMouseEffects = true;
+            this.btnPay.AllowToggling = false;
+            this.btnPay.AnimationSpeed = 200;
+            this.btnPay.AutoGenerateColors = false;
+            this.btnPay.AutoRoundBorders = false;
+            this.btnPay.AutoSizeLeftIcon = true;
+            this.btnPay.AutoSizeRightIcon = true;
+            this.btnPay.BackColor = System.Drawing.Color.Transparent;
+            this.btnPay.BackColor1 = System.Drawing.Color.Moccasin;
+            this.btnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPay.BackgroundImage")));
+            this.btnPay.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.ButtonText = "Pay?Done?";
+            this.btnPay.ButtonTextMarginLeft = 0;
+            this.btnPay.ColorContrastOnClick = 45;
+            this.btnPay.ColorContrastOnHover = 45;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnPay.CustomizableEdges = borderEdges5;
+            this.bunifuTransition2.SetDecoration(this.btnPay, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.btnPay, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.btnPay, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPay.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPay.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPay.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnPay.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPay.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPay.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPay.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnPay.IconMarginLeft = 11;
+            this.btnPay.IconPadding = 10;
+            this.btnPay.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPay.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnPay.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnPay.IconSize = 25;
+            this.btnPay.IdleBorderColor = System.Drawing.Color.Moccasin;
+            this.btnPay.IdleBorderRadius = 1;
+            this.btnPay.IdleBorderThickness = 1;
+            this.btnPay.IdleFillColor = System.Drawing.Color.Moccasin;
+            this.btnPay.IdleIconLeftImage = null;
+            this.btnPay.IdleIconRightImage = null;
+            this.btnPay.IndicateFocus = false;
+            this.btnPay.Location = new System.Drawing.Point(770, 470);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnPay.OnDisabledState.BorderRadius = 1;
+            this.btnPay.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnDisabledState.BorderThickness = 1;
+            this.btnPay.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnPay.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnPay.OnDisabledState.IconLeftImage = null;
+            this.btnPay.OnDisabledState.IconRightImage = null;
+            this.btnPay.onHoverState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnPay.onHoverState.BorderRadius = 1;
+            this.btnPay.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.onHoverState.BorderThickness = 1;
+            this.btnPay.onHoverState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnPay.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnPay.onHoverState.IconLeftImage = null;
+            this.btnPay.onHoverState.IconRightImage = null;
+            this.btnPay.OnIdleState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnPay.OnIdleState.BorderRadius = 1;
+            this.btnPay.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnIdleState.BorderThickness = 1;
+            this.btnPay.OnIdleState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnPay.OnIdleState.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPay.OnIdleState.IconLeftImage = null;
+            this.btnPay.OnIdleState.IconRightImage = null;
+            this.btnPay.OnPressedState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnPay.OnPressedState.BorderRadius = 1;
+            this.btnPay.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnPay.OnPressedState.BorderThickness = 1;
+            this.btnPay.OnPressedState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnPay.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnPay.OnPressedState.IconLeftImage = null;
+            this.btnPay.OnPressedState.IconRightImage = null;
+            this.btnPay.Size = new System.Drawing.Size(104, 50);
+            this.btnPay.TabIndex = 16;
+            this.btnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPay.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPay.TextMarginLeft = 0;
+            this.btnPay.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnPay.UseDefaultRadiusAndThickness = true;
             // 
             // Order
             // 
@@ -1400,6 +1496,7 @@ namespace PBL3.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.numberTable);
             this.Controls.Add(this.bunifuRating1);
             this.Controls.Add(this.btnBack);
@@ -1489,5 +1586,6 @@ namespace PBL3.Views
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private System.Windows.Forms.Label numberTable;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPay;
     }
 }

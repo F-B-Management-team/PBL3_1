@@ -25,6 +25,14 @@ namespace PBL3.Views
         public void statusOder(string m)
         {
             numberTable.Text = m;
+            if(m == "Take out")
+            {
+                btnPay.Text = "Pay";
+            }
+            else
+            {
+                btnPay.Text = "Done";
+            }
         }
         public void ColumnDataOrder()
         {
