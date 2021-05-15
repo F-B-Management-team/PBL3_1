@@ -30,12 +30,12 @@ namespace PBL3.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -64,13 +64,13 @@ namespace PBL3.Views
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.MenuFood = new System.Windows.Forms.PictureBox();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.MenuDrink = new System.Windows.Forms.PictureBox();
             this.dataDrink = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.MenuFood = new System.Windows.Forms.PictureBox();
             this.dataFood = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@ namespace PBL3.Views
             this.btnFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dataOder = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -104,12 +104,12 @@ namespace PBL3.Views
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.bunifuPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuFood)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuDrink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDrink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.bunifuPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -239,6 +239,45 @@ namespace PBL3.Views
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
+            // bunifuPanel2
+            // 
+            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Moccasin;
+            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
+            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BorderRadius = 3;
+            this.bunifuPanel2.BorderThickness = 1;
+            this.bunifuPanel2.Controls.Add(this.MenuFood);
+            this.bunifuPanel2.Controls.Add(this.dataFood);
+            this.bunifuPanel2.Controls.Add(this.pictureBox6);
+            this.bunifuPanel2.Controls.Add(this.label11);
+            this.bunifuTransition1.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuPanel2.Location = new System.Drawing.Point(2, 2);
+            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuPanel2.Name = "bunifuPanel2";
+            this.bunifuPanel2.ShowBorders = true;
+            this.bunifuPanel2.Size = new System.Drawing.Size(297, 407);
+            this.bunifuPanel2.TabIndex = 11;
+            this.bunifuPanel2.Visible = false;
+            // 
+            // MenuFood
+            // 
+            this.MenuFood.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition3.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.MenuFood.Image = global::PBL3.Properties.Resources._180965072_3956474667807313_2984068236954540088_n;
+            this.MenuFood.Location = new System.Drawing.Point(250, 11);
+            this.MenuFood.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuFood.Name = "MenuFood";
+            this.MenuFood.Size = new System.Drawing.Size(34, 27);
+            this.MenuFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MenuFood.TabIndex = 10;
+            this.MenuFood.TabStop = false;
+            this.MenuFood.Click += new System.EventHandler(this.MenuFood_Click);
+            // 
             // bunifuPanel3
             // 
             this.bunifuPanel3.BackgroundColor = System.Drawing.Color.Moccasin;
@@ -254,7 +293,7 @@ namespace PBL3.Views
             this.bunifuTransition1.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition3.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuPanel3.Location = new System.Drawing.Point(0, 2);
+            this.bunifuPanel3.Location = new System.Drawing.Point(22, 113);
             this.bunifuPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
@@ -283,22 +322,22 @@ namespace PBL3.Views
             this.dataDrink.AllowCustomTheming = false;
             this.dataDrink.AllowUserToAddRows = false;
             this.dataDrink.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataDrink.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataDrink.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataDrink.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataDrink.BackgroundColor = System.Drawing.Color.LightSalmon;
             this.dataDrink.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataDrink.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataDrink.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDrink.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDrink.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataDrink.ColumnHeadersHeight = 40;
             this.dataDrink.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
             this.dataDrink.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -321,14 +360,14 @@ namespace PBL3.Views
             this.bunifuTransition2.SetDecoration(this.dataDrink, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.dataDrink, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition3.SetDecoration(this.dataDrink, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(208)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(114)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataDrink.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(208)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(114)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataDrink.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataDrink.EnableHeadersVisualStyles = false;
             this.dataDrink.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.dataDrink.HeaderBackColor = System.Drawing.Color.Crimson;
@@ -377,67 +416,27 @@ namespace PBL3.Views
             this.label9.TabIndex = 0;
             this.label9.Text = "Drink";
             // 
-            // bunifuPanel2
-            // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Moccasin;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BorderRadius = 3;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.MenuFood);
-            this.bunifuPanel2.Controls.Add(this.bunifuPanel3);
-            this.bunifuPanel2.Controls.Add(this.dataFood);
-            this.bunifuPanel2.Controls.Add(this.pictureBox6);
-            this.bunifuPanel2.Controls.Add(this.label11);
-            this.bunifuTransition1.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition3.SetDecoration(this.bunifuPanel2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuPanel2.Location = new System.Drawing.Point(2, 2);
-            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(297, 407);
-            this.bunifuPanel2.TabIndex = 11;
-            this.bunifuPanel2.Visible = false;
-            // 
-            // MenuFood
-            // 
-            this.MenuFood.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition3.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition1.SetDecoration(this.MenuFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.MenuFood.Image = global::PBL3.Properties.Resources._180965072_3956474667807313_2984068236954540088_n;
-            this.MenuFood.Location = new System.Drawing.Point(250, 11);
-            this.MenuFood.Margin = new System.Windows.Forms.Padding(2);
-            this.MenuFood.Name = "MenuFood";
-            this.MenuFood.Size = new System.Drawing.Size(34, 27);
-            this.MenuFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MenuFood.TabIndex = 10;
-            this.MenuFood.TabStop = false;
-            this.MenuFood.Click += new System.EventHandler(this.MenuFood_Click);
-            // 
             // dataFood
             // 
             this.dataFood.AllowCustomTheming = false;
             this.dataFood.AllowUserToAddRows = false;
             this.dataFood.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataFood.BackgroundColor = System.Drawing.Color.LightSalmon;
             this.dataFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataFood.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataFood.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(16)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataFood.ColumnHeadersHeight = 40;
             this.dataFood.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
             this.dataFood.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -460,14 +459,14 @@ namespace PBL3.Views
             this.bunifuTransition2.SetDecoration(this.dataFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.dataFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition3.SetDecoration(this.dataFood, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(208)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(114)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataFood.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(208)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(114)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataFood.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataFood.EnableHeadersVisualStyles = false;
             this.dataFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.dataFood.HeaderBackColor = System.Drawing.Color.Crimson;
@@ -978,7 +977,7 @@ namespace PBL3.Views
             this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel4.BorderRadius = 3;
             this.bunifuPanel4.BorderThickness = 1;
-            this.bunifuPanel4.Controls.Add(this.label13);
+            this.bunifuPanel4.Controls.Add(this.txtTotal);
             this.bunifuPanel4.Controls.Add(this.label12);
             this.bunifuPanel4.Controls.Add(this.dataOder);
             this.bunifuPanel4.Controls.Add(this.label10);
@@ -992,21 +991,21 @@ namespace PBL3.Views
             this.bunifuPanel4.Size = new System.Drawing.Size(297, 407);
             this.bunifuPanel4.TabIndex = 13;
             // 
-            // label13
+            // txtTotal
             // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition3.SetDecoration(this.label13, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.label13, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuTransition1.SetDecoration(this.label13, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Firebrick;
-            this.label13.Location = new System.Drawing.Point(74, 368);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(209, 20);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "?";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtTotal.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition3.SetDecoration(this.txtTotal, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.txtTotal, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.txtTotal, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtTotal.Location = new System.Drawing.Point(74, 368);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(209, 20);
+            this.txtTotal.TabIndex = 11;
+            this.txtTotal.Text = "?";
+            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -1506,6 +1505,7 @@ namespace PBL3.Views
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.bunifuPanel3);
             this.Controls.Add(this.numberTable);
             this.Controls.Add(this.bunifuRating1);
             this.Controls.Add(this.btnBack);
@@ -1527,14 +1527,14 @@ namespace PBL3.Views
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.bunifuPanel2.ResumeLayout(false);
+            this.bunifuPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MenuFood)).EndInit();
             this.bunifuPanel3.ResumeLayout(false);
             this.bunifuPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuDrink)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDrink)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.bunifuPanel2.ResumeLayout(false);
-            this.bunifuPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MenuFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1579,7 +1579,7 @@ namespace PBL3.Views
         private System.Windows.Forms.Label label9;
         private Bunifu.UI.WinForms.BunifuDataGridView dataFood;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel4;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label txtTotal;
         private System.Windows.Forms.Label label12;
         private Bunifu.UI.WinForms.BunifuDataGridView dataOder;
         private System.Windows.Forms.Label label10;

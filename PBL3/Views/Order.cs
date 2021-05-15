@@ -40,6 +40,15 @@ namespace PBL3.Views
             dataOder.Columns[0].Name = "TenMon";
             dataOder.Columns[1].Name = "SoLuong";
             dataOder.Columns[2].Name = "Gia";
+            /*DataGridViewColumn Col1 = new DataGridViewColumn();
+            Col1.HeaderText = "TenMon";
+            DataGridViewColumn Col2 = new DataGridViewColumn();
+            Col2.HeaderText = "SoLuong";
+            DataGridViewColumn Col3 = new DataGridViewColumn();
+            Col3.HeaderText = "Gia";
+
+            dataOder.Columns.AddRange(new[] { Col1, Col2, Col3 });
+            //dataOder.Columns.Add();*/
             dataOder.Rows.Clear();
         }
         void loadFood()
@@ -104,13 +113,14 @@ namespace PBL3.Views
         private void dataFood_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             bool k = false ;
-            for (int i= 0; i < dataOder.Rows.Count ; i++)
+            for (int i= 0; i < dataOder.Rows.Count - 1 ; i++)
             {
                 if (dataOder.Rows[i].Cells["TenMon"].Value == dataFood.Rows[e.RowIndex].Cells["TenMon"].Value)
                 {
                     k = true;
-                    dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells[1].Value) + 1;
-                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataFood.Rows[i].Cells["Gia"].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
+                    dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value) + 1;
+                    dataOder.Rows[i].Cells[2].Value = (Convert.ToInt32(dataOder.Rows[i].Cells["Gia"].Value)/(Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value)-1))
+                                                        *Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                     break;
                 }
                 else
@@ -126,7 +136,8 @@ namespace PBL3.Views
                 row.Cells[1].Value = 1;
                 row.Cells[2].Value = dataFood.Rows[e.RowIndex].Cells["Gia"].Value;
                 dataOder.Rows.Add(row);
-            }    
+            }
+            Total();
             /*DataGridViewRow row = new DataGridViewRow();
             row = (DataGridViewRow)dataOder.Rows[0].Clone();
             row.Cells[0].Value = dataFood.Rows[e.RowIndex].Cells["TenMon"].Value;
@@ -138,13 +149,14 @@ namespace PBL3.Views
         private void dataDrink_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             bool k = false;
-            for (int i = 0; i < dataOder.Rows.Count; i++)
+            for (int i = 0; i < dataOder.Rows.Count - 1; i++)
             {
                 if (dataOder.Rows[i].Cells["TenMon"].Value == dataDrink.Rows[e.RowIndex].Cells["TenMon"].Value)
                 {
                     k = true;
-                    dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells[1].Value) + 1;
-                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataDrink.Rows[i].Cells["Gia"].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
+                    dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value) + 1;
+                    dataOder.Rows[i].Cells[2].Value = (Convert.ToInt32(dataOder.Rows[i].Cells["Gia"].Value) / (Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value)-1))
+                                                        * Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                     break;
                 }
                 else
@@ -161,15 +173,28 @@ namespace PBL3.Views
                 row.Cells[2].Value = dataDrink.Rows[e.RowIndex].Cells["Gia"].Value;
                 dataOder.Rows.Add(row);
             }
+            Total();
         }
 
         private void dataOder_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataOder.Rows[e.RowIndex].Cells[1].Value = Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells[1].Value) - 1;
-            if(Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells[1].Value) == 0)
+            dataOder.Rows[e.RowIndex].Cells["SoLuong"].Value = Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells["SoLuong"].Value) - 1;
+            dataOder.Rows[e.RowIndex].Cells["Gia"].Value = Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells["Gia"].Value) / (Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells["SoLuong"].Value) + 1)
+                                                            * Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells["SoLuong"].Value);
+            if (Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells[1].Value) == 0)
             {
                 dataOder.Rows.RemoveAt(e.RowIndex);
             }
+            Total();
+        }
+        public void Total()
+        {
+            double total = 0;
+            for(int i=0; i< dataOder.Rows.Count - 1 ; i++)
+            {
+                total = total + Convert.ToDouble(dataOder.Rows[i].Cells["Gia"].Value);
+            }
+            txtTotal.Text = (total + " VND").ToString();
         }
     }
 }
