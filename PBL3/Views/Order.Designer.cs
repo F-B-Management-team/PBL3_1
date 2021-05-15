@@ -52,10 +52,10 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation3 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,6 +93,8 @@ namespace PBL3.Views
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuRating1 = new Bunifu.UI.WinForms.BunifuRating();
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
+            this.numberTable = new System.Windows.Forms.Label();
+            this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuTransition2 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuTransition3 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -100,8 +102,6 @@ namespace PBL3.Views
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.numberTable = new System.Windows.Forms.Label();
-            this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuPanel3.SuspendLayout();
@@ -204,7 +204,6 @@ namespace PBL3.Views
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.pictureBox3);
-            this.bunifuPanel1.Controls.Add(this.bunifuPanel3);
             this.bunifuPanel1.Controls.Add(this.bunifuPanel2);
             this.bunifuPanel1.Controls.Add(this.pictureBox2);
             this.bunifuPanel1.Controls.Add(this.btnDrink);
@@ -255,7 +254,7 @@ namespace PBL3.Views
             this.bunifuTransition1.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuTransition3.SetDecoration(this.bunifuPanel3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuPanel3.Location = new System.Drawing.Point(0, 4);
+            this.bunifuPanel3.Location = new System.Drawing.Point(0, 2);
             this.bunifuPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
@@ -282,6 +281,8 @@ namespace PBL3.Views
             // dataDrink
             // 
             this.dataDrink.AllowCustomTheming = false;
+            this.dataDrink.AllowUserToAddRows = false;
+            this.dataDrink.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataDrink.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -336,6 +337,7 @@ namespace PBL3.Views
             this.dataDrink.Location = new System.Drawing.Point(20, 54);
             this.dataDrink.Margin = new System.Windows.Forms.Padding(2);
             this.dataDrink.Name = "dataDrink";
+            this.dataDrink.ReadOnly = true;
             this.dataDrink.RowHeadersVisible = false;
             this.dataDrink.RowTemplate.Height = 40;
             this.dataDrink.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -384,6 +386,7 @@ namespace PBL3.Views
             this.bunifuPanel2.BorderRadius = 3;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.MenuFood);
+            this.bunifuPanel2.Controls.Add(this.bunifuPanel3);
             this.bunifuPanel2.Controls.Add(this.dataFood);
             this.bunifuPanel2.Controls.Add(this.pictureBox6);
             this.bunifuPanel2.Controls.Add(this.label11);
@@ -417,6 +420,8 @@ namespace PBL3.Views
             // dataFood
             // 
             this.dataFood.AllowCustomTheming = false;
+            this.dataFood.AllowUserToAddRows = false;
+            this.dataFood.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -471,6 +476,7 @@ namespace PBL3.Views
             this.dataFood.Location = new System.Drawing.Point(20, 54);
             this.dataFood.Margin = new System.Windows.Forms.Padding(2);
             this.dataFood.Name = "dataFood";
+            this.dataFood.ReadOnly = true;
             this.dataFood.RowHeadersVisible = false;
             this.dataFood.RowTemplate.Height = 40;
             this.dataFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1021,6 +1027,7 @@ namespace PBL3.Views
             // dataOder
             // 
             this.dataOder.AllowCustomTheming = false;
+            this.dataOder.AllowUserToDeleteRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             this.dataOder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
@@ -1075,6 +1082,7 @@ namespace PBL3.Views
             this.dataOder.Location = new System.Drawing.Point(20, 46);
             this.dataOder.Margin = new System.Windows.Forms.Padding(2);
             this.dataOder.Name = "dataOder";
+            this.dataOder.ReadOnly = true;
             this.dataOder.RowHeadersVisible = false;
             this.dataOder.RowTemplate.Height = 40;
             this.dataOder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1082,6 +1090,7 @@ namespace PBL3.Views
             this.dataOder.StandardTab = true;
             this.dataOder.TabIndex = 8;
             this.dataOder.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Crimson;
+            this.dataOder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataOder_CellContentDoubleClick);
             // 
             // label10
             // 
@@ -1317,73 +1326,6 @@ namespace PBL3.Views
             animation3.TransparencyCoeff = 0F;
             this.bunifuTransition1.DefaultAnimation = animation3;
             // 
-            // bunifuTransition2
-            // 
-            this.bunifuTransition2.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Mosaic;
-            this.bunifuTransition2.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 20;
-            animation2.Padding = new System.Windows.Forms.Padding(30);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition2.DefaultAnimation = animation2;
-            // 
-            // bunifuTransition3
-            // 
-            this.bunifuTransition3.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.HorizBlind;
-            this.bunifuTransition3.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition3.DefaultAnimation = animation1;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 35;
-            this.bunifuElipse2.TargetControl = this;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 35;
-            this.bunifuElipse3.TargetControl = this;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 35;
-            this.bunifuElipse4.TargetControl = this.bunifuPanel3;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 35;
-            this.bunifuElipse5.TargetControl = this.bunifuPanel2;
-            // 
-            // bunifuElipse6
-            // 
-            this.bunifuElipse6.ElipseRadius = 35;
-            this.bunifuElipse6.TargetControl = this.bunifuPanel4;
-            // 
             // numberTable
             // 
             this.bunifuTransition3.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
@@ -1489,6 +1431,73 @@ namespace PBL3.Views
             this.btnPay.TextMarginLeft = 0;
             this.btnPay.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPay.UseDefaultRadiusAndThickness = true;
+            // 
+            // bunifuTransition2
+            // 
+            this.bunifuTransition2.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Mosaic;
+            this.bunifuTransition2.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 20;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation2;
+            // 
+            // bunifuTransition3
+            // 
+            this.bunifuTransition3.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.HorizBlind;
+            this.bunifuTransition3.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition3.DefaultAnimation = animation1;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 35;
+            this.bunifuElipse2.TargetControl = this;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 35;
+            this.bunifuElipse3.TargetControl = this;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 35;
+            this.bunifuElipse4.TargetControl = this.bunifuPanel3;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 35;
+            this.bunifuElipse5.TargetControl = this.bunifuPanel2;
+            // 
+            // bunifuElipse6
+            // 
+            this.bunifuElipse6.ElipseRadius = 35;
+            this.bunifuElipse6.TargetControl = this.bunifuPanel4;
             // 
             // Order
             // 

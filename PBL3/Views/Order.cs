@@ -44,14 +44,23 @@ namespace PBL3.Views
         }
         void loadFood()
         {
-            var result = from c in db.MonAns where c.IDDanhMuc == "doan" select new { TenMon = c.TenMon, Gia = c.Gia };
-            dataFood.DataSource = result.ToList();
-
+            //var result = from c in db.MonAns where c.IDDanhMuc == "doan" select new { TenMon = c.TenMon, Gia = c.Gia };
+            //var result = db.MonAns.Where(p => p.IDDanhMuc == "doan").Select(p => new { p.TenMon, p.Gia });
+            dataFood.DataSource = BLL.BLL_Order.Instance.LoadMenuFood();
+            dataFood.Columns[0].Visible = false;
+            dataFood.Columns[1].Visible = false;
+            dataFood.Columns[4].Visible = false;
+            dataFood.Columns[5].Visible = false;
         }
         void loadDrink()
         {
-            var result = from c in db.MonAns where c.IDDanhMuc == "douong" select new { TenMon = c.TenMon, Gia = c.Gia };
-            dataDrink.DataSource = result.ToList();
+            //var result = from c in db.MonAns where c.IDDanhMuc == "douong" select new { TenMon = c.TenMon, Gia = c.Gia };
+            //dataDrink.DataSource = result.ToList();
+            dataDrink.DataSource = BLL.BLL_Order.Instance.LoadMenuDrink();
+            dataDrink.Columns[0].Visible = false;
+            dataDrink.Columns[1].Visible = false;
+            dataDrink.Columns[4].Visible = false;
+            dataDrink.Columns[5].Visible = false;
         }
         private void pictureBox7_Click(object sender, EventArgs e)
         {
@@ -101,7 +110,7 @@ namespace PBL3.Views
                 {
                     k = true;
                     dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells[1].Value) + 1;
-                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataFood.Rows[i].Cells[1].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
+                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataFood.Rows[i].Cells["Gia"].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
                     break;
                 }
                 else
@@ -135,7 +144,7 @@ namespace PBL3.Views
                 {
                     k = true;
                     dataOder.Rows[i].Cells[1].Value = Convert.ToInt32(dataOder.Rows[i].Cells[1].Value) + 1;
-                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataDrink.Rows[i].Cells[1].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
+                    dataOder.Rows[i].Cells[2].Value = Convert.ToInt32(dataDrink.Rows[i].Cells["Gia"].Value) * Convert.ToInt32(dataOder.Rows[i].Cells[1].Value);
                     break;
                 }
                 else
@@ -151,6 +160,15 @@ namespace PBL3.Views
                 row.Cells[1].Value = 1;
                 row.Cells[2].Value = dataDrink.Rows[e.RowIndex].Cells["Gia"].Value;
                 dataOder.Rows.Add(row);
+            }
+        }
+
+        private void dataOder_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataOder.Rows[e.RowIndex].Cells[1].Value = Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells[1].Value) - 1;
+            if(Convert.ToInt32(dataOder.Rows[e.RowIndex].Cells[1].Value) == 0)
+            {
+                dataOder.Rows.RemoveAt(e.RowIndex);
             }
         }
     }
