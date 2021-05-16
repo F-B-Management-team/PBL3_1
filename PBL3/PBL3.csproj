@@ -157,6 +157,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Insert.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Order.cs" />
     <Compile Include="Data\Ban.cs">

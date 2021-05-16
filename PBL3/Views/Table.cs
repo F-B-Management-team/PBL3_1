@@ -18,9 +18,7 @@ namespace PBL3.Views
         public Table()
         {
             InitializeComponent();
-            
         }
-
         private void btnMangve_Click(object sender, EventArgs e)
         {
             order2.Visible = true;

@@ -24,9 +24,9 @@ namespace PBL3
                 bunifuPages1.SetPage(0);
                 btnLogin.BringToFront();
                 btnLogout.SendToBack();
-                btnOrder.Enabled = true;
-                btnBill.Enabled = true;
-                btnSetting.Enabled = true;
+                btnOrder.Enabled = false;
+                btnBill.Enabled = false;
+                btnSetting.Enabled = false;
             }
             if(check == true)
             {
@@ -63,6 +63,7 @@ namespace PBL3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
+            table1.order2.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

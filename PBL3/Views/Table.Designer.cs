@@ -1864,6 +1864,6 @@ namespace PBL3.Views
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
-        private Order order2;
+        public Order order2;
     }
 }
