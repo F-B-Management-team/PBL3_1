@@ -29,6 +29,9 @@ namespace PBL3.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Table));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -46,8 +49,8 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.groupbox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnTable = new System.Windows.Forms.Panel();
+            this.dataTable = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -80,7 +83,10 @@ namespace PBL3.Views
             this.bthTable5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bthTable2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bthTable1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.order2 = new PBL3.Views.Order();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupbox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.pnTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -99,204 +105,283 @@ namespace PBL3.Views
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupbox1
+            // pnTable
             // 
-            this.groupbox1.BackColor = System.Drawing.Color.White;
-            this.groupbox1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.groupbox1.Location = new System.Drawing.Point(40, 30);
-            this.groupbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupbox1.Name = "groupbox1";
-            this.groupbox1.Size = new System.Drawing.Size(670, 478);
-            this.groupbox1.TabIndex = 0;
+            this.pnTable.Controls.Add(this.dataTable);
+            this.pnTable.Controls.Add(this.pictureBox16);
+            this.pnTable.Controls.Add(this.pictureBox15);
+            this.pnTable.Controls.Add(this.pictureBox14);
+            this.pnTable.Controls.Add(this.pictureBox13);
+            this.pnTable.Controls.Add(this.pictureBox12);
+            this.pnTable.Controls.Add(this.pictureBox11);
+            this.pnTable.Controls.Add(this.pictureBox10);
+            this.pnTable.Controls.Add(this.pictureBox9);
+            this.pnTable.Controls.Add(this.pictureBox8);
+            this.pnTable.Controls.Add(this.pictureBox7);
+            this.pnTable.Controls.Add(this.pictureBox6);
+            this.pnTable.Controls.Add(this.pictureBox5);
+            this.pnTable.Controls.Add(this.pictureBox4);
+            this.pnTable.Controls.Add(this.pictureBox3);
+            this.pnTable.Controls.Add(this.pictureBox2);
+            this.pnTable.Controls.Add(this.pictureBox1);
+            this.pnTable.Controls.Add(this.btnMangve);
+            this.pnTable.Controls.Add(this.bthTable12);
+            this.pnTable.Controls.Add(this.bthTable11);
+            this.pnTable.Controls.Add(this.bthTable13);
+            this.pnTable.Controls.Add(this.bthTable8);
+            this.pnTable.Controls.Add(this.bthTable7);
+            this.pnTable.Controls.Add(this.bthTable15);
+            this.pnTable.Controls.Add(this.bthTable10);
+            this.pnTable.Controls.Add(this.bthTable4);
+            this.pnTable.Controls.Add(this.bthTable6);
+            this.pnTable.Controls.Add(this.bthTable14);
+            this.pnTable.Controls.Add(this.bthTable9);
+            this.pnTable.Controls.Add(this.bthTable3);
+            this.pnTable.Controls.Add(this.bthTable5);
+            this.pnTable.Controls.Add(this.bthTable2);
+            this.pnTable.Controls.Add(this.bthTable1);
+            this.pnTable.Controls.Add(this.label1);
+            this.pnTable.Controls.Add(this.groupbox1);
+            this.pnTable.Location = new System.Drawing.Point(0, 0);
+            this.pnTable.Name = "pnTable";
+            this.pnTable.Size = new System.Drawing.Size(876, 540);
+            this.pnTable.TabIndex = 0;
             // 
-            // label1
+            // dataTable
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(262, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "List Table";
+            this.dataTable.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataTable.ColumnHeadersHeight = 40;
+            this.dataTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dataTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataTable.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataTable.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataTable.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dataTable.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataTable.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dataTable.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dataTable.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataTable.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dataTable.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataTable.CurrentTheme.Name = null;
+            this.dataTable.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataTable.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataTable.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataTable.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataTable.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataTable.EnableHeadersVisualStyles = false;
+            this.dataTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataTable.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dataTable.HeaderForeColor = System.Drawing.Color.White;
+            this.dataTable.Location = new System.Drawing.Point(644, 240);
+            this.dataTable.Name = "dataTable";
+            this.dataTable.RowHeadersVisible = false;
+            this.dataTable.RowTemplate.Height = 40;
+            this.dataTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataTable.Size = new System.Drawing.Size(207, 232);
+            this.dataTable.TabIndex = 59;
+            this.dataTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dataTable.Visible = false;
             // 
             // pictureBox16
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox16.Image = global::PBL3.Properties.Resources.online_shopping__1_;
-            this.pictureBox16.Location = new System.Drawing.Point(740, 93);
+            this.pictureBox16.Location = new System.Drawing.Point(718, 101);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(90, 91);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 23;
+            this.pictureBox16.TabIndex = 58;
             this.pictureBox16.TabStop = false;
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox15.Location = new System.Drawing.Point(576, 360);
+            this.pictureBox15.Location = new System.Drawing.Point(554, 368);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(70, 76);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 22;
+            this.pictureBox15.TabIndex = 57;
             this.pictureBox15.TabStop = false;
             // 
             // pictureBox14
             // 
             this.pictureBox14.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox14.Location = new System.Drawing.Point(444, 360);
+            this.pictureBox14.Location = new System.Drawing.Point(422, 368);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(70, 76);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 21;
+            this.pictureBox14.TabIndex = 56;
             this.pictureBox14.TabStop = false;
             // 
             // pictureBox13
             // 
             this.pictureBox13.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox13.Location = new System.Drawing.Point(319, 360);
+            this.pictureBox13.Location = new System.Drawing.Point(297, 368);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(70, 76);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 20;
+            this.pictureBox13.TabIndex = 55;
             this.pictureBox13.TabStop = false;
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox12.Location = new System.Drawing.Point(185, 360);
+            this.pictureBox12.Location = new System.Drawing.Point(163, 368);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(70, 76);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 19;
+            this.pictureBox12.TabIndex = 54;
             this.pictureBox12.TabStop = false;
             // 
             // pictureBox11
             // 
             this.pictureBox11.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox11.Location = new System.Drawing.Point(67, 360);
+            this.pictureBox11.Location = new System.Drawing.Point(45, 368);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(70, 76);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 18;
+            this.pictureBox11.TabIndex = 53;
             this.pictureBox11.TabStop = false;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox10.Location = new System.Drawing.Point(576, 232);
+            this.pictureBox10.Location = new System.Drawing.Point(554, 240);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 76);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 17;
+            this.pictureBox10.TabIndex = 52;
             this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox9.Location = new System.Drawing.Point(444, 232);
+            this.pictureBox9.Location = new System.Drawing.Point(422, 240);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(70, 76);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 16;
+            this.pictureBox9.TabIndex = 51;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox8.Location = new System.Drawing.Point(319, 232);
+            this.pictureBox8.Location = new System.Drawing.Point(297, 240);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(70, 76);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 15;
+            this.pictureBox8.TabIndex = 50;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox7.Location = new System.Drawing.Point(185, 232);
+            this.pictureBox7.Location = new System.Drawing.Point(163, 240);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(70, 76);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabIndex = 49;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox6.Location = new System.Drawing.Point(67, 232);
+            this.pictureBox6.Location = new System.Drawing.Point(45, 240);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 76);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox5.Location = new System.Drawing.Point(576, 101);
+            this.pictureBox5.Location = new System.Drawing.Point(554, 109);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(70, 76);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabIndex = 47;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox4.Location = new System.Drawing.Point(444, 101);
+            this.pictureBox4.Location = new System.Drawing.Point(422, 109);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 76);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabIndex = 46;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox3.Location = new System.Drawing.Point(319, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(297, 109);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 76);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabIndex = 45;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox2.Location = new System.Drawing.Point(185, 101);
+            this.pictureBox2.Location = new System.Drawing.Point(163, 109);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 76);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabIndex = 44;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PBL3.Properties.Resources.table;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 109);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
             // 
             // btnMangve
@@ -346,7 +431,7 @@ namespace PBL3.Views
             this.btnMangve.IdleIconLeftImage = null;
             this.btnMangve.IdleIconRightImage = null;
             this.btnMangve.IndicateFocus = false;
-            this.btnMangve.Location = new System.Drawing.Point(740, 181);
+            this.btnMangve.Location = new System.Drawing.Point(718, 189);
             this.btnMangve.Margin = new System.Windows.Forms.Padding(2);
             this.btnMangve.Name = "btnMangve";
             this.btnMangve.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -382,13 +467,12 @@ namespace PBL3.Views
             this.btnMangve.OnPressedState.IconLeftImage = null;
             this.btnMangve.OnPressedState.IconRightImage = null;
             this.btnMangve.Size = new System.Drawing.Size(90, 32);
-            this.btnMangve.TabIndex = 6;
+            this.btnMangve.TabIndex = 42;
             this.btnMangve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMangve.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnMangve.TextMarginLeft = 0;
             this.btnMangve.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnMangve.UseDefaultRadiusAndThickness = true;
-            this.btnMangve.Click += new System.EventHandler(this.btnMangve_Click);
             // 
             // bthTable12
             // 
@@ -437,7 +521,7 @@ namespace PBL3.Views
             this.bthTable12.IdleIconLeftImage = null;
             this.bthTable12.IdleIconRightImage = null;
             this.bthTable12.IndicateFocus = false;
-            this.bthTable12.Location = new System.Drawing.Point(185, 432);
+            this.bthTable12.Location = new System.Drawing.Point(163, 440);
             this.bthTable12.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable12.Name = "bthTable12";
             this.bthTable12.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -473,13 +557,12 @@ namespace PBL3.Views
             this.bthTable12.OnPressedState.IconLeftImage = null;
             this.bthTable12.OnPressedState.IconRightImage = null;
             this.bthTable12.Size = new System.Drawing.Size(70, 32);
-            this.bthTable12.TabIndex = 6;
+            this.bthTable12.TabIndex = 33;
             this.bthTable12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable12.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable12.TextMarginLeft = 0;
             this.bthTable12.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable12.UseDefaultRadiusAndThickness = true;
-            this.bthTable12.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable11
             // 
@@ -528,7 +611,7 @@ namespace PBL3.Views
             this.bthTable11.IdleIconLeftImage = null;
             this.bthTable11.IdleIconRightImage = null;
             this.bthTable11.IndicateFocus = false;
-            this.bthTable11.Location = new System.Drawing.Point(67, 432);
+            this.bthTable11.Location = new System.Drawing.Point(45, 440);
             this.bthTable11.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable11.Name = "bthTable11";
             this.bthTable11.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -564,13 +647,12 @@ namespace PBL3.Views
             this.bthTable11.OnPressedState.IconLeftImage = null;
             this.bthTable11.OnPressedState.IconRightImage = null;
             this.bthTable11.Size = new System.Drawing.Size(70, 32);
-            this.bthTable11.TabIndex = 6;
+            this.bthTable11.TabIndex = 39;
             this.bthTable11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable11.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable11.TextMarginLeft = 0;
             this.bthTable11.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable11.UseDefaultRadiusAndThickness = true;
-            this.bthTable11.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable13
             // 
@@ -619,7 +701,7 @@ namespace PBL3.Views
             this.bthTable13.IdleIconLeftImage = null;
             this.bthTable13.IdleIconRightImage = null;
             this.bthTable13.IndicateFocus = false;
-            this.bthTable13.Location = new System.Drawing.Point(319, 432);
+            this.bthTable13.Location = new System.Drawing.Point(297, 440);
             this.bthTable13.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable13.Name = "bthTable13";
             this.bthTable13.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -655,13 +737,12 @@ namespace PBL3.Views
             this.bthTable13.OnPressedState.IconLeftImage = null;
             this.bthTable13.OnPressedState.IconRightImage = null;
             this.bthTable13.Size = new System.Drawing.Size(70, 32);
-            this.bthTable13.TabIndex = 6;
+            this.bthTable13.TabIndex = 38;
             this.bthTable13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable13.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable13.TextMarginLeft = 0;
             this.bthTable13.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable13.UseDefaultRadiusAndThickness = true;
-            this.bthTable13.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable8
             // 
@@ -710,7 +791,7 @@ namespace PBL3.Views
             this.bthTable8.IdleIconLeftImage = null;
             this.bthTable8.IdleIconRightImage = null;
             this.bthTable8.IndicateFocus = false;
-            this.bthTable8.Location = new System.Drawing.Point(319, 304);
+            this.bthTable8.Location = new System.Drawing.Point(297, 312);
             this.bthTable8.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable8.Name = "bthTable8";
             this.bthTable8.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -746,13 +827,12 @@ namespace PBL3.Views
             this.bthTable8.OnPressedState.IconLeftImage = null;
             this.bthTable8.OnPressedState.IconRightImage = null;
             this.bthTable8.Size = new System.Drawing.Size(70, 32);
-            this.bthTable8.TabIndex = 6;
+            this.bthTable8.TabIndex = 37;
             this.bthTable8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable8.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable8.TextMarginLeft = 0;
             this.bthTable8.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable8.UseDefaultRadiusAndThickness = true;
-            this.bthTable8.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable7
             // 
@@ -801,7 +881,7 @@ namespace PBL3.Views
             this.bthTable7.IdleIconLeftImage = null;
             this.bthTable7.IdleIconRightImage = null;
             this.bthTable7.IndicateFocus = false;
-            this.bthTable7.Location = new System.Drawing.Point(185, 304);
+            this.bthTable7.Location = new System.Drawing.Point(163, 312);
             this.bthTable7.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable7.Name = "bthTable7";
             this.bthTable7.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -837,13 +917,12 @@ namespace PBL3.Views
             this.bthTable7.OnPressedState.IconLeftImage = null;
             this.bthTable7.OnPressedState.IconRightImage = null;
             this.bthTable7.Size = new System.Drawing.Size(70, 32);
-            this.bthTable7.TabIndex = 6;
+            this.bthTable7.TabIndex = 36;
             this.bthTable7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable7.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable7.TextMarginLeft = 0;
             this.bthTable7.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable7.UseDefaultRadiusAndThickness = true;
-            this.bthTable7.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable15
             // 
@@ -892,7 +971,7 @@ namespace PBL3.Views
             this.bthTable15.IdleIconLeftImage = null;
             this.bthTable15.IdleIconRightImage = null;
             this.bthTable15.IndicateFocus = false;
-            this.bthTable15.Location = new System.Drawing.Point(576, 432);
+            this.bthTable15.Location = new System.Drawing.Point(554, 440);
             this.bthTable15.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable15.Name = "bthTable15";
             this.bthTable15.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -928,13 +1007,12 @@ namespace PBL3.Views
             this.bthTable15.OnPressedState.IconLeftImage = null;
             this.bthTable15.OnPressedState.IconRightImage = null;
             this.bthTable15.Size = new System.Drawing.Size(70, 32);
-            this.bthTable15.TabIndex = 6;
+            this.bthTable15.TabIndex = 35;
             this.bthTable15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable15.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable15.TextMarginLeft = 0;
             this.bthTable15.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable15.UseDefaultRadiusAndThickness = true;
-            this.bthTable15.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable10
             // 
@@ -983,7 +1061,7 @@ namespace PBL3.Views
             this.bthTable10.IdleIconLeftImage = null;
             this.bthTable10.IdleIconRightImage = null;
             this.bthTable10.IndicateFocus = false;
-            this.bthTable10.Location = new System.Drawing.Point(576, 304);
+            this.bthTable10.Location = new System.Drawing.Point(554, 312);
             this.bthTable10.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable10.Name = "bthTable10";
             this.bthTable10.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1019,13 +1097,12 @@ namespace PBL3.Views
             this.bthTable10.OnPressedState.IconLeftImage = null;
             this.bthTable10.OnPressedState.IconRightImage = null;
             this.bthTable10.Size = new System.Drawing.Size(70, 32);
-            this.bthTable10.TabIndex = 6;
+            this.bthTable10.TabIndex = 34;
             this.bthTable10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable10.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable10.TextMarginLeft = 0;
             this.bthTable10.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable10.UseDefaultRadiusAndThickness = true;
-            this.bthTable10.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable4
             // 
@@ -1074,7 +1151,7 @@ namespace PBL3.Views
             this.bthTable4.IdleIconLeftImage = null;
             this.bthTable4.IdleIconRightImage = null;
             this.bthTable4.IndicateFocus = false;
-            this.bthTable4.Location = new System.Drawing.Point(444, 176);
+            this.bthTable4.Location = new System.Drawing.Point(422, 184);
             this.bthTable4.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable4.Name = "bthTable4";
             this.bthTable4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1110,13 +1187,12 @@ namespace PBL3.Views
             this.bthTable4.OnPressedState.IconLeftImage = null;
             this.bthTable4.OnPressedState.IconRightImage = null;
             this.bthTable4.Size = new System.Drawing.Size(70, 32);
-            this.bthTable4.TabIndex = 6;
+            this.bthTable4.TabIndex = 41;
             this.bthTable4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable4.TextMarginLeft = 0;
             this.bthTable4.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable4.UseDefaultRadiusAndThickness = true;
-            this.bthTable4.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable6
             // 
@@ -1165,7 +1241,7 @@ namespace PBL3.Views
             this.bthTable6.IdleIconLeftImage = null;
             this.bthTable6.IdleIconRightImage = null;
             this.bthTable6.IndicateFocus = false;
-            this.bthTable6.Location = new System.Drawing.Point(67, 304);
+            this.bthTable6.Location = new System.Drawing.Point(45, 312);
             this.bthTable6.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable6.Name = "bthTable6";
             this.bthTable6.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1201,13 +1277,12 @@ namespace PBL3.Views
             this.bthTable6.OnPressedState.IconLeftImage = null;
             this.bthTable6.OnPressedState.IconRightImage = null;
             this.bthTable6.Size = new System.Drawing.Size(70, 32);
-            this.bthTable6.TabIndex = 6;
+            this.bthTable6.TabIndex = 32;
             this.bthTable6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable6.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable6.TextMarginLeft = 0;
             this.bthTable6.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable6.UseDefaultRadiusAndThickness = true;
-            this.bthTable6.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable14
             // 
@@ -1256,7 +1331,7 @@ namespace PBL3.Views
             this.bthTable14.IdleIconLeftImage = null;
             this.bthTable14.IdleIconRightImage = null;
             this.bthTable14.IndicateFocus = false;
-            this.bthTable14.Location = new System.Drawing.Point(444, 432);
+            this.bthTable14.Location = new System.Drawing.Point(422, 440);
             this.bthTable14.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable14.Name = "bthTable14";
             this.bthTable14.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1292,13 +1367,12 @@ namespace PBL3.Views
             this.bthTable14.OnPressedState.IconLeftImage = null;
             this.bthTable14.OnPressedState.IconRightImage = null;
             this.bthTable14.Size = new System.Drawing.Size(70, 32);
-            this.bthTable14.TabIndex = 6;
+            this.bthTable14.TabIndex = 31;
             this.bthTable14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable14.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable14.TextMarginLeft = 0;
             this.bthTable14.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable14.UseDefaultRadiusAndThickness = true;
-            this.bthTable14.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable9
             // 
@@ -1347,7 +1421,7 @@ namespace PBL3.Views
             this.bthTable9.IdleIconLeftImage = null;
             this.bthTable9.IdleIconRightImage = null;
             this.bthTable9.IndicateFocus = false;
-            this.bthTable9.Location = new System.Drawing.Point(444, 304);
+            this.bthTable9.Location = new System.Drawing.Point(422, 312);
             this.bthTable9.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable9.Name = "bthTable9";
             this.bthTable9.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1383,13 +1457,12 @@ namespace PBL3.Views
             this.bthTable9.OnPressedState.IconLeftImage = null;
             this.bthTable9.OnPressedState.IconRightImage = null;
             this.bthTable9.Size = new System.Drawing.Size(70, 32);
-            this.bthTable9.TabIndex = 6;
+            this.bthTable9.TabIndex = 30;
             this.bthTable9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable9.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable9.TextMarginLeft = 0;
             this.bthTable9.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable9.UseDefaultRadiusAndThickness = true;
-            this.bthTable9.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable3
             // 
@@ -1438,7 +1511,7 @@ namespace PBL3.Views
             this.bthTable3.IdleIconLeftImage = null;
             this.bthTable3.IdleIconRightImage = null;
             this.bthTable3.IndicateFocus = false;
-            this.bthTable3.Location = new System.Drawing.Point(319, 176);
+            this.bthTable3.Location = new System.Drawing.Point(297, 184);
             this.bthTable3.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable3.Name = "bthTable3";
             this.bthTable3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1474,13 +1547,12 @@ namespace PBL3.Views
             this.bthTable3.OnPressedState.IconLeftImage = null;
             this.bthTable3.OnPressedState.IconRightImage = null;
             this.bthTable3.Size = new System.Drawing.Size(70, 32);
-            this.bthTable3.TabIndex = 6;
+            this.bthTable3.TabIndex = 29;
             this.bthTable3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable3.TextMarginLeft = 0;
             this.bthTable3.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable3.UseDefaultRadiusAndThickness = true;
-            this.bthTable3.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable5
             // 
@@ -1529,7 +1601,7 @@ namespace PBL3.Views
             this.bthTable5.IdleIconLeftImage = null;
             this.bthTable5.IdleIconRightImage = null;
             this.bthTable5.IndicateFocus = false;
-            this.bthTable5.Location = new System.Drawing.Point(576, 176);
+            this.bthTable5.Location = new System.Drawing.Point(554, 184);
             this.bthTable5.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable5.Name = "bthTable5";
             this.bthTable5.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1565,13 +1637,12 @@ namespace PBL3.Views
             this.bthTable5.OnPressedState.IconLeftImage = null;
             this.bthTable5.OnPressedState.IconRightImage = null;
             this.bthTable5.Size = new System.Drawing.Size(70, 32);
-            this.bthTable5.TabIndex = 6;
+            this.bthTable5.TabIndex = 28;
             this.bthTable5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable5.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable5.TextMarginLeft = 0;
             this.bthTable5.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable5.UseDefaultRadiusAndThickness = true;
-            this.bthTable5.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable2
             // 
@@ -1620,7 +1691,7 @@ namespace PBL3.Views
             this.bthTable2.IdleIconLeftImage = null;
             this.bthTable2.IdleIconRightImage = null;
             this.bthTable2.IndicateFocus = false;
-            this.bthTable2.Location = new System.Drawing.Point(185, 176);
+            this.bthTable2.Location = new System.Drawing.Point(163, 184);
             this.bthTable2.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable2.Name = "bthTable2";
             this.bthTable2.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1656,13 +1727,12 @@ namespace PBL3.Views
             this.bthTable2.OnPressedState.IconLeftImage = null;
             this.bthTable2.OnPressedState.IconRightImage = null;
             this.bthTable2.Size = new System.Drawing.Size(70, 32);
-            this.bthTable2.TabIndex = 6;
+            this.bthTable2.TabIndex = 27;
             this.bthTable2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable2.TextMarginLeft = 0;
             this.bthTable2.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable2.UseDefaultRadiusAndThickness = true;
-            this.bthTable2.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable1
             // 
@@ -1711,7 +1781,7 @@ namespace PBL3.Views
             this.bthTable1.IdleIconLeftImage = null;
             this.bthTable1.IdleIconRightImage = null;
             this.bthTable1.IndicateFocus = false;
-            this.bthTable1.Location = new System.Drawing.Point(67, 176);
+            this.bthTable1.Location = new System.Drawing.Point(45, 184);
             this.bthTable1.Margin = new System.Windows.Forms.Padding(2);
             this.bthTable1.Name = "bthTable1";
             this.bthTable1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1747,66 +1817,47 @@ namespace PBL3.Views
             this.bthTable1.OnPressedState.IconLeftImage = null;
             this.bthTable1.OnPressedState.IconRightImage = null;
             this.bthTable1.Size = new System.Drawing.Size(70, 32);
-            this.bthTable1.TabIndex = 6;
+            this.bthTable1.TabIndex = 40;
             this.bthTable1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bthTable1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bthTable1.TextMarginLeft = 0;
             this.bthTable1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable1.UseDefaultRadiusAndThickness = true;
-            this.bthTable1.Click += new System.EventHandler(this.BthTable1_Click);
+            this.bthTable1.Click += new System.EventHandler(this.bthTable1_Click_1);
             // 
-            // order2
+            // label1
             // 
-            this.order2.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.order2.BackColor = System.Drawing.Color.White;
-            this.order2.Location = new System.Drawing.Point(-3, 2);
-            this.order2.Margin = new System.Windows.Forms.Padding(2);
-            this.order2.Name = "order2";
-            this.order2.Size = new System.Drawing.Size(877, 542);
-            this.order2.TabIndex = 24;
-            this.order2.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(240, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 39);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "List Table";
+            // 
+            // groupbox1
+            // 
+            this.groupbox1.BackColor = System.Drawing.Color.White;
+            this.groupbox1.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.groupbox1.Location = new System.Drawing.Point(29, 35);
+            this.groupbox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupbox1.Name = "groupbox1";
+            this.groupbox1.Size = new System.Drawing.Size(670, 478);
+            this.groupbox1.TabIndex = 25;
             // 
             // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.pictureBox15);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnMangve);
-            this.Controls.Add(this.bthTable12);
-            this.Controls.Add(this.bthTable11);
-            this.Controls.Add(this.bthTable13);
-            this.Controls.Add(this.bthTable8);
-            this.Controls.Add(this.bthTable7);
-            this.Controls.Add(this.bthTable15);
-            this.Controls.Add(this.bthTable10);
-            this.Controls.Add(this.bthTable4);
-            this.Controls.Add(this.bthTable6);
-            this.Controls.Add(this.bthTable14);
-            this.Controls.Add(this.bthTable9);
-            this.Controls.Add(this.bthTable3);
-            this.Controls.Add(this.bthTable5);
-            this.Controls.Add(this.bthTable2);
-            this.Controls.Add(this.bthTable1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupbox1);
-            this.Controls.Add(this.order2);
+            this.Controls.Add(this.pnTable);
             this.Name = "Table";
             this.Size = new System.Drawing.Size(876, 540);
+            this.pnTable.ResumeLayout(false);
+            this.pnTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -1824,46 +1875,45 @@ namespace PBL3.Views
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.UI.WinForms.BunifuGroupBox groupbox1;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnMangve;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable3;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable4;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable5;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable6;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable7;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable8;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable9;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable10;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable11;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable12;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable13;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable14;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable15;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.Panel pnTable;
+        private Bunifu.UI.WinForms.BunifuDataGridView dataTable;
         private System.Windows.Forms.PictureBox pictureBox16;
-        public Order order2;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnMangve;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable12;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable11;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable13;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable8;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable7;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable15;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable10;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable4;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable6;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable14;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable9;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable5;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable2;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable1;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuGroupBox groupbox1;
     }
 }

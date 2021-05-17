@@ -63,7 +63,8 @@ namespace PBL3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
-            table1.order2.Visible = false;
+            //table1.order2.Visible = false;
+            table1.LoadStatusBan();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

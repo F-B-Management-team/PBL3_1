@@ -1,12 +1,5 @@
 ﻿using PBL3.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL3.Views
@@ -116,7 +109,7 @@ namespace PBL3.Views
         private void dataFood_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             bool k = false ;
-            for (int i= 0; i < dataOder.Rows.Count - 1 ; i++)
+            for (int i= 0; i < dataOder.Rows.Count; i++)
             {
                 if (dataOder.Rows[i].Cells["TenMon"].Value == dataFood.Rows[e.RowIndex].Cells["TenMon"].Value)
                 {
@@ -155,7 +148,7 @@ namespace PBL3.Views
         private void dataDrink_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             bool k = false;
-            for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+            for (int i = 0; i < dataOder.Rows.Count; i++)
             {
                 if (dataOder.Rows[i].Cells["TenMon"].Value == dataDrink.Rows[e.RowIndex].Cells["TenMon"].Value)
                 {
@@ -200,7 +193,7 @@ namespace PBL3.Views
         public void Total()
         {
             double total = 0;
-            for(int i=0; i< dataOder.Rows.Count - 1 ; i++)
+            for(int i=0; i< dataOder.Rows.Count ; i++)
             {
                 total = total + Convert.ToDouble(dataOder.Rows[i].Cells["Gia"].Value);
             }

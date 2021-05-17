@@ -37,7 +37,8 @@ namespace PBL3.BLL
         public List<MonAn> LoadMenuDrink()
         {
             List<MonAn> result = new List<MonAn>();
-            result = (db.MonAns.Where(p => p.IDDanhMuc == "douong").ToList());
+            List<MonAn> monAns = db.MonAns.Where(p => p.IDDanhMuc == "douong").ToList();
+            result = monAns;
             return result;
         }
     }
