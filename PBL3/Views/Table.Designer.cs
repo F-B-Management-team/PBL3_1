@@ -85,6 +85,7 @@ namespace PBL3.Views
             this.bthTable1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupbox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.order1 = new PBL3.Views.Order();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -142,6 +143,7 @@ namespace PBL3.Views
             this.pnTable.Controls.Add(this.bthTable1);
             this.pnTable.Controls.Add(this.label1);
             this.pnTable.Controls.Add(this.groupbox1);
+            this.pnTable.Controls.Add(this.order1);
             this.pnTable.Location = new System.Drawing.Point(0, 0);
             this.pnTable.Name = "pnTable";
             this.pnTable.Size = new System.Drawing.Size(876, 540);
@@ -473,6 +475,7 @@ namespace PBL3.Views
             this.btnMangve.TextMarginLeft = 0;
             this.btnMangve.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnMangve.UseDefaultRadiusAndThickness = true;
+            this.btnMangve.Click += new System.EventHandler(this.btnMangve_Click);
             // 
             // bthTable12
             // 
@@ -563,6 +566,7 @@ namespace PBL3.Views
             this.bthTable12.TextMarginLeft = 0;
             this.bthTable12.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable12.UseDefaultRadiusAndThickness = true;
+            this.bthTable12.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable11
             // 
@@ -653,6 +657,7 @@ namespace PBL3.Views
             this.bthTable11.TextMarginLeft = 0;
             this.bthTable11.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable11.UseDefaultRadiusAndThickness = true;
+            this.bthTable11.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable13
             // 
@@ -743,6 +748,7 @@ namespace PBL3.Views
             this.bthTable13.TextMarginLeft = 0;
             this.bthTable13.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable13.UseDefaultRadiusAndThickness = true;
+            this.bthTable13.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable8
             // 
@@ -833,6 +839,7 @@ namespace PBL3.Views
             this.bthTable8.TextMarginLeft = 0;
             this.bthTable8.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable8.UseDefaultRadiusAndThickness = true;
+            this.bthTable8.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable7
             // 
@@ -923,6 +930,7 @@ namespace PBL3.Views
             this.bthTable7.TextMarginLeft = 0;
             this.bthTable7.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable7.UseDefaultRadiusAndThickness = true;
+            this.bthTable7.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable15
             // 
@@ -1013,6 +1021,7 @@ namespace PBL3.Views
             this.bthTable15.TextMarginLeft = 0;
             this.bthTable15.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable15.UseDefaultRadiusAndThickness = true;
+            this.bthTable15.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable10
             // 
@@ -1103,6 +1112,7 @@ namespace PBL3.Views
             this.bthTable10.TextMarginLeft = 0;
             this.bthTable10.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable10.UseDefaultRadiusAndThickness = true;
+            this.bthTable10.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable4
             // 
@@ -1193,6 +1203,7 @@ namespace PBL3.Views
             this.bthTable4.TextMarginLeft = 0;
             this.bthTable4.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable4.UseDefaultRadiusAndThickness = true;
+            this.bthTable4.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable6
             // 
@@ -1283,6 +1294,7 @@ namespace PBL3.Views
             this.bthTable6.TextMarginLeft = 0;
             this.bthTable6.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable6.UseDefaultRadiusAndThickness = true;
+            this.bthTable6.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable14
             // 
@@ -1373,6 +1385,7 @@ namespace PBL3.Views
             this.bthTable14.TextMarginLeft = 0;
             this.bthTable14.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable14.UseDefaultRadiusAndThickness = true;
+            this.bthTable14.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable9
             // 
@@ -1463,6 +1476,7 @@ namespace PBL3.Views
             this.bthTable9.TextMarginLeft = 0;
             this.bthTable9.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable9.UseDefaultRadiusAndThickness = true;
+            this.bthTable9.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable3
             // 
@@ -1553,6 +1567,7 @@ namespace PBL3.Views
             this.bthTable3.TextMarginLeft = 0;
             this.bthTable3.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable3.UseDefaultRadiusAndThickness = true;
+            this.bthTable3.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable5
             // 
@@ -1643,6 +1658,7 @@ namespace PBL3.Views
             this.bthTable5.TextMarginLeft = 0;
             this.bthTable5.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable5.UseDefaultRadiusAndThickness = true;
+            this.bthTable5.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable2
             // 
@@ -1733,6 +1749,7 @@ namespace PBL3.Views
             this.bthTable2.TextMarginLeft = 0;
             this.bthTable2.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable2.UseDefaultRadiusAndThickness = true;
+            this.bthTable2.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // bthTable1
             // 
@@ -1823,7 +1840,7 @@ namespace PBL3.Views
             this.bthTable1.TextMarginLeft = 0;
             this.bthTable1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable1.UseDefaultRadiusAndThickness = true;
-            this.bthTable1.Click += new System.EventHandler(this.bthTable1_Click_1);
+            this.bthTable1.Click += new System.EventHandler(this.BthTable1_Click);
             // 
             // label1
             // 
@@ -1847,6 +1864,18 @@ namespace PBL3.Views
             this.groupbox1.Name = "groupbox1";
             this.groupbox1.Size = new System.Drawing.Size(670, 478);
             this.groupbox1.TabIndex = 25;
+            this.groupbox1.Click += new System.EventHandler(this.BthTable1_Click);
+            // 
+            // order1
+            // 
+            this.order1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.order1.BackColor = System.Drawing.Color.White;
+            this.order1.Location = new System.Drawing.Point(4, 4);
+            this.order1.Margin = new System.Windows.Forms.Padding(2);
+            this.order1.Name = "order1";
+            this.order1.Size = new System.Drawing.Size(872, 536);
+            this.order1.TabIndex = 60;
+            this.order1.Visible = false;
             // 
             // Table
             // 
@@ -1915,5 +1944,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable1;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuGroupBox groupbox1;
+        private Order order1;
     }
 }

@@ -17,9 +17,9 @@ namespace PBL3.Views
         public setting()
         {
             InitializeComponent();
-            loadFood();
+            /*loadFood();
             loadDrink();
-            loadStaff();
+            loadStaff();*/
             indicator.Left = bunifuLabel2.Left;
             indicator.Width = bunifuLabel2.Width;
 

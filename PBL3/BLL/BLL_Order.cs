@@ -41,5 +41,17 @@ namespace PBL3.BLL
             result = monAns;
             return result;
         }
+        public List<string> GetListIDHoaDon_TO()
+        {
+            List<string> result;
+            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TO")).Select(p => p.IDHoaDon).ToList();
+            return result;
+        }
+        public List<string> GetListIDHoaDon_TI()
+        {
+            List<string> result;
+            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TI")).Select(p => p.IDHoaDon).ToList();
+            return result;
+        }
     }
 }

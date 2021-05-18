@@ -469,7 +469,7 @@ namespace PBL3.Views
             // 
             // detailBill1
             // 
-            this.detailBill1.Location = new System.Drawing.Point(0, -3);
+            this.detailBill1.Location = new System.Drawing.Point(-3, -3);
             this.detailBill1.Name = "detailBill1";
             this.detailBill1.Size = new System.Drawing.Size(877, 542);
             this.detailBill1.TabIndex = 6;

@@ -56,13 +56,21 @@ namespace PBL3
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.startMain1 = new PBL3.Views.StartMain();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.table1 = new PBL3.Views.Table();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.manageBill1 = new PBL3.Views.ManageBill();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.setting1 = new PBL3.Views.setting();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.bunifuPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -791,15 +799,17 @@ namespace PBL3
             this.bunifuPages1.AllowTransitions = true;
             this.bunifuPages1.Controls.Add(this.tabPage1);
             this.bunifuPages1.Controls.Add(this.tabPage2);
+            this.bunifuPages1.Controls.Add(this.tabPage3);
+            this.bunifuPages1.Controls.Add(this.tabPage4);
             this.bunifuPages1.Location = new System.Drawing.Point(69, 36);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage2;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "tabPage2";
-            this.bunifuPages1.PageTitle = "tabPage2";
+            this.bunifuPages1.Page = this.tabPage4;
+            this.bunifuPages1.PageIndex = 3;
+            this.bunifuPages1.PageName = "tabPage4";
+            this.bunifuPages1.PageTitle = "tabPage4";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(893, 568);
+            this.bunifuPages1.Size = new System.Drawing.Size(890, 568);
             this.bunifuPages1.TabIndex = 7;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -809,7 +819,7 @@ namespace PBL3
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -825,20 +835,10 @@ namespace PBL3
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(885, 542);
+            this.tabPage1.Size = new System.Drawing.Size(882, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(885, 542);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // startMain1
             // 
@@ -848,6 +848,61 @@ namespace PBL3
             this.startMain1.Name = "startMain1";
             this.startMain1.Size = new System.Drawing.Size(884, 538);
             this.startMain1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.table1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(882, 542);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // table1
+            // 
+            this.table1.Location = new System.Drawing.Point(0, 2);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(876, 540);
+            this.table1.t = null;
+            this.table1.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.manageBill1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(882, 542);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // manageBill1
+            // 
+            this.manageBill1.Location = new System.Drawing.Point(4, 4);
+            this.manageBill1.Name = "manageBill1";
+            this.manageBill1.Size = new System.Drawing.Size(877, 542);
+            this.manageBill1.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.setting1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(882, 542);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // setting1
+            // 
+            this.setting1.Location = new System.Drawing.Point(6, -3);
+            this.setting1.Name = "setting1";
+            this.setting1.Size = new System.Drawing.Size(877, 542);
+            this.setting1.TabIndex = 0;
             // 
             // FormStart
             // 
@@ -870,6 +925,9 @@ namespace PBL3
             this.panel2.PerformLayout();
             this.bunifuPages1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -889,15 +947,17 @@ namespace PBL3
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private System.Windows.Forms.Label User;
+        public System.Windows.Forms.Label User;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLogout;
-        private Views.setting setting1;
-        private Views.Table table1;
-        private Views.setting setting2;
         private Bunifu.UI.WinForms.BunifuPages bunifuPages1;
         private System.Windows.Forms.TabPage tabPage1;
         private Views.StartMain startMain1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Views.Table table1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Views.ManageBill manageBill1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private Views.setting setting1;
     }
 }
 

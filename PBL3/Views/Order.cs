@@ -1,5 +1,6 @@
 ﻿using PBL3.Data;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PBL3.Views
@@ -12,8 +13,8 @@ namespace PBL3.Views
         {
             InitializeComponent();
             ColumnDataOrder();
-            loadDrink();
-            loadFood();
+            //loadDrink();
+            //loadFood();
         }
         public void statusOder(string m)
         {
@@ -47,7 +48,7 @@ namespace PBL3.Views
 
             dataOder.Rows.Clear();
         }
-        void loadFood()
+        public void loadFood()
         {
             //var result = from c in db.MonAns where c.IDDanhMuc == "doan" select new { TenMon = c.TenMon, Gia = c.Gia };
             //var result = db.MonAns.Where(p => p.IDDanhMuc == "doan").Select(p => new { p.TenMon, p.Gia });
@@ -57,7 +58,7 @@ namespace PBL3.Views
             dataFood.Columns[4].Visible = false;
             dataFood.Columns[5].Visible = false;
         }
-        void loadDrink()
+        public void loadDrink()
         {
             //var result = from c in db.MonAns where c.IDDanhMuc == "douong" select new { TenMon = c.TenMon, Gia = c.Gia };
             //dataDrink.DataSource = result.ToList();
@@ -197,7 +198,28 @@ namespace PBL3.Views
             {
                 total = total + Convert.ToDouble(dataOder.Rows[i].Cells["Gia"].Value);
             }
-            txtTotal.Text = (total + " VND").ToString();
+            txtTotal.Text = (total).ToString();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            List<string> l = new List<string>();
+            HoaDon s = new HoaDon();
+            if(numberTable.Text == "Take out")
+            {
+                l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
+                l.Sort();
+                s.IDHoaDon= "TO" + (l[l.Count - 1].Substring(2, 3) +1);         //// for chạy xét từng string
+
+                s.IDBan = "0";
+            }
+            s.NgayXuat = DateTime.Today;
+            s.TrangThai = true;
+            float t = float.Parse(txtTotal.Text);
+            s.TongTien = t;
+            s.IDNguoiDung = "giahung";              ///// Truyền delegate
+            BLL.BLL_Insert.Instance.AddHoaDon(s);
+            this.Visible = false;
         }
     }
 }
