@@ -13,7 +13,7 @@ namespace PBL3.Views
 {
     public partial class Table : UserControl
     {
-        public delegate void Table_del(string t);
+        public delegate void Table_del(string t, bool status);
         public Table_del t { get; set; }
         public Table()
         {
@@ -45,7 +45,7 @@ namespace PBL3.Views
             order1.loadFood();
             order1.loadDrink();
             t = new Table.Table_del(order1.statusOder);
-            t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text);
+            t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text,true);
         }
 
         private void BthTable1_Click(object sender, EventArgs e)
@@ -56,7 +56,15 @@ namespace PBL3.Views
             order1.loadFood();
             order1.loadDrink();
             t = new Table.Table_del(order1.statusOder);
-            t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text);
+            if(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).IdleFillColor == Color.Yellow)
+            {
+                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, false);
+            }
+            else
+            {
+                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, true);
+
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ namespace PBL3
 {
     public partial class FormStart : Form
     {
+        public delegate void User_del(string TenNguoiDung);
+        public User_del d { get; set; }
         public string user { get; set; }
         public bool check_login { get; set; }
         public FormStart(string username)
@@ -40,7 +42,7 @@ namespace PBL3
         }
         public void Login(string username, bool check)
         {
-            User.Text = username;
+            User.Text = BLL.BLL_Login.Instance.GetTenNguoiDung(BLL.BLL_Login.Instance.GetIDNguoiDung_tdn(username));
             check_login = check;
             Check_Login(check_login);
         }
@@ -63,7 +65,8 @@ namespace PBL3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
-            //table1.order2.Visible = false;
+            d = new User_del(table1.order1.SetNguoiDung);
+            d(User.Text);
             table1.LoadStatusBan();
         }
 

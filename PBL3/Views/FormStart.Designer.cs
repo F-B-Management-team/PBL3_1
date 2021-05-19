@@ -56,12 +56,12 @@ namespace PBL3
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.startMain1 = new PBL3.Views.StartMain();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.table1 = new PBL3.Views.Table();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.manageBill1 = new PBL3.Views.ManageBill();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.startMain1 = new PBL3.Views.StartMain();
+            this.table1 = new PBL3.Views.Table();
+            this.manageBill1 = new PBL3.Views.ManageBill();
             this.setting1 = new PBL3.Views.setting();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -190,9 +190,9 @@ namespace PBL3
             // User
             // 
             this.User.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User.Location = new System.Drawing.Point(12, 71);
+            this.User.Location = new System.Drawing.Point(3, 71);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(51, 23);
+            this.User.Size = new System.Drawing.Size(64, 23);
             this.User.TabIndex = 5;
             // 
             // btnOrder
@@ -840,15 +840,6 @@ namespace PBL3
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // startMain1
-            // 
-            this.startMain1.BackColor = System.Drawing.Color.White;
-            this.startMain1.Location = new System.Drawing.Point(5, 4);
-            this.startMain1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.startMain1.Name = "startMain1";
-            this.startMain1.Size = new System.Drawing.Size(884, 538);
-            this.startMain1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.table1);
@@ -859,14 +850,6 @@ namespace PBL3
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // table1
-            // 
-            this.table1.Location = new System.Drawing.Point(0, 2);
-            this.table1.Name = "table1";
-            this.table1.Size = new System.Drawing.Size(876, 540);
-            this.table1.t = null;
-            this.table1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -879,13 +862,6 @@ namespace PBL3
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // manageBill1
-            // 
-            this.manageBill1.Location = new System.Drawing.Point(4, 4);
-            this.manageBill1.Name = "manageBill1";
-            this.manageBill1.Size = new System.Drawing.Size(877, 542);
-            this.manageBill1.TabIndex = 0;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.setting1);
@@ -896,6 +872,30 @@ namespace PBL3
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // startMain1
+            // 
+            this.startMain1.BackColor = System.Drawing.Color.White;
+            this.startMain1.Location = new System.Drawing.Point(5, 4);
+            this.startMain1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startMain1.Name = "startMain1";
+            this.startMain1.Size = new System.Drawing.Size(884, 538);
+            this.startMain1.TabIndex = 0;
+            // 
+            // table1
+            // 
+            this.table1.Location = new System.Drawing.Point(0, 2);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(876, 540);
+            this.table1.t = null;
+            this.table1.TabIndex = 0;
+            // 
+            // manageBill1
+            // 
+            this.manageBill1.Location = new System.Drawing.Point(4, 4);
+            this.manageBill1.Name = "manageBill1";
+            this.manageBill1.Size = new System.Drawing.Size(877, 542);
+            this.manageBill1.TabIndex = 0;
             // 
             // setting1
             // 

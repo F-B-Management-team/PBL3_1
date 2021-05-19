@@ -104,6 +104,7 @@ namespace PBL3.Views
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.txtTenNguoiDung = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuPanel2.SuspendLayout();
@@ -1334,7 +1335,7 @@ namespace PBL3.Views
             this.bunifuTransition1.SetDecoration(this.numberTable, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.numberTable.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberTable.ForeColor = System.Drawing.Color.Firebrick;
-            this.numberTable.Location = new System.Drawing.Point(556, 26);
+            this.numberTable.Location = new System.Drawing.Point(556, 44);
             this.numberTable.Name = "numberTable";
             this.numberTable.Size = new System.Drawing.Size(100, 23);
             this.numberTable.TabIndex = 15;
@@ -1525,6 +1526,7 @@ namespace PBL3.Views
             this.btnDone.TextMarginLeft = 0;
             this.btnDone.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDone.UseDefaultRadiusAndThickness = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // bunifuTransition2
             // 
@@ -1593,12 +1595,27 @@ namespace PBL3.Views
             this.bunifuElipse6.ElipseRadius = 35;
             this.bunifuElipse6.TargetControl = this.bunifuPanel4;
             // 
+            // txtTenNguoiDung
+            // 
+            this.bunifuTransition3.SetDecoration(this.txtTenNguoiDung, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.txtTenNguoiDung, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.txtTenNguoiDung, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.txtTenNguoiDung.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNguoiDung.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtTenNguoiDung.Location = new System.Drawing.Point(556, 16);
+            this.txtTenNguoiDung.Name = "txtTenNguoiDung";
+            this.txtTenNguoiDung.Size = new System.Drawing.Size(100, 23);
+            this.txtTenNguoiDung.TabIndex = 18;
+            this.txtTenNguoiDung.Text = "User";
+            this.txtTenNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.bunifuPanel3);
@@ -1693,5 +1710,6 @@ namespace PBL3.Views
         private System.Windows.Forms.Label numberTable;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPay;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDone;
+        private System.Windows.Forms.Label txtTenNguoiDung;
     }
 }

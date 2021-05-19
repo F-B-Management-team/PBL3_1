@@ -1944,6 +1944,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable1;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuGroupBox groupbox1;
-        private Order order1;
+        public Order order1;
     }
 }

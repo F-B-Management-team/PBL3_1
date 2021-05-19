@@ -8,7 +8,7 @@ namespace PBL3.Views
     public partial class Order : UserControl
     {
         MVH_08Entities db = new MVH_08Entities();
-
+        bool statusorder = true;
         public Order()
         {
             InitializeComponent();
@@ -16,19 +16,22 @@ namespace PBL3.Views
             //loadDrink();
             //loadFood();
         }
-        public void statusOder(string m)
+        public void statusOder(string m, bool status)
         {
             numberTable.Text = m;
             if(m == "Take out")
             {
-                
                 btnDone.Visible = false;
             }
             else
             {
                 btnDone.Visible = true;
-                
+
             }
+        }
+        public void SetNguoiDung(string m)
+        {
+            txtTenNguoiDung.Text = m;
         }
         public void ColumnDataOrder()
         {
@@ -41,7 +44,7 @@ namespace PBL3.Views
             dataOder.Columns[5].Name = "DanhMuc";
             dataOder.Columns[6].Name = "DatMons";
 
-            dataOder.Columns[0].Visible = false;
+            dataOder.Columns[0].Visible = true;
             dataOder.Columns[1].Visible = false;
             dataOder.Columns[5].Visible = false;
             dataOder.Columns[6].Visible = false;
@@ -129,7 +132,7 @@ namespace PBL3.Views
             if(!k)
             {
                 DataGridViewRow row = (DataGridViewRow)dataOder.Rows[0].Clone();
-                //row = (DataGridViewRow)dataOder.Rows[0].Clone();
+                row = (DataGridViewRow)dataOder.Rows[0].Clone();
                 row.Cells[0].Value = dataFood.Rows[e.RowIndex].Cells["IDMon"].Value;
                 row.Cells[1].Value = dataFood.Rows[e.RowIndex].Cells["IDDanhMuc"].Value;
                 row.Cells[2].Value = dataFood.Rows[e.RowIndex].Cells["TenMon"].Value;
@@ -200,26 +203,87 @@ namespace PBL3.Views
             }
             txtTotal.Text = (total).ToString();
         }
+        public void Sort()
+        {
 
+        }
         private void btnPay_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // HoaDon
+                List<string> l = new List<string>();
+                HoaDon s = new HoaDon();
+                if (numberTable.Text == "Take out")
+                {
+                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
+                    //l.Sort();
+                    int idhoadon = 0;
+                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                    s.IDHoaDon = "TO" + idhoadon.ToString("000");         
+                    s.IDBan = "0";
+                }
+                else
+                {
+                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
+                    int idhoadon = 0;
+                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                    s.IDHoaDon = "TI" + idhoadon.ToString("000");
+                    s.IDBan = numberTable.Text.Substring(6);
+                }
+                s.NgayXuat = DateTime.Today;
+                s.TrangThai = true;
+                float t = float.Parse(txtTotal.Text);
+                s.TongTien = t;
+                s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
+                BLL.BLL_Insert.Instance.AddHoaDon(s);
+
+
+                // DatMon
+                for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+                {
+                    List<string> d = new List<string>();
+                    DatMon datmon = new DatMon();
+                    d = BLL.BLL_Order.Instance.GetIDDatMon();
+                    //d.Sort();
+                    int iddatmon = 0;
+                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
+                    datmon.IDDatMon = iddatmon.ToString("00000");
+                    datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                    datmon.IDHoaDon = s.IDHoaDon;
+                    datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                    BLL.BLL_Insert.Instance.AddDatMon(datmon);
+
+                }
+                bunifuPanel1.BringToFront();
+                txtTotal.ResetText();
+                dataOder.Rows.Clear();
+                this.Visible = false;
+            }
+            catch(Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            // HoaDon
             List<string> l = new List<string>();
             HoaDon s = new HoaDon();
-            if(numberTable.Text == "Take out")
             {
-                l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
-                l.Sort();
-                s.IDHoaDon= "TO" + (l[l.Count - 1].Substring(2, 3) +1);         //// for chạy xét từng string
-
-                s.IDBan = "0";
+                l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
+                int idhoadon = 0;
+                idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                s.IDHoaDon = "TI" + idhoadon.ToString("000");
+                s.IDBan = numberTable.Text.Substring(6);
             }
             s.NgayXuat = DateTime.Today;
             s.TrangThai = true;
             float t = float.Parse(txtTotal.Text);
             s.TongTien = t;
-            s.IDNguoiDung = "giahung";              ///// Truyền delegate
+            s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
             BLL.BLL_Insert.Instance.AddHoaDon(s);
-            this.Visible = false;
         }
     }
 }

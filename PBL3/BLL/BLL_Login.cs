@@ -45,9 +45,19 @@ namespace PBL3.BLL
                 var x = db.TaiKhoans.Where(p => p.TenDangNhap == user).Select(p => p.Chucvu).ToString();
                 return x;
             }
-        public string GetIDNguoiDung(string tendangnhap)
+        public string GetIDNguoiDung_tdn(string tendangnhap)
         {
             var result = db.TaiKhoans.Where(p => p.TenDangNhap == tendangnhap).Select(p => p.IDNguoiDung).FirstOrDefault();
+            return result;
+        }
+        public string GetTenNguoiDung(string IDNguoiDung)
+        {
+            var result = db.ThongTinNguoiDungs.Where(p => p.IDNguoiDung == IDNguoiDung).Select(p => p.TenNguoiDung).FirstOrDefault();
+            return result;
+        }
+        public string GetIDNguoiDung_tnd(string TenNguoiDung)
+        {
+            var result = db.ThongTinNguoiDungs.Where(p => p.TenNguoiDung == TenNguoiDung).Select(p => p.IDNguoiDung).FirstOrDefault();
             return result;
         }
     }

@@ -44,13 +44,19 @@ namespace PBL3.BLL
         public List<string> GetListIDHoaDon_TO()
         {
             List<string> result;
-            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TO")).Select(p => p.IDHoaDon).ToList();
+            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TO")).OrderBy(p => p.IDHoaDon).Select(g => g.IDHoaDon).ToList();
             return result;
         }
         public List<string> GetListIDHoaDon_TI()
         {
             List<string> result;
-            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TI")).Select(p => p.IDHoaDon).ToList();
+            result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TI")).OrderBy(p=> p.IDHoaDon).Select(p => p.IDHoaDon).ToList();
+            return result;
+        }
+        public List<string> GetIDDatMon()
+        {
+            List<string> result;
+            result = db.DatMons.OrderBy(p =>p.IDDatMon).Select(p => p.IDDatMon).ToList();
             return result;
         }
     }
