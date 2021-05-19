@@ -15,6 +15,7 @@ namespace PBL3.Views
     {
         public delegate void Table_del(string t, bool status);
         public Table_del t { get; set; }
+        bool statusTable = true;
         public Table()
         {
             InitializeComponent();
@@ -26,14 +27,16 @@ namespace PBL3.Views
             {
                 if (Convert.ToBoolean(dataTable.Rows[i].Cells["TrangThai"].Value) == true)
                 {
-                    break;
+                    continue;
                 }
                 else
                 {
                     bthTable1.IdleBorderColor = Color.Yellow;
                     bthTable1.IdleFillColor = Color.Yellow;
+                    statusTable = false;
+                    break;
                 }
-                break;
+                
             }
         }
         
@@ -45,7 +48,7 @@ namespace PBL3.Views
             order1.loadFood();
             order1.loadDrink();
             t = new Table.Table_del(order1.statusOder);
-            t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text,true);
+            t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, statusTable);
         }
 
         private void BthTable1_Click(object sender, EventArgs e)
@@ -56,14 +59,14 @@ namespace PBL3.Views
             order1.loadFood();
             order1.loadDrink();
             t = new Table.Table_del(order1.statusOder);
-            if(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).IdleFillColor == Color.Yellow)
+            if(statusTable == false)
             {
-                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, false);
+                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, statusTable);
+                order1.SetDataOrder_statusFalse();
             }
             else
             {
-                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, true);
-
+                t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, statusTable);
             }
         }
     }

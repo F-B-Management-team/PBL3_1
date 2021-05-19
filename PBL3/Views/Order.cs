@@ -19,6 +19,7 @@ namespace PBL3.Views
         public void statusOder(string m, bool status)
         {
             numberTable.Text = m;
+            statusorder = status;
             if(m == "Take out")
             {
                 btnDone.Visible = false;
@@ -27,6 +28,35 @@ namespace PBL3.Views
             {
                 btnDone.Visible = true;
 
+            }
+        }
+        public void SetDataOrder_statusFalse()
+        {
+            if(statusorder == false)
+            {
+                string IDBan = numberTable.Text.Substring(6);
+                string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
+                List<string> IDMon = BLL.BLL_Order.Instance.GetMonAn_IDHoaDon(IDHoaDon);
+                List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
+                MonAn monan = new MonAn();
+                for(int i = 0; i < datmon.Count; i++)
+                {
+                    DatMon d = datmon[i];
+                    monan = BLL.BLL_Order.Instance.GetMonAn_IDMon(IDMon[i]);
+
+                    //new row
+                    DataGridViewRow row = (DataGridViewRow)dataOder.Rows[0].Clone();
+                    row = (DataGridViewRow)dataOder.Rows[0].Clone();
+                    row.Cells[0].Value = monan.IDMon;
+                    row.Cells[1].Value = monan.IDDanhMuc;
+                    row.Cells[2].Value = monan.TenMon;
+                    row.Cells[3].Value = d.SoLuong;
+                    row.Cells[4].Value = d.SoLuong * monan.Gia;
+                    dataOder.Rows.Add(row);
+
+                    Total();
+                }
+                //dataOder.DataSource = monan;
             }
         }
         public void SetNguoiDung(string m)
@@ -202,10 +232,6 @@ namespace PBL3.Views
                 total = total + Convert.ToDouble(dataOder.Rows[i].Cells["Gia"].Value);
             }
             txtTotal.Text = (total).ToString();
-        }
-        public void Sort()
-        {
-
         }
         private void btnPay_Click(object sender, EventArgs e)
         {

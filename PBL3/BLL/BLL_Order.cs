@@ -59,5 +59,29 @@ namespace PBL3.BLL
             result = db.DatMons.OrderBy(p =>p.IDDatMon).Select(p => p.IDDatMon).ToList();
             return result;
         }
+        public string GetIDHoaDon_IDTable(string IDTable)
+        {
+            string result;
+            result = db.HoaDons.Where(p => p.IDBan == IDTable).Select(p => p.IDHoaDon).FirstOrDefault();
+            return result;
+        }
+        public List<string> GetMonAn_IDHoaDon(string IDHoaDon)
+        {
+            List<string> result = new List<string>();
+            result = db.DatMons.Where(p => p.IDHoaDon == IDHoaDon).Select(p => p.IDMon).ToList();
+            return result;
+        }
+        public List<DatMon> GetDatMon_IDHoaDon(string IDHoaDon)
+        {
+            List<DatMon> result = new List<DatMon>();
+            result = db.DatMons.Where(p => p.IDHoaDon == IDHoaDon).Select(p => p).ToList();
+            return result;
+        }
+        public MonAn GetMonAn_IDMon(string IDMon)
+        {
+            MonAn result = new MonAn();
+            result = db.MonAns.Where(p => p.IDMon == IDMon).Select(p => p).FirstOrDefault();
+            return result;
+        }
     }
 }

@@ -65,9 +65,9 @@ namespace PBL3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
-            d = new User_del(table1.order1.SetNguoiDung);
-            d(User.Text);
             table1.LoadStatusBan();
+            d = new User_del(table1.order1.SetNguoiDung);
+            d(User.Text); 
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
