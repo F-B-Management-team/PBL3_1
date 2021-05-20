@@ -36,7 +36,6 @@ namespace PBL3.Views
                     statusTable = false;
                     break;
                 }
-                
             }
         }
         

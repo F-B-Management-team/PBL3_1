@@ -83,5 +83,13 @@ namespace PBL3.BLL
             result = db.MonAns.Where(p => p.IDMon == IDMon).Select(p => p).FirstOrDefault();
             return result;
         }
+        public Customer GetCustomer_IDHoaDon(string IDHoaDon)
+        {
+            Customer result = new Customer();
+            string d;
+            d = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).Select(p => p.IDCustommer).FirstOrDefault();
+            result = db.Customers.Where(p => p.IDCustomer == d).FirstOrDefault();
+            return result;
+        }
     }
 }

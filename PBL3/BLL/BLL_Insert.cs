@@ -46,7 +46,7 @@ namespace PBL3.BLL
         public void AddDatMon(DatMon s)
         {
             db.DatMons.Add(s);
-            db.SaveChanges();
+            db.SaveChanges();   
         }
     }
 }

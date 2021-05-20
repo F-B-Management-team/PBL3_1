@@ -36,6 +36,10 @@ namespace PBL3.Views
             {
                 string IDBan = numberTable.Text.Substring(6);
                 string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
+                Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
+                NameCustomer.Text = customer.NameCustomer;
+                PhoneCustomer.Text = customer.Phone;
+
                 List<string> IDMon = BLL.BLL_Order.Instance.GetMonAn_IDHoaDon(IDHoaDon);
                 List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
                 MonAn monan = new MonAn();
@@ -56,7 +60,10 @@ namespace PBL3.Views
 
                     Total();
                 }
-                //dataOder.DataSource = monan;
+                for (int i = 0; i < datmon.Count; i++)
+                {
+                    BLL.BLL_Update.Instance.Delete_DatMon_IDDatMon(datmon[i].IDDatMon);
+                }
             }
         }
         public void SetNguoiDung(string m)
@@ -104,6 +111,8 @@ namespace PBL3.Views
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            dataOder.Rows.Clear();
+            txtTotal.ResetText();
         }
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
@@ -233,63 +242,154 @@ namespace PBL3.Views
             }
             txtTotal.Text = (total).ToString();
         }
-        private void btnPay_Click(object sender, EventArgs e)
+        public bool TextChange(string before, string after)
         {
-            try
+            if (before == after)
             {
-                // HoaDon
-                List<string> l = new List<string>();
-                HoaDon s = new HoaDon();
-                if (numberTable.Text == "Take out")
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void btnPay_Click(object sender, EventArgs e)
+        { 
+            //// TRUE
+            
+                if(statusorder == true)
                 {
-                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
-                    //l.Sort();
-                    int idhoadon = 0;
-                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
-                    s.IDHoaDon = "TO" + idhoadon.ToString("000");         
-                    s.IDBan = "0";
+                    // Customer
+                    Customer customer = new Customer();
+                    customer.IDCustomer = PhoneCustomer.Text;
+                    customer.NameCustomer = NameCustomer.Text;
+                    customer.Phone = PhoneCustomer.Text;
+                    BLL.BLL_Insert.Instance.AddCustomer(customer);
+
+                    // HoaDon
+                    List<string> l = new List<string>();
+                    HoaDon s = new HoaDon();
+                    if (numberTable.Text == "Take out")
+                    {
+                        l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
+                        //l.Sort();
+                        int idhoadon = 0;
+                        idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                        s.IDHoaDon = "TO" + idhoadon.ToString("000");
+                        s.IDBan = "0";
+                    }
+                    else
+                    {
+                        l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
+                        int idhoadon = 0;
+                        idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                        s.IDHoaDon = "TI" + idhoadon.ToString("000");
+                        s.IDBan = numberTable.Text.Substring(6);
+                    }
+                    s.NgayXuat = DateTime.Today;
+                    s.TrangThai = true;
+                    float t = float.Parse(txtTotal.Text);
+                    s.TongTien = t;
+                    s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
+                    s.IDCustommer = customer.IDCustomer;
+                    BLL.BLL_Insert.Instance.AddHoaDon(s);
+
+
+                    // DatMon
+                    for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+                    {
+                        List<string> d = new List<string>();
+                        DatMon datmon = new DatMon();
+                        d = BLL.BLL_Order.Instance.GetIDDatMon();
+                        //d.Sort();
+                        int iddatmon = 0;
+                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
+                        datmon.IDDatMon = iddatmon.ToString("00000");
+                        datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                        datmon.IDHoaDon = s.IDHoaDon;
+                        datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                        BLL.BLL_Insert.Instance.AddDatMon(datmon);
+
+                    }
+                    NameCustomer.Clear();
+                    PhoneCustomer.Clear();
+                    bunifuPanel1.BringToFront();
+                    txtTotal.ResetText();
+                    dataOder.Rows.Clear();
+                    this.Visible = false;
                 }
                 else
                 {
-                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
-                    int idhoadon = 0;
-                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
-                    s.IDHoaDon = "TI" + idhoadon.ToString("000");
-                    s.IDBan = numberTable.Text.Substring(6);
+                    //customer
+                    string IDBan = numberTable.Text.Substring(6);
+                    string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
+                    Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
+                    if (TextChange(customer.IDCustomer,PhoneCustomer.Text) == true)
+                    {
+                        customer.IDCustomer = PhoneCustomer.Text;
+                        customer.NameCustomer = NameCustomer.Text;
+                        customer.Phone = PhoneCustomer.Text;
+                        BLL.BLL_Insert.Instance.AddCustomer(customer);
+                    }
+
+                    //HoaDon
+                    BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
+                    
+                    //statusTable
+                    BLL.BLL_Update.Instance.Status_Table(IDBan, true);
+
+                    //Datmon
+                    for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+                    {
+                        List<string> d = new List<string>();
+                        DatMon datmon = new DatMon();
+                        d = BLL.BLL_Order.Instance.GetIDDatMon();
+                        //d.Sort();
+                        int iddatmon = 0;
+                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
+                        datmon.IDDatMon = iddatmon.ToString("00000");
+                        datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                        datmon.IDHoaDon = IDHoaDon;
+                        datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                        BLL.BLL_Insert.Instance.AddDatMon(datmon);
+
+                    }
+                    /*List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
+                    for(int i =0; i < datmon.Count; i++)
+                    {
+                        if(dataOder.Rows[i].Cells["IDMon"].Value.ToString() == null)
+                        {
+
+                        }
+                       if(dataOder.Rows[i].Cells["IDMon"].Value.ToString() == datmon[i].IDMon)
+                       {    
+                            BLL.BLL_Update.Instance.SoLuong_DatMon(datmon[i].IDDatMon, Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value));
+                       }
+                    }
+                    for(int i = datmon.Count; i < dataOder.Rows.Count-1; i++)
+                    {
+                        DatMon new_datmon = new DatMon();
+                        List<string> d = BLL.BLL_Order.Instance.GetIDDatMon();
+                        int iddatmon = 0;
+                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
+                        new_datmon.IDDatMon = iddatmon.ToString("00000");
+                        new_datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                        new_datmon.IDHoaDon = IDHoaDon;
+                        new_datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                        BLL.BLL_Insert.Instance.AddDatMon(new_datmon);
+                    }*/
+                    NameCustomer.Clear();
+                    PhoneCustomer.Clear();
+                    bunifuPanel1.BringToFront();
+                    txtTotal.ResetText();
+                    dataOder.Rows.Clear();
+                    this.Visible = false;
                 }
-                s.NgayXuat = DateTime.Today;
-                s.TrangThai = true;
-                float t = float.Parse(txtTotal.Text);
-                s.TongTien = t;
-                s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
-                BLL.BLL_Insert.Instance.AddHoaDon(s);
-
-
-                // DatMon
-                for (int i = 0; i < dataOder.Rows.Count - 1; i++)
-                {
-                    List<string> d = new List<string>();
-                    DatMon datmon = new DatMon();
-                    d = BLL.BLL_Order.Instance.GetIDDatMon();
-                    //d.Sort();
-                    int iddatmon = 0;
-                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
-                    datmon.IDDatMon = iddatmon.ToString("00000");
-                    datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
-                    datmon.IDHoaDon = s.IDHoaDon;
-                    datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
-                    BLL.BLL_Insert.Instance.AddDatMon(datmon);
-
-                }
-                bunifuPanel1.BringToFront();
-                txtTotal.ResetText();
-                dataOder.Rows.Clear();
-                this.Visible = false;
-            }
+            /*}
             catch(Exception m)
             {
                 MessageBox.Show(m.Message);
-            }
+            }*/
         }
 
         private void btnDone_Click(object sender, EventArgs e)
