@@ -22,8 +22,27 @@ namespace PBL3.Views
         }
         public void LoadStatusBan()
         {
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton[] arr = new Bunifu.UI.WinForms.BunifuButton.BunifuButton[16];
+            arr[0] = btnMangve;
+            arr[1] = bthTable1;
+            arr[2] = bthTable10;
+            arr[3] = bthTable11;
+            arr[4] = bthTable12;
+            arr[5] = bthTable13;
+            arr[6] = bthTable14;
+            arr[7] = bthTable15;
+            arr[8] = bthTable2;
+            arr[9] = bthTable3;
+            arr[10] = bthTable4;
+            arr[11] = bthTable5;
+            arr[12] = bthTable6;
+            arr[13] = bthTable7;
+            arr[14] = bthTable8;
+            arr[15] = bthTable9;
+            List<Bunifu.UI.WinForms.BunifuButton.BunifuButton> btnTable = new List<Bunifu.UI.WinForms.BunifuButton.BunifuButton>();
+            btnTable.AddRange(arr);
             dataTable.DataSource = BLL.BLL_Table.Instance.GetBan();
-            for(int i = 0; i < dataTable.Rows.Count; i++)
+            for(int i = 1; i < dataTable.Rows.Count; i++)
             {
                 if (Convert.ToBoolean(dataTable.Rows[i].Cells["TrangThai"].Value) == true)
                 {
@@ -31,10 +50,13 @@ namespace PBL3.Views
                 }
                 else
                 {
-                    bthTable1.IdleBorderColor = Color.Yellow;
-                    bthTable1.IdleFillColor = Color.Yellow;
-                    statusTable = false;
-                    break;
+                    if(dataTable.Rows[i].Cells["IDBan"].Value.ToString() == btnTable[i].Text.Substring(6))
+                    {
+                        btnTable[i].IdleFillColor = Color.Yellow;
+                        btnTable[i].IdleBorderColor = Color.Yellow;
+                        btnTable[i].BackColor = Color.Yellow;
+                        //statusTable = false;
+                    }
                 }
             }
         }
@@ -52,6 +74,14 @@ namespace PBL3.Views
 
         private void BthTable1_Click(object sender, EventArgs e)
         {
+            if(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).BackColor == Color.Yellow)
+            {
+                statusTable = false;
+            }
+            else
+            {
+                statusTable = true;
+            }
             order1.Visible = true;
             this.SendToBack();
             order1.BringToFront();

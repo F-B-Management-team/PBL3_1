@@ -216,7 +216,7 @@ namespace PBL3.Views
             this.bunifuImageButton1.FadeWhenInactive = false;
             this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton1.Image = global::PBL3.Properties.Resources.clerk;
-            this.bunifuImageButton1.ImageActive = null;
+            //this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.ImageLocation = null;
             this.bunifuImageButton1.ImageMargin = 10;
             this.bunifuImageButton1.ImageSize = new System.Drawing.Size(39, 37);
@@ -233,7 +233,7 @@ namespace PBL3.Views
             this.bunifuImageButton1.TabIndex = 1;
             this.bunifuImageButton1.ToolTipText = "";
             this.bunifuImageButton1.WaitOnLoad = false;
-            this.bunifuImageButton1.Zoom = 10;
+            //this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.ZoomSpeed = 10;
             // 
             // bunifuLabel1
@@ -543,7 +543,7 @@ namespace PBL3.Views
             this.dataStaff.EnableHeadersVisualStyles = false;
             this.dataStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.dataStaff.HeaderBackColor = System.Drawing.Color.Crimson;
-            this.dataStaff.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.dataStaff.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataStaff.HeaderForeColor = System.Drawing.Color.White;
             this.dataStaff.Location = new System.Drawing.Point(33, 63);
             this.dataStaff.Name = "dataStaff";
@@ -1250,7 +1250,7 @@ namespace PBL3.Views
             this.dataDrink.EnableHeadersVisualStyles = false;
             this.dataDrink.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.dataDrink.HeaderBackColor = System.Drawing.Color.Crimson;
-            this.dataDrink.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.dataDrink.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataDrink.HeaderForeColor = System.Drawing.Color.White;
             this.dataDrink.Location = new System.Drawing.Point(482, 38);
             this.dataDrink.Name = "dataDrink";
@@ -1309,7 +1309,7 @@ namespace PBL3.Views
             this.dataFood.EnableHeadersVisualStyles = false;
             this.dataFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.dataFood.HeaderBackColor = System.Drawing.Color.Crimson;
-            this.dataFood.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.dataFood.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataFood.HeaderForeColor = System.Drawing.Color.White;
             this.dataFood.Location = new System.Drawing.Point(51, 38);
             this.dataFood.Name = "dataFood";

@@ -27,7 +27,6 @@ namespace PBL3.Views
             else
             {
                 btnDone.Visible = true;
-
             }
         }
         public void SetDataOrder_statusFalse()

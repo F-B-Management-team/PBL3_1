@@ -197,7 +197,7 @@ namespace PBL3.Views
             this.dataTable.EnableHeadersVisualStyles = false;
             this.dataTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataTable.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.dataTable.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataTable.HeaderForeColor = System.Drawing.Color.White;
             this.dataTable.Location = new System.Drawing.Point(644, 240);
             this.dataTable.Name = "dataTable";
@@ -207,7 +207,6 @@ namespace PBL3.Views
             this.dataTable.Size = new System.Drawing.Size(207, 232);
             this.dataTable.TabIndex = 59;
             this.dataTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.dataTable.Visible = false;
             // 
             // pictureBox16
             // 

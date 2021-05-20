@@ -39,6 +39,7 @@ namespace PBL3.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.detailBill1 = new PBL3.Views.DetailBill();
             this.btnNote = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -47,7 +48,6 @@ namespace PBL3.Views
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.entityCommand2 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.detailBill1 = new PBL3.Views.DetailBill();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBill)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,14 @@ namespace PBL3.Views
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(877, 542);
             this.bunifuPanel1.TabIndex = 2;
+            // 
+            // detailBill1
+            // 
+            this.detailBill1.Location = new System.Drawing.Point(0, -3);
+            this.detailBill1.Name = "detailBill1";
+            this.detailBill1.Size = new System.Drawing.Size(877, 542);
+            this.detailBill1.TabIndex = 6;
+            this.detailBill1.Visible = false;
             // 
             // btnNote
             // 
@@ -393,7 +401,7 @@ namespace PBL3.Views
             this.DataBill.EnableHeadersVisualStyles = false;
             this.DataBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.DataBill.HeaderBackColor = System.Drawing.Color.Crimson;
-            this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataBill.HeaderForeColor = System.Drawing.Color.White;
             this.DataBill.Location = new System.Drawing.Point(41, 131);
             this.DataBill.Name = "DataBill";
@@ -466,14 +474,6 @@ namespace PBL3.Views
             // 
             this.bunifuElipse2.ElipseRadius = 35;
             this.bunifuElipse2.TargetControl = this;
-            // 
-            // detailBill1
-            // 
-            this.detailBill1.Location = new System.Drawing.Point(-3, -3);
-            this.detailBill1.Name = "detailBill1";
-            this.detailBill1.Size = new System.Drawing.Size(877, 542);
-            this.detailBill1.TabIndex = 6;
-            this.detailBill1.Visible = false;
             // 
             // ManageBill
             // 

@@ -490,7 +490,7 @@ namespace PBL3.Views
             this.Data.EnableHeadersVisualStyles = false;
             this.Data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.Data.HeaderBackColor = System.Drawing.Color.Crimson;
-            this.Data.HeaderBgColor = System.Drawing.Color.Empty;
+            //this.Data.HeaderBgColor = System.Drawing.Color.Empty;
             this.Data.HeaderForeColor = System.Drawing.Color.White;
             this.Data.Location = new System.Drawing.Point(49, 103);
             this.Data.Name = "Data";

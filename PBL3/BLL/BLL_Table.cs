@@ -31,7 +31,7 @@ namespace PBL3.BLL
         public List<Ban> GetBan()
         {
             List<Ban> result = new List<Ban>();
-            result = db.Bans.Select(p => p).ToList();
+            result = db.Bans.Select(p => p).OrderBy(p => p.IDBan).ToList();
             return result;
         }
     }
