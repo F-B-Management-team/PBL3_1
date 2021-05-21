@@ -44,6 +44,15 @@ namespace PBL3.BLL
             result.IDCustommer = IDCustomer;
             db.SaveChanges();
         }
+        public void Update_HoaDon(string IDHoaDon, bool staus, DateTime NgayXuat, float Total, string IDNguoiDung)
+        {
+            var result = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).FirstOrDefault();
+            result.NgayXuat = NgayXuat;
+            result.TrangThai = staus;
+            result.TongTien = Total;
+            result.IDNguoiDung = IDNguoiDung;
+            db.SaveChanges();
+        }
         public void SoLuong_DatMon(string IDDatMon, int SoLuong)
         {
             var result = db.DatMons.Where(p => p.IDDatMon == IDDatMon).FirstOrDefault();
@@ -54,6 +63,7 @@ namespace PBL3.BLL
         {
             var datmon = db.DatMons.Where(p => p.IDDatMon == IDDatMon).FirstOrDefault();
             var result = db.DatMons.Remove(datmon);
+            db.SaveChanges();
         }
         public void Update_Customer(string IDCustomer, string NameCustomer)
         {

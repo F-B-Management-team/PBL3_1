@@ -7,7 +7,8 @@ namespace PBL3.Views
 {
     public partial class Order : UserControl
     {
-        MVH_08Entities db = new MVH_08Entities();
+        public delegate void Status_del(string idban, bool status);
+        public Status_del s { get; set; }
         bool statusorder = true;
         public Order()
         {
@@ -36,9 +37,16 @@ namespace PBL3.Views
                 string IDBan = numberTable.Text.Substring(6);
                 string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                 Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
-                NameCustomer.Text = customer.NameCustomer;
-                PhoneCustomer.Text = customer.Phone;
-
+                if(customer != null)
+                {
+                    NameCustomer.Text = customer.NameCustomer;
+                    PhoneCustomer.Text = customer.Phone;
+                }
+                else
+                {
+                    NameCustomer.Text = "";
+                    PhoneCustomer.Text = "";
+                }
                 List<string> IDMon = BLL.BLL_Order.Instance.GetMonAn_IDHoaDon(IDHoaDon);
                 List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
                 MonAn monan = new MonAn();
@@ -59,10 +67,7 @@ namespace PBL3.Views
 
                     Total();
                 }
-                for (int i = 0; i < datmon.Count; i++)
-                {
-                    BLL.BLL_Update.Instance.Delete_DatMon_IDDatMon(datmon[i].IDDatMon);
-                }
+                
             }
         }
         public void SetNguoiDung(string m)
@@ -255,15 +260,19 @@ namespace PBL3.Views
         private void btnPay_Click(object sender, EventArgs e)
         { 
             //// TRUE
-            
-                if(statusorder == true)
+            try
+            {
+                if (statusorder == true)
                 {
                     // Customer
-                    Customer customer = new Customer();
-                    customer.IDCustomer = PhoneCustomer.Text;
-                    customer.NameCustomer = NameCustomer.Text;
-                    customer.Phone = PhoneCustomer.Text;
-                    BLL.BLL_Insert.Instance.AddCustomer(customer);
+                    if (PhoneCustomer.Text != "" || NameCustomer.Text != "")
+                    {
+                        Customer customer = new Customer();
+                        customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                        customer.NameCustomer = NameCustomer.Text;
+                        customer.Phone = PhoneCustomer.Text;
+                        BLL.BLL_Insert.Instance.AddCustomer(customer);
+                    }
 
                     // HoaDon
                     List<string> l = new List<string>();
@@ -290,7 +299,7 @@ namespace PBL3.Views
                     float t = float.Parse(txtTotal.Text);
                     s.TongTien = t;
                     s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
-                    s.IDCustommer = customer.IDCustomer;
+                    s.IDCustommer = PhoneCustomer.Text;
                     BLL.BLL_Insert.Instance.AddHoaDon(s);
 
 
@@ -323,21 +332,38 @@ namespace PBL3.Views
                     string IDBan = numberTable.Text.Substring(6);
                     string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                     Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
-                    if (TextChange(customer.IDCustomer,PhoneCustomer.Text) == true)
+                    if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
                     {
-                        customer.IDCustomer = PhoneCustomer.Text;
-                        customer.NameCustomer = NameCustomer.Text;
-                        customer.Phone = PhoneCustomer.Text;
-                        BLL.BLL_Insert.Instance.AddCustomer(customer);
+                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text));
                     }
+                    else
+                    {
+                        if (BLL.BLL_Order.Instance.GetIDCustomer(NameCustomer.Text + PhoneCustomer.Text.Substring(7)) == true)
+                        {
+                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text));
+                        }
+                        else
+                        {
+                            customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                            customer.NameCustomer = NameCustomer.Text;
+                            customer.Phone = PhoneCustomer.Text;
+                            BLL.BLL_Insert.Instance.AddCustomer(customer);
 
+                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
+                        }
+                    }
                     //HoaDon
-                    BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
-                    
+                    //BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
+
                     //statusTable
                     BLL.BLL_Update.Instance.Status_Table(IDBan, true);
 
                     //Datmon
+                    List<DatMon> before_datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
+                    for (int i = 0; i < before_datmon.Count; i++)
+                    {
+                        BLL.BLL_Update.Instance.Delete_DatMon_IDDatMon(before_datmon[i].IDDatMon);
+                    }
                     for (int i = 0; i < dataOder.Rows.Count - 1; i++)
                     {
                         List<string> d = new List<string>();
@@ -351,32 +377,10 @@ namespace PBL3.Views
                         datmon.IDHoaDon = IDHoaDon;
                         datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                         BLL.BLL_Insert.Instance.AddDatMon(datmon);
-
                     }
-                    /*List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
-                    for(int i =0; i < datmon.Count; i++)
-                    {
-                        if(dataOder.Rows[i].Cells["IDMon"].Value.ToString() == null)
-                        {
-
-                        }
-                       if(dataOder.Rows[i].Cells["IDMon"].Value.ToString() == datmon[i].IDMon)
-                       {    
-                            BLL.BLL_Update.Instance.SoLuong_DatMon(datmon[i].IDDatMon, Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value));
-                       }
-                    }
-                    for(int i = datmon.Count; i < dataOder.Rows.Count-1; i++)
-                    {
-                        DatMon new_datmon = new DatMon();
-                        List<string> d = BLL.BLL_Order.Instance.GetIDDatMon();
-                        int iddatmon = 0;
-                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
-                        new_datmon.IDDatMon = iddatmon.ToString("00000");
-                        new_datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
-                        new_datmon.IDHoaDon = IDHoaDon;
-                        new_datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
-                        BLL.BLL_Insert.Instance.AddDatMon(new_datmon);
-                    }*/
+                        Table t = new Table();
+                        s = new Status_del(t.LoadStatusTable);
+                        s(numberTable.Text.Substring(6), true);
                     NameCustomer.Clear();
                     PhoneCustomer.Clear();
                     bunifuPanel1.BringToFront();
@@ -384,31 +388,132 @@ namespace PBL3.Views
                     dataOder.Rows.Clear();
                     this.Visible = false;
                 }
-            /*}
+            }
             catch(Exception m)
             {
                 MessageBox.Show(m.Message);
-            }*/
+            }
         }
-
+            
         private void btnDone_Click(object sender, EventArgs e)
         {
-            // HoaDon
-            List<string> l = new List<string>();
-            HoaDon s = new HoaDon();
+            if(statusorder == true)
             {
+                // Customer
+                if (PhoneCustomer.Text != "" || NameCustomer.Text != "")
+                {
+                    Customer customer = new Customer();
+                    customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                    customer.NameCustomer = NameCustomer.Text;
+                    customer.Phone = PhoneCustomer.Text;
+                    BLL.BLL_Insert.Instance.AddCustomer(customer);
+                }
+
+                // HoaDon
+                List<string> l = new List<string>();
+                HoaDon h = new HoaDon();
                 l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
                 int idhoadon = 0;
                 idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
-                s.IDHoaDon = "TI" + idhoadon.ToString("000");
-                s.IDBan = numberTable.Text.Substring(6);
+                h.IDHoaDon = "TI" + idhoadon.ToString("000");
+                h.IDBan = numberTable.Text.Substring(6);
+                h.NgayXuat = DateTime.Today;
+                h.TrangThai = false;
+                float total = float.Parse(txtTotal.Text);
+                h.TongTien = total;
+                h.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
+                h.IDCustommer = PhoneCustomer.Text;
+                BLL.BLL_Insert.Instance.AddHoaDon(h);
+
+                //statusTable
+                BLL.BLL_Update.Instance.Status_Table(numberTable.Text.Substring(6), false);
+
+                // DatMon
+                for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+                {
+                    List<string> d = new List<string>();
+                    DatMon datmon = new DatMon();
+                    d = BLL.BLL_Order.Instance.GetIDDatMon();
+                    //d.Sort();
+                    int iddatmon = 0;
+                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0, 5)) + 1;
+                    datmon.IDDatMon = iddatmon.ToString("00000");
+                    datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                    datmon.IDHoaDon = "TI" + idhoadon.ToString("000");
+                    datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                    BLL.BLL_Insert.Instance.AddDatMon(datmon);
+                }
+                    Table t = new Table();
+                    s = new Status_del(t.LoadStatusTable);
+                    s(numberTable.Text.Substring(6), false);
+                NameCustomer.Clear();
+                PhoneCustomer.Clear();
+                bunifuPanel1.BringToFront();
+                txtTotal.ResetText();
+                dataOder.Rows.Clear();
+                this.Visible = false;
             }
-            s.NgayXuat = DateTime.Today;
-            s.TrangThai = true;
-            float t = float.Parse(txtTotal.Text);
-            s.TongTien = t;
-            s.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);              ///// Truyền delegate
-            BLL.BLL_Insert.Instance.AddHoaDon(s);
+            else
+            {
+                string IDBan = numberTable.Text.Substring(6);
+                string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
+                Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
+                if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
+                {
+                    BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text));
+                }
+                else
+                {
+                    if (BLL.BLL_Order.Instance.GetIDCustomer(NameCustomer.Text + PhoneCustomer.Text.Substring(7)) == true)
+                    {
+                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text));
+                    }
+                    else
+                    {
+                        customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                        customer.NameCustomer = NameCustomer.Text;
+                        customer.Phone = PhoneCustomer.Text;
+                        BLL.BLL_Insert.Instance.AddCustomer(customer);
+
+                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
+                    }
+                }
+                //HoaDon
+                //BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer);
+
+                //statusTable
+                BLL.BLL_Update.Instance.Status_Table(IDBan, false);
+
+                //dat mon
+                List<DatMon> before_datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
+                for (int i = 0; i < before_datmon.Count; i++)
+                {
+                    Console.WriteLine(before_datmon[i].IDDatMon);
+                    BLL.BLL_Update.Instance.Delete_DatMon_IDDatMon(before_datmon[i].IDDatMon);
+                }
+                for (int i = 0; i < dataOder.Rows.Count - 1; i++)
+                {
+                    List<string> d = new List<string>();
+                    DatMon datmon = new DatMon();
+                    d = BLL.BLL_Order.Instance.GetIDDatMon();
+                    int iddatmon = 0;
+                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0)) + 1 ;
+                    datmon.IDDatMon = iddatmon.ToString("00000");
+                    datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
+                    datmon.IDHoaDon = IDHoaDon;
+                    datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
+                    BLL.BLL_Insert.Instance.AddDatMon(datmon);
+                }
+                    Table t = new Table();
+                    s = new Status_del(t.LoadStatusTable);
+                    s(numberTable.Text.Substring(6), false);
+                NameCustomer.Clear();
+                PhoneCustomer.Clear();
+                bunifuPanel1.BringToFront();
+                txtTotal.ResetText();
+                dataOder.Rows.Clear();
+                this.Visible = false;
+            }
         }
     }
 }

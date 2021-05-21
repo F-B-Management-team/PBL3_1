@@ -62,7 +62,9 @@ namespace PBL3.BLL
         public string GetIDHoaDon_IDTable(string IDTable)
         {
             string result;
-            result = db.HoaDons.Where(p => p.IDBan == IDTable).Select(p => p.IDHoaDon).FirstOrDefault();
+            List<string> ListIDHoaDon = db.HoaDons.Where(p => p.IDBan == IDTable).OrderBy(p => p.IDHoaDon).Select(p => p.IDHoaDon).ToList();
+
+            result = ListIDHoaDon[ListIDHoaDon.Count - 1];
             return result;
         }
         public List<string> GetMonAn_IDHoaDon(string IDHoaDon)
@@ -74,7 +76,7 @@ namespace PBL3.BLL
         public List<DatMon> GetDatMon_IDHoaDon(string IDHoaDon)
         {
             List<DatMon> result = new List<DatMon>();
-            result = db.DatMons.Where(p => p.IDHoaDon == IDHoaDon).Select(p => p).ToList();
+            result = db.DatMons.Where(p => p.IDHoaDon == IDHoaDon).ToList();
             return result;
         }
         public MonAn GetMonAn_IDMon(string IDMon)
@@ -90,6 +92,12 @@ namespace PBL3.BLL
             d = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).Select(p => p.IDCustommer).FirstOrDefault();
             result = db.Customers.Where(p => p.IDCustomer == d).FirstOrDefault();
             return result;
+        }
+        public bool GetIDCustomer(string ID)
+        {
+            var result = db.Customers.Find(ID);
+            if (result.IDCustomer == ID) return true;
+            else return false;
         }
     }
 }

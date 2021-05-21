@@ -46,7 +46,14 @@ namespace PBL3.Views
             {
                 if (Convert.ToBoolean(dataTable.Rows[i].Cells["TrangThai"].Value) == true)
                 {
-                    continue;
+                    if (dataTable.Rows[i].Cells["IDBan"].Value.ToString() == btnTable[i].Text.Substring(6))
+                    {
+                        btnTable[i].IdleFillColor = Color.Firebrick;
+                        btnTable[i].IdleBorderColor = Color.Firebrick;
+                        btnTable[i].BackColor = Color.Firebrick;
+                        btnTable[i].BackColor1 = Color.Firebrick;
+                        //statusTable = false;
+                    }
                 }
                 else
                 {
@@ -60,7 +67,18 @@ namespace PBL3.Views
                 }
             }
         }
-        
+        public void LoadStatusTable(string idban, bool status)
+        {
+            dataTable.DataSource = BLL.BLL_Table.Instance.GetBan();
+            for (int i = 1; i < dataTable.Rows.Count; i++)
+            {
+                if (dataTable.Rows[i].Cells["IDBan"].Value.ToString() == idban)
+                {
+                    dataTable.Rows[i].Cells["TrangThai"].Value = status;
+                }
+            }
+            LoadStatusBan();
+        }
         private void btnMangve_Click(object sender, EventArgs e)
         {
             order1.Visible = true;

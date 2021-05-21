@@ -84,7 +84,6 @@ namespace PBL3.Views
             this.bthTable2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bthTable1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupbox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.order1 = new PBL3.Views.Order();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
@@ -142,7 +141,6 @@ namespace PBL3.Views
             this.pnTable.Controls.Add(this.bthTable2);
             this.pnTable.Controls.Add(this.bthTable1);
             this.pnTable.Controls.Add(this.label1);
-            this.pnTable.Controls.Add(this.groupbox1);
             this.pnTable.Controls.Add(this.order1);
             this.pnTable.Location = new System.Drawing.Point(0, 0);
             this.pnTable.Name = "pnTable";
@@ -197,7 +195,7 @@ namespace PBL3.Views
             this.dataTable.EnableHeadersVisualStyles = false;
             this.dataTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataTable.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            //this.dataTable.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dataTable.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataTable.HeaderForeColor = System.Drawing.Color.White;
             this.dataTable.Location = new System.Drawing.Point(644, 240);
             this.dataTable.Name = "dataTable";
@@ -1854,17 +1852,6 @@ namespace PBL3.Views
             this.label1.TabIndex = 26;
             this.label1.Text = "List Table";
             // 
-            // groupbox1
-            // 
-            this.groupbox1.BackColor = System.Drawing.Color.White;
-            this.groupbox1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.groupbox1.Location = new System.Drawing.Point(29, 35);
-            this.groupbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupbox1.Name = "groupbox1";
-            this.groupbox1.Size = new System.Drawing.Size(670, 478);
-            this.groupbox1.TabIndex = 25;
-            this.groupbox1.Click += new System.EventHandler(this.BthTable1_Click);
-            // 
             // order1
             // 
             this.order1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
@@ -1872,6 +1859,7 @@ namespace PBL3.Views
             this.order1.Location = new System.Drawing.Point(4, 4);
             this.order1.Margin = new System.Windows.Forms.Padding(2);
             this.order1.Name = "order1";
+            this.order1.s = null;
             this.order1.Size = new System.Drawing.Size(872, 536);
             this.order1.TabIndex = 60;
             this.order1.Visible = false;
@@ -1942,7 +1930,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bthTable1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuGroupBox groupbox1;
         public Order order1;
     }
 }
