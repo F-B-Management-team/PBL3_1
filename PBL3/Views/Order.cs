@@ -380,8 +380,6 @@ namespace PBL3.Views
                     datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                     BLL.BLL_Insert.Instance.AddDatMon(datmon);
                 }
-                Table t = new Table();
-                s = new Status_del(t.LoadStatusTable);
                 s(numberTable.Text.Substring(6), true);
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
@@ -445,10 +443,9 @@ namespace PBL3.Views
                     datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                     BLL.BLL_Insert.Instance.AddDatMon(datmon);
                 }
-                    Table t = new Table();
-                    s = new Status_del(t.LoadStatusTable);
+                    /*Table t = new Table();
+                    s = new Status_del(t.LoadStatusTable);*/
                     s(numberTable.Text.Substring(6), false);
-                    t.LoadStatusBan();
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();
@@ -508,10 +505,8 @@ namespace PBL3.Views
                     datmon.SoLuong = Convert.ToInt32(dataOder.Rows[i].Cells["SoLuong"].Value);
                     BLL.BLL_Insert.Instance.AddDatMon(datmon);
                 }
-                    Table t = new Table();
-                    s = new Status_del(t.LoadStatusTable);
+
                     s(numberTable.Text.Substring(6), false);
-                t.LoadStatusBan();
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();
