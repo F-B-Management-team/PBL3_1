@@ -124,9 +124,6 @@
   <data name="169388438_2875593456039775_4052894549446701561_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\169388438_2875593456039775_4052894549446701561_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kitchen (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kitchen (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fast-food (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fast-food (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,6 +154,9 @@
   <data name="table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="6e510a0f-0fa4-43c7-9d6d-f47e4568a334" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6e510a0f-0fa4-43c7-9d6d-f47e4568a334.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +174,9 @@
   </data>
   <data name="online-shopping" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\online-shopping.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dollars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dollars1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="180478677_479136336763688_337598169216810801_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\180478677_479136336763688_337598169216810801_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,10 +205,10 @@
   <data name="180965072_3956474667807313_2984068236954540088_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\180965072_3956474667807313_2984068236954540088_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kitchen (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kitchen (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dollars" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dollars1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

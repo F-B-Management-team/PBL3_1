@@ -51,6 +51,7 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.pnTable = new System.Windows.Forms.Panel();
             this.dataTable = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -83,7 +84,6 @@ namespace PBL3.Views
             this.bthTable5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bthTable2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bthTable1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.order1 = new PBL3.Views.Order();
             this.pnTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable)).BeginInit();
@@ -205,6 +205,19 @@ namespace PBL3.Views
             this.dataTable.Size = new System.Drawing.Size(207, 232);
             this.dataTable.TabIndex = 59;
             this.dataTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(240, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 39);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "List Table";
             // 
             // pictureBox16
             // 
@@ -1838,19 +1851,6 @@ namespace PBL3.Views
             this.bthTable1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bthTable1.UseDefaultRadiusAndThickness = true;
             this.bthTable1.Click += new System.EventHandler(this.BthTable1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(240, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 39);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "List Table";
             // 
             // order1
             // 

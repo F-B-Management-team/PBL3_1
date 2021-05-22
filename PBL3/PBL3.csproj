@@ -422,6 +422,7 @@
       <DependentUpon>PBL3.edmx</DependentUpon>
       <LastGenOutput>PBL3.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\yellow.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

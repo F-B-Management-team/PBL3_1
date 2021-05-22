@@ -79,7 +79,7 @@ namespace PBL3.Views
             // 
             // detailBill1
             // 
-            this.detailBill1.Location = new System.Drawing.Point(0, -3);
+            this.detailBill1.Location = new System.Drawing.Point(0, -6);
             this.detailBill1.Name = "detailBill1";
             this.detailBill1.Size = new System.Drawing.Size(877, 542);
             this.detailBill1.TabIndex = 6;
@@ -401,7 +401,7 @@ namespace PBL3.Views
             this.DataBill.EnableHeadersVisualStyles = false;
             this.DataBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(184)))), ((int)(((byte)(196)))));
             this.DataBill.HeaderBackColor = System.Drawing.Color.Crimson;
-            //this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataBill.HeaderForeColor = System.Drawing.Color.White;
             this.DataBill.Location = new System.Drawing.Point(41, 131);
             this.DataBill.Name = "DataBill";
