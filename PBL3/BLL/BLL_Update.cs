@@ -34,7 +34,7 @@ namespace PBL3.BLL
             result.TrangThai = m;
             db.SaveChanges();
         }
-        public void Update_HoaDon(string IDHoaDon, bool staus, DateTime NgayXuat, float Total, string IDNguoiDung, string IDCustomer)
+        public void Update_HoaDon(string IDHoaDon, bool staus, DateTime NgayXuat, float Total, string IDNguoiDung, string IDCustomer, string note)
         {
             var result = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).FirstOrDefault();
             result.NgayXuat = NgayXuat;
@@ -42,6 +42,17 @@ namespace PBL3.BLL
             result.TongTien = Total;
             result.IDNguoiDung = IDNguoiDung;
             result.IDCustommer = IDCustomer;
+            result.Note = note;
+            db.SaveChanges();
+        }
+        public void Update_HoaDon(string IDHoaDon, bool staus, DateTime NgayXuat, float Total, string IDNguoiDung, string note)
+        {
+            var result = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).FirstOrDefault();
+            result.NgayXuat = NgayXuat;
+            result.TrangThai = staus;
+            result.TongTien = Total;
+            result.IDNguoiDung = IDNguoiDung;
+            result.Note = note;
             db.SaveChanges();
         }
         public void Update_HoaDon(string IDHoaDon, bool staus, DateTime NgayXuat, float Total, string IDNguoiDung)

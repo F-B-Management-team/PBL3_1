@@ -463,6 +463,15 @@
         V+B/e83rAaZt7wOWyyNDAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="txtNote.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAR0AAAAkCAYAAAC0aO6qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACvSURBVHhe7dQxDQMxAARB80fll2EERgDkZclNAHirGema
+        A7ADILfW+sw5f2Zmt7Y7c5Izxj4AbtqdOckRHeA+0QFSogOkRAdIiQ6QEh0gJTpASnSAlOgAKdEBUqID
+        pEQHSIkOkBIdICU6QEp0gJToACnRAVKiA6REB0iJDpASHSAlOkBKdICU6AAp0QFSogOkRAdIiQ6QEh0g
+        JTpA6i86z/N892Fmdmu7Myc5AJUxXgUV+ODm8XnQAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="bunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>582, 17</value>
   </metadata>

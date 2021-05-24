@@ -54,6 +54,10 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation3 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
@@ -98,6 +102,7 @@ namespace PBL3.Views
             this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDone = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtTenNguoiDung = new System.Windows.Forms.Label();
+            this.txtNote = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuTransition2 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuTransition3 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -1319,7 +1324,7 @@ namespace PBL3.Views
             animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
             animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
             animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation3.Padding = new System.Windows.Forms.Padding(0);
             animation3.RotateCoeff = 0F;
             animation3.RotateLimit = 0F;
             animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
@@ -1542,6 +1547,84 @@ namespace PBL3.Views
             this.txtTenNguoiDung.Text = "User";
             this.txtTenNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtNote
+            // 
+            this.txtNote.AcceptsReturn = false;
+            this.txtNote.AcceptsTab = false;
+            this.txtNote.AnimationSpeed = 200;
+            this.txtNote.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtNote.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtNote.BackColor = System.Drawing.Color.Transparent;
+            this.txtNote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtNote.BackgroundImage")));
+            this.txtNote.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtNote.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtNote.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtNote.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtNote.BorderRadius = 1;
+            this.txtNote.BorderThickness = 1;
+            this.txtNote.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.txtNote, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.txtNote, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.txtNote, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.txtNote.DefaultFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote.DefaultText = "";
+            this.txtNote.FillColor = System.Drawing.Color.White;
+            this.txtNote.HideSelection = true;
+            this.txtNote.IconLeft = null;
+            this.txtNote.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNote.IconPadding = 10;
+            this.txtNote.IconRight = null;
+            this.txtNote.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNote.Lines = new string[0];
+            this.txtNote.Location = new System.Drawing.Point(560, 73);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNote.MaxLength = 32767;
+            this.txtNote.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtNote.Modified = false;
+            this.txtNote.Multiline = false;
+            this.txtNote.Name = "txtNote";
+            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtNote.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtNote.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtNote.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.White;
+            stateProperties12.ForeColor = System.Drawing.Color.Empty;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtNote.OnIdleState = stateProperties12;
+            this.txtNote.Padding = new System.Windows.Forms.Padding(2);
+            this.txtNote.PasswordChar = '\0';
+            this.txtNote.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtNote.PlaceholderText = "Note\r\n";
+            this.txtNote.ReadOnly = false;
+            this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNote.SelectedText = "";
+            this.txtNote.SelectionLength = 0;
+            this.txtNote.SelectionStart = 0;
+            this.txtNote.ShortcutsEnabled = true;
+            this.txtNote.Size = new System.Drawing.Size(285, 36);
+            this.txtNote.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtNote.TabIndex = 19;
+            this.txtNote.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNote.TextMarginBottom = 0;
+            this.txtNote.TextMarginLeft = 3;
+            this.txtNote.TextMarginTop = 0;
+            this.txtNote.TextPlaceholder = "Note\r\n";
+            this.txtNote.UseSystemPasswordChar = false;
+            this.txtNote.WordWrap = true;
+            // 
             // bunifuTransition2
             // 
             this.bunifuTransition2.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.VertSlide;
@@ -1554,7 +1637,7 @@ namespace PBL3.Views
             animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
             animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
             animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.Padding = new System.Windows.Forms.Padding(0);
             animation2.RotateCoeff = 0F;
             animation2.RotateLimit = 0F;
             animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
@@ -1575,7 +1658,7 @@ namespace PBL3.Views
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -1615,6 +1698,7 @@ namespace PBL3.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnPay);
@@ -1711,5 +1795,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPay;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDone;
         private System.Windows.Forms.Label txtTenNguoiDung;
+        private Bunifu.UI.WinForms.BunifuTextBox txtNote;
     }
 }
