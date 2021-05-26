@@ -18,6 +18,7 @@ namespace PBL3.Data
         public HoaDon()
         {
             this.DatMons = new HashSet<DatMon>();
+            this.ThongTinHoaDons = new HashSet<ThongTinHoaDon>();
         }
     
         public string IDHoaDon { get; set; }
@@ -27,7 +28,6 @@ namespace PBL3.Data
         public Nullable<double> TongTien { get; set; }
         public string IDNguoiDung { get; set; }
         public string IDCustommer { get; set; }
-        public Nullable<double> DonGia { get; set; }
         public string Note { get; set; }
     
         public virtual Ban Ban { get; set; }
@@ -35,5 +35,7 @@ namespace PBL3.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DatMon> DatMons { get; set; }
         public virtual ThongTinNguoiDung ThongTinNguoiDung { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThongTinHoaDon> ThongTinHoaDons { get; set; }
     }
 }

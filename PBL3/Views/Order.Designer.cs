@@ -58,9 +58,13 @@ namespace PBL3.Views
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,6 +107,8 @@ namespace PBL3.Views
             this.btnDone = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtTenNguoiDung = new System.Windows.Forms.Label();
             this.txtNote = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.btnDiscount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtDiscount = new System.Windows.Forms.Label();
             this.bunifuTransition2 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuTransition3 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -110,6 +116,7 @@ namespace PBL3.Views
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.dataCustomer = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.bunifuPanel2.SuspendLayout();
@@ -125,6 +132,7 @@ namespace PBL3.Views
             this.bunifuPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataOder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -1010,7 +1018,7 @@ namespace PBL3.Views
             this.txtTotal.Location = new System.Drawing.Point(74, 368);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(209, 20);
+            this.txtTotal.Size = new System.Drawing.Size(209, 22);
             this.txtTotal.TabIndex = 11;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1625,6 +1633,112 @@ namespace PBL3.Views
             this.txtNote.UseSystemPasswordChar = false;
             this.txtNote.WordWrap = true;
             // 
+            // btnDiscount
+            // 
+            this.btnDiscount.AllowAnimations = true;
+            this.btnDiscount.AllowMouseEffects = true;
+            this.btnDiscount.AllowToggling = false;
+            this.btnDiscount.AnimationSpeed = 200;
+            this.btnDiscount.AutoGenerateColors = false;
+            this.btnDiscount.AutoRoundBorders = false;
+            this.btnDiscount.AutoSizeLeftIcon = true;
+            this.btnDiscount.AutoSizeRightIcon = true;
+            this.btnDiscount.BackColor = System.Drawing.Color.Transparent;
+            this.btnDiscount.BackColor1 = System.Drawing.Color.Moccasin;
+            this.btnDiscount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiscount.BackgroundImage")));
+            this.btnDiscount.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDiscount.ButtonText = "Discount";
+            this.btnDiscount.ButtonTextMarginLeft = 0;
+            this.btnDiscount.ColorContrastOnClick = 45;
+            this.btnDiscount.ColorContrastOnHover = 45;
+            this.btnDiscount.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnDiscount.CustomizableEdges = borderEdges7;
+            this.bunifuTransition2.SetDecoration(this.btnDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.btnDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.btnDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.btnDiscount.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDiscount.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDiscount.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDiscount.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDiscount.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnDiscount.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscount.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDiscount.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDiscount.IconMarginLeft = 11;
+            this.btnDiscount.IconPadding = 10;
+            this.btnDiscount.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDiscount.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDiscount.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDiscount.IconSize = 25;
+            this.btnDiscount.IdleBorderColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.IdleBorderRadius = 1;
+            this.btnDiscount.IdleBorderThickness = 1;
+            this.btnDiscount.IdleFillColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.IdleIconLeftImage = null;
+            this.btnDiscount.IdleIconRightImage = null;
+            this.btnDiscount.IndicateFocus = false;
+            this.btnDiscount.Location = new System.Drawing.Point(770, 358);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDiscount.OnDisabledState.BorderRadius = 1;
+            this.btnDiscount.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDiscount.OnDisabledState.BorderThickness = 1;
+            this.btnDiscount.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDiscount.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDiscount.OnDisabledState.IconLeftImage = null;
+            this.btnDiscount.OnDisabledState.IconRightImage = null;
+            this.btnDiscount.onHoverState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.onHoverState.BorderRadius = 1;
+            this.btnDiscount.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDiscount.onHoverState.BorderThickness = 1;
+            this.btnDiscount.onHoverState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDiscount.onHoverState.IconLeftImage = null;
+            this.btnDiscount.onHoverState.IconRightImage = null;
+            this.btnDiscount.OnIdleState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.OnIdleState.BorderRadius = 1;
+            this.btnDiscount.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDiscount.OnIdleState.BorderThickness = 1;
+            this.btnDiscount.OnIdleState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.OnIdleState.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnDiscount.OnIdleState.IconLeftImage = null;
+            this.btnDiscount.OnIdleState.IconRightImage = null;
+            this.btnDiscount.OnPressedState.BorderColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.OnPressedState.BorderRadius = 1;
+            this.btnDiscount.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnDiscount.OnPressedState.BorderThickness = 1;
+            this.btnDiscount.OnPressedState.FillColor = System.Drawing.Color.Moccasin;
+            this.btnDiscount.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDiscount.OnPressedState.IconLeftImage = null;
+            this.btnDiscount.OnPressedState.IconRightImage = null;
+            this.btnDiscount.Size = new System.Drawing.Size(104, 50);
+            this.btnDiscount.TabIndex = 20;
+            this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDiscount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDiscount.TextMarginLeft = 0;
+            this.btnDiscount.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDiscount.UseDefaultRadiusAndThickness = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
+            // txtDiscount
+            // 
+            this.bunifuTransition3.SetDecoration(this.txtDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.txtDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.txtDiscount, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.txtDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtDiscount.Location = new System.Drawing.Point(770, 328);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(104, 27);
+            this.txtDiscount.TabIndex = 21;
+            this.txtDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bunifuTransition2
             // 
             this.bunifuTransition2.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.VertSlide;
@@ -1692,12 +1806,77 @@ namespace PBL3.Views
             this.bunifuElipse6.ElipseRadius = 35;
             this.bunifuElipse6.TargetControl = this.bunifuPanel4;
             // 
+            // dataCustomer
+            // 
+            this.dataCustomer.AllowCustomTheming = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dataCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCustomer.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dataCustomer.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataCustomer.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataCustomer.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataCustomer.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataCustomer.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dataCustomer.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataCustomer.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dataCustomer.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dataCustomer.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataCustomer.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dataCustomer.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataCustomer.CurrentTheme.Name = null;
+            this.dataCustomer.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataCustomer.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataCustomer.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataCustomer.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataCustomer.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.bunifuTransition2.SetDecoration(this.dataCustomer, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.dataCustomer, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuTransition3.SetDecoration(this.dataCustomer, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataCustomer.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataCustomer.EnableHeadersVisualStyles = false;
+            this.dataCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataCustomer.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataCustomer.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dataCustomer.HeaderForeColor = System.Drawing.Color.White;
+            this.dataCustomer.Location = new System.Drawing.Point(272, 323);
+            this.dataCustomer.Name = "dataCustomer";
+            this.dataCustomer.RowHeadersVisible = false;
+            this.dataCustomer.RowTemplate.Height = 40;
+            this.dataCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataCustomer.Size = new System.Drawing.Size(240, 199);
+            this.dataCustomer.TabIndex = 22;
+            this.dataCustomer.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataCustomer);
+            this.Controls.Add(this.txtDiscount);
+            this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.btnDone);
@@ -1740,6 +1919,7 @@ namespace PBL3.Views
             this.bunifuPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataOder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1796,5 +1976,8 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDone;
         private System.Windows.Forms.Label txtTenNguoiDung;
         private Bunifu.UI.WinForms.BunifuTextBox txtNote;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDiscount;
+        private System.Windows.Forms.Label txtDiscount;
+        private Bunifu.UI.WinForms.BunifuDataGridView dataCustomer;
     }
 }

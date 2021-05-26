@@ -15,6 +15,7 @@
     <Property Name="IDCustomer" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NameCustomer" Type="varchar" MaxLength="10" />
     <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Discount" Type="int" />
   </EntityType>
   <EntityType Name="DanhMuc">
     <Key>
@@ -73,11 +74,9 @@
     <Property Name="MatKhau" Type="varchar" MaxLength="50" />
     <Property Name="Chucvu" Type="nvarchar" MaxLength="20" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'MVH_08.dbo.ThongTinHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ThongTinHoaDon">
     <Key>
-      <PropertyRef Name="IDHoaDon" />
+      <PropertyRef Name="IDThongTin" />
     </Key>
     <Property Name="IDHoaDon" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="LoaiBan" Type="varchar" MaxLength="10" />
@@ -89,6 +88,7 @@ warning 6002: The table/view 'MVH_08.dbo.ThongTinHoaDon' does not have a primary
     <Property Name="IDNguoiDung" Type="varchar" MaxLength="10" />
     <Property Name="IDCustommer" Type="varchar" MaxLength="10" />
     <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="IDThongTin" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="ThongTinNguoiDung">
     <Key>
@@ -172,9 +172,9 @@ warning 6002: The table/view 'MVH_08.dbo.ThongTinHoaDon' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ThongTinHoaDon_HoaDon">
+  <Association Name="fk_thongtinhoadon_idhoadon">
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-    <End Role="ThongTinHoaDon" Type="Self.ThongTinHoaDon" Multiplicity="0..1" />
+    <End Role="ThongTinHoaDon" Type="Self.ThongTinHoaDon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HoaDon">
         <PropertyRef Name="IDHoaDon" />
@@ -236,21 +236,8 @@ warning 6002: The table/view 'MVH_08.dbo.ThongTinHoaDon' does not have a primary
     <EntitySet Name="MonAn" EntityType="Self.MonAn" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongTinHoaDon" EntityType="Self.ThongTinHoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThongTinNguoiDung" EntityType="Self.ThongTinNguoiDung" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ThongTinHoaDon" EntityType="Self.ThongTinHoaDon" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ThongTinHoaDon].[IDHoaDon] AS [IDHoaDon], 
-    [ThongTinHoaDon].[LoaiBan] AS [LoaiBan], 
-    [ThongTinHoaDon].[NgayXuat] AS [NgayXuat], 
-    [ThongTinHoaDon].[IDDatMon] AS [IDDatMon], 
-    [ThongTinHoaDon].[TenMon] AS [TenMon], 
-    [ThongTinHoaDon].[SoLuong] AS [SoLuong], 
-    [ThongTinHoaDon].[GiaMon] AS [GiaMon], 
-    [ThongTinHoaDon].[IDNguoiDung] AS [IDNguoiDung], 
-    [ThongTinHoaDon].[IDCustommer] AS [IDCustommer], 
-    [ThongTinHoaDon].[Note] AS [Note]
-    FROM [dbo].[ThongTinHoaDon] AS [ThongTinHoaDon]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK__HoaDon__IDCustom__59063A47" Association="Self.FK__HoaDon__IDCustom__59063A47">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="HoaDon" EntitySet="HoaDon" />
@@ -275,7 +262,7 @@ warning 6002: The table/view 'MVH_08.dbo.ThongTinHoaDon' does not have a primary
       <End Role="DanhMuc" EntitySet="DanhMuc" />
       <End Role="MonAn" EntitySet="MonAn" />
     </AssociationSet>
-    <AssociationSet Name="FK_ThongTinHoaDon_HoaDon" Association="Self.FK_ThongTinHoaDon_HoaDon">
+    <AssociationSet Name="fk_thongtinhoadon_idhoadon" Association="Self.fk_thongtinhoadon_idhoadon">
       <End Role="HoaDon" EntitySet="HoaDon" />
       <End Role="ThongTinHoaDon" EntitySet="ThongTinHoaDon" />
     </AssociationSet>

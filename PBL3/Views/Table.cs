@@ -107,7 +107,6 @@ namespace PBL3.Views
         }
         public void LoadStatusTable(string idban, bool status)
         {
-            dataTable.DataSource = BLL.BLL_Table.Instance.GetBan();
             for (int i = 1; i < dataTable.Rows.Count; i++)
             {
                 if (dataTable.Rows[i].Cells["IDBan"].Value.ToString() == idban)
@@ -124,6 +123,7 @@ namespace PBL3.Views
             order1.BringToFront();
             order1.loadFood();
             order1.loadDrink();
+            order1.loadCustomer();
             t = new Table.Table_del(order1.statusOder);
             t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, statusTable);
         }
@@ -150,6 +150,7 @@ namespace PBL3.Views
             order1.BringToFront();
             order1.loadFood();
             order1.loadDrink();
+            order1.loadCustomer();
             t = new Table.Table_del(order1.statusOder);
             if(statusTable == false)
             {

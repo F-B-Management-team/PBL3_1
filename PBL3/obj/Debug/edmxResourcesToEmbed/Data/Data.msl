@@ -16,6 +16,7 @@
           <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
           <ScalarProperty Name="NameCustomer" ColumnName="NameCustomer" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,6 +83,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ThongTinHoaDons">
+      <EntityTypeMapping TypeName="MVH_08Model.ThongTinHoaDon">
+        <MappingFragment StoreEntitySet="ThongTinHoaDon">
+          <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
+          <ScalarProperty Name="LoaiBan" ColumnName="LoaiBan" />
+          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
+          <ScalarProperty Name="IDDatMon" ColumnName="IDDatMon" />
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="GiaMon" ColumnName="GiaMon" />
+          <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
+          <ScalarProperty Name="IDCustommer" ColumnName="IDCustommer" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IDThongTin" ColumnName="IDThongTin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ThongTinNguoiDungs">
       <EntityTypeMapping TypeName="MVH_08Model.ThongTinNguoiDung">
         <MappingFragment StoreEntitySet="ThongTinNguoiDung">
@@ -90,22 +108,6 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ThongTinHoaDons">
-      <EntityTypeMapping TypeName="MVH_08Model.ThongTinHoaDon">
-        <MappingFragment StoreEntitySet="ThongTinHoaDon">
-          <ScalarProperty Name="Note" ColumnName="Note" />
-          <ScalarProperty Name="IDCustommer" ColumnName="IDCustommer" />
-          <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
-          <ScalarProperty Name="GiaMon" ColumnName="GiaMon" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
-          <ScalarProperty Name="IDDatMon" ColumnName="IDDatMon" />
-          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
-          <ScalarProperty Name="LoaiBan" ColumnName="LoaiBan" />
-          <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

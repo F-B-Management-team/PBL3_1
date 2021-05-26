@@ -163,46 +163,55 @@
     <Compile Include="BLL\BLL_Table.cs" />
     <Compile Include="BLL\BLL_Update.cs" />
     <Compile Include="Data\Ban.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Customer.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\DanhMuc.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\DatMon.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\HoaDon.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\MonAn.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\PBL3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PBL3.Context.tt</DependentUpon>
+    <Compile Include="Data\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\PBL3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PBL3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\PBL3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PBL3.edmx</DependentUpon>
+    <Compile Include="Data\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sysdiagram.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\TaiKhoan.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ThongTinHoaDon.cs">
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\ThongTinNguoiDung.cs">
-      <DependentUpon>PBL3.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailBill.cs">
       <SubType>UserControl</SubType>
@@ -298,16 +307,16 @@
     <EmbeddedResource Include="Views\Table.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Data\PBL3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PBL3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
     <None Include="App.Config" />
-    <None Include="Data\PBL3.edmx.diagram">
-      <DependentUpon>PBL3.edmx</DependentUpon>
+    <EntityDeploy Include="Data\Data.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\Data.edmx.diagram">
+      <DependentUpon>Data.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -412,17 +421,20 @@
     <None Include="Resources\exit %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\PBL3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PBL3.edmx</DependentUpon>
-      <LastGenOutput>PBL3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\PBL3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PBL3.edmx</DependentUpon>
-      <LastGenOutput>PBL3.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\yellow.jfif" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Data.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Data.edmx</DependentUpon>
+      <LastGenOutput>Data.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\Data.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Data.edmx</DependentUpon>
+      <LastGenOutput>Data.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

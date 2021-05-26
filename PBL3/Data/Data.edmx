@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MVH_08Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MVH_08Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ban">
           <Key>
             <PropertyRef Name="IDBan" />
@@ -20,6 +20,7 @@
           <Property Name="IDCustomer" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NameCustomer" Type="varchar" MaxLength="10" />
           <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="Discount" Type="int" />
         </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
@@ -48,7 +49,6 @@
           <Property Name="TongTien" Type="float" />
           <Property Name="IDNguoiDung" Type="varchar" MaxLength="10" />
           <Property Name="IDCustommer" Type="varchar" MaxLength="10" />
-          <Property Name="DonGia" Type="float" />
           <Property Name="Note" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="MonAn">
@@ -78,6 +78,22 @@
           <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
           <Property Name="MatKhau" Type="varchar" MaxLength="50" />
           <Property Name="Chucvu" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ThongTinHoaDon">
+          <Key>
+            <PropertyRef Name="IDThongTin" />
+          </Key>
+          <Property Name="IDHoaDon" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoaiBan" Type="varchar" MaxLength="10" />
+          <Property Name="NgayXuat" Type="date" />
+          <Property Name="IDDatMon" Type="varchar" MaxLength="10" />
+          <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="GiaMon" Type="float" />
+          <Property Name="IDNguoiDung" Type="varchar" MaxLength="10" />
+          <Property Name="IDCustommer" Type="varchar" MaxLength="10" />
+          <Property Name="Note" Type="varchar" MaxLength="100" />
+          <Property Name="IDThongTin" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="ThongTinNguoiDung">
           <Key>
@@ -161,6 +177,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_thongtinhoadon_idhoadon">
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+          <End Role="ThongTinHoaDon" Type="Self.ThongTinHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoaDon">
+              <PropertyRef Name="IDHoaDon" />
+            </Principal>
+            <Dependent Role="ThongTinHoaDon">
+              <PropertyRef Name="IDHoaDon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="pk_taikhoan_idnguoidung">
           <End Role="ThongTinNguoiDung" Type="Self.ThongTinNguoiDung" Multiplicity="1" />
           <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
@@ -173,6 +201,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MVH_08ModelStoreContainer">
           <EntitySet Name="Ban" EntityType="Self.Ban" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -182,6 +241,7 @@
           <EntitySet Name="MonAn" EntityType="Self.MonAn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinHoaDon" EntityType="Self.ThongTinHoaDon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongTinNguoiDung" EntityType="Self.ThongTinNguoiDung" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__HoaDon__IDCustom__59063A47" Association="Self.FK__HoaDon__IDCustom__59063A47">
             <End Role="Customer" EntitySet="Customer" />
@@ -207,13 +267,16 @@
             <End Role="DanhMuc" EntitySet="DanhMuc" />
             <End Role="MonAn" EntitySet="MonAn" />
           </AssociationSet>
+          <AssociationSet Name="fk_thongtinhoadon_idhoadon" Association="Self.fk_thongtinhoadon_idhoadon">
+            <End Role="HoaDon" EntitySet="HoaDon" />
+            <End Role="ThongTinHoaDon" EntitySet="ThongTinHoaDon" />
+          </AssociationSet>
           <AssociationSet Name="pk_taikhoan_idnguoidung" Association="Self.pk_taikhoan_idnguoidung">
             <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDung" />
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MVH_08Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -233,6 +296,7 @@
           <Property Name="IDCustomer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NameCustomer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Discount" Type="Int32" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__IDCustom__59063A47" FromRole="Customer" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="DanhMuc">
@@ -265,12 +329,12 @@
           <Property Name="TongTien" Type="Double" />
           <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DonGia" Type="Double" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ban" Relationship="Self.fk_hoadon_idban" FromRole="HoaDon" ToRole="Ban" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__HoaDon__IDCustom__59063A47" FromRole="HoaDon" ToRole="Customer" />
           <NavigationProperty Name="DatMons" Relationship="Self.fk_hoadon_idhoadon" FromRole="HoaDon" ToRole="DatMon" />
           <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.FK__HoaDon__IDNguoiD__59FA5E80" FromRole="HoaDon" ToRole="ThongTinNguoiDung" />
+          <NavigationProperty Name="ThongTinHoaDons" Relationship="Self.fk_thongtinhoadon_idhoadon" FromRole="HoaDon" ToRole="ThongTinHoaDon" />
         </EntityType>
         <EntityType Name="MonAn">
           <Key>
@@ -302,6 +366,23 @@
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Chucvu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.pk_taikhoan_idnguoidung" FromRole="TaiKhoan" ToRole="ThongTinNguoiDung" />
+        </EntityType>
+        <EntityType Name="ThongTinHoaDon">
+          <Key>
+            <PropertyRef Name="IDThongTin" />
+          </Key>
+          <Property Name="IDHoaDon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoaiBan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NgayXuat" Type="DateTime" Precision="0" />
+          <Property Name="IDDatMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="GiaMon" Type="Double" />
+          <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDThongTin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="HoaDon" Relationship="Self.fk_thongtinhoadon_idhoadon" FromRole="ThongTinHoaDon" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="ThongTinNguoiDung">
           <Key>
@@ -387,6 +468,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_thongtinhoadon_idhoadon">
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+          <End Role="ThongTinHoaDon" Type="Self.ThongTinHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoaDon">
+              <PropertyRef Name="IDHoaDon" />
+            </Principal>
+            <Dependent Role="ThongTinHoaDon">
+              <PropertyRef Name="IDHoaDon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="pk_taikhoan_idnguoidung">
           <End Role="ThongTinNguoiDung" Type="Self.ThongTinNguoiDung" Multiplicity="1" />
           <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
@@ -408,6 +501,7 @@
           <EntitySet Name="MonAns" EntityType="Self.MonAn" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+          <EntitySet Name="ThongTinHoaDons" EntityType="Self.ThongTinHoaDon" />
           <EntitySet Name="ThongTinNguoiDungs" EntityType="Self.ThongTinNguoiDung" />
           <AssociationSet Name="fk_hoadon_idban" Association="Self.fk_hoadon_idban">
             <End Role="Ban" EntitySet="Bans" />
@@ -433,11 +527,56 @@
             <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDungs" />
             <End Role="HoaDon" EntitySet="HoaDons" />
           </AssociationSet>
+          <AssociationSet Name="fk_thongtinhoadon_idhoadon" Association="Self.fk_thongtinhoadon_idhoadon">
+            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="ThongTinHoaDon" EntitySet="ThongTinHoaDons" />
+          </AssociationSet>
           <AssociationSet Name="pk_taikhoan_idnguoidung" Association="Self.pk_taikhoan_idnguoidung">
             <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDungs" />
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
           </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MVH_08Model.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MVH_08Model.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -459,6 +598,7 @@
                 <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
                 <ScalarProperty Name="NameCustomer" ColumnName="NameCustomer" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -490,7 +630,6 @@
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
                 <ScalarProperty Name="IDCustommer" ColumnName="IDCustommer" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -526,6 +665,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinHoaDons">
+            <EntityTypeMapping TypeName="MVH_08Model.ThongTinHoaDon">
+              <MappingFragment StoreEntitySet="ThongTinHoaDon">
+                <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
+                <ScalarProperty Name="LoaiBan" ColumnName="LoaiBan" />
+                <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
+                <ScalarProperty Name="IDDatMon" ColumnName="IDDatMon" />
+                <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="GiaMon" ColumnName="GiaMon" />
+                <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
+                <ScalarProperty Name="IDCustommer" ColumnName="IDCustommer" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IDThongTin" ColumnName="IDThongTin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ThongTinNguoiDungs">
             <EntityTypeMapping TypeName="MVH_08Model.ThongTinNguoiDung">
               <MappingFragment StoreEntitySet="ThongTinNguoiDung">
@@ -537,6 +693,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MVH_08Model.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MVH_08Model.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MVH_08Model.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MVH_08Model.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MVH_08Model.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MVH_08Model.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MVH_08Model.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MVH_08Model.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MVH_08Model.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

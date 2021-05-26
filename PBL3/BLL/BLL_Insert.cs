@@ -48,5 +48,10 @@ namespace PBL3.BLL
             db.DatMons.Add(s);
             db.SaveChanges();
         }
+        public void AddThongTinHoaDon(ThongTinHoaDon s)
+        {
+            db.ThongTinHoaDons.Add(s);
+            db.SaveChanges();
+        }
     }
 }

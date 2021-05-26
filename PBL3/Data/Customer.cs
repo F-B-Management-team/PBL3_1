@@ -23,6 +23,7 @@ namespace PBL3.Data
         public string IDCustomer { get; set; }
         public string NameCustomer { get; set; }
         public string Phone { get; set; }
+        public Nullable<int> Discount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

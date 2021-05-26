@@ -76,12 +76,11 @@ namespace PBL3.BLL
             var result = db.DatMons.Remove(datmon);
             db.SaveChanges();
         }
-        public void Update_Customer(string IDCustomer, string NameCustomer)
+        public void Update_Customer(string IDCustomer, int Discount)
         {
             var result = db.Customers.Where(p => p.IDCustomer == IDCustomer).FirstOrDefault();
-            result.IDCustomer = IDCustomer;
-            result.NameCustomer = NameCustomer;
-            result.Phone = IDCustomer;
+            result.Discount = Discount;
+            db.SaveChanges();
         }
     }
 }

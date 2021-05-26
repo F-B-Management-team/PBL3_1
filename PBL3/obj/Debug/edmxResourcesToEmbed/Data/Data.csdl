@@ -16,6 +16,7 @@
     <Property Name="IDCustomer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NameCustomer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Discount" Type="Int32" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__IDCustom__59063A47" FromRole="Customer" ToRole="HoaDon" />
   </EntityType>
   <EntityType Name="DanhMuc">
@@ -53,7 +54,7 @@
     <NavigationProperty Name="Customer" Relationship="Self.FK__HoaDon__IDCustom__59063A47" FromRole="HoaDon" ToRole="Customer" />
     <NavigationProperty Name="DatMons" Relationship="Self.fk_hoadon_idhoadon" FromRole="HoaDon" ToRole="DatMon" />
     <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.FK__HoaDon__IDNguoiD__59FA5E80" FromRole="HoaDon" ToRole="ThongTinNguoiDung" />
-    <NavigationProperty Name="ThongTinHoaDon" Relationship="MVH_08Model.FK_ThongTinHoaDon_HoaDon" FromRole="HoaDon" ToRole="ThongTinHoaDon" />
+    <NavigationProperty Name="ThongTinHoaDons" Relationship="Self.fk_thongtinhoadon_idhoadon" FromRole="HoaDon" ToRole="ThongTinHoaDon" />
   </EntityType>
   <EntityType Name="MonAn">
     <Key>
@@ -85,6 +86,23 @@
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Chucvu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ThongTinNguoiDung" Relationship="Self.pk_taikhoan_idnguoidung" FromRole="TaiKhoan" ToRole="ThongTinNguoiDung" />
+  </EntityType>
+  <EntityType Name="ThongTinHoaDon">
+    <Key>
+      <PropertyRef Name="IDThongTin" />
+    </Key>
+    <Property Name="IDHoaDon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoaiBan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NgayXuat" Type="DateTime" Precision="0" />
+    <Property Name="IDDatMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="GiaMon" Type="Double" />
+    <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IDThongTin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.fk_thongtinhoadon_idhoadon" FromRole="ThongTinHoaDon" ToRole="HoaDon" />
   </EntityType>
   <EntityType Name="ThongTinNguoiDung">
     <Key>
@@ -170,6 +188,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_thongtinhoadon_idhoadon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="ThongTinHoaDon" Type="Self.ThongTinHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="IDHoaDon" />
+      </Principal>
+      <Dependent Role="ThongTinHoaDon">
+        <PropertyRef Name="IDHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="pk_taikhoan_idnguoidung">
     <End Role="ThongTinNguoiDung" Type="Self.ThongTinNguoiDung" Multiplicity="1" />
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
@@ -191,6 +221,7 @@
     <EntitySet Name="MonAns" EntityType="Self.MonAn" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <EntitySet Name="ThongTinHoaDons" EntityType="Self.ThongTinHoaDon" />
     <EntitySet Name="ThongTinNguoiDungs" EntityType="Self.ThongTinNguoiDung" />
     <AssociationSet Name="fk_hoadon_idban" Association="Self.fk_hoadon_idban">
       <End Role="Ban" EntitySet="Bans" />
@@ -216,14 +247,13 @@
       <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDungs" />
       <End Role="HoaDon" EntitySet="HoaDons" />
     </AssociationSet>
+    <AssociationSet Name="fk_thongtinhoadon_idhoadon" Association="Self.fk_thongtinhoadon_idhoadon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="ThongTinHoaDon" EntitySet="ThongTinHoaDons" />
+    </AssociationSet>
     <AssociationSet Name="pk_taikhoan_idnguoidung" Association="Self.pk_taikhoan_idnguoidung">
       <End Role="ThongTinNguoiDung" EntitySet="ThongTinNguoiDungs" />
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-    </AssociationSet>
-    <EntitySet Name="ThongTinHoaDons" EntityType="MVH_08Model.ThongTinHoaDon" />
-    <AssociationSet Name="FK_ThongTinHoaDon_HoaDon" Association="MVH_08Model.FK_ThongTinHoaDon_HoaDon">
-      <End Role="HoaDon" EntitySet="HoaDons" />
-      <End Role="ThongTinHoaDon" EntitySet="ThongTinHoaDons" />
     </AssociationSet>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -256,34 +286,6 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <EntityType Name="ThongTinHoaDon">
-    <Key>
-      <PropertyRef Name="IDHoaDon" />
-    </Key>
-    <Property Name="IDHoaDon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="LoaiBan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="NgayXuat" Type="DateTime" Precision="0" />
-    <Property Name="IDDatMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SoLuong" Type="Int32" />
-    <Property Name="GiaMon" Type="Double" />
-    <Property Name="IDNguoiDung" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="IDCustommer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="HoaDon" Relationship="MVH_08Model.FK_ThongTinHoaDon_HoaDon" FromRole="ThongTinHoaDon" ToRole="HoaDon" />
-  </EntityType>
-  <Association Name="FK_ThongTinHoaDon_HoaDon">
-    <End Type="MVH_08Model.HoaDon" Role="HoaDon" Multiplicity="1" />
-    <End Type="MVH_08Model.ThongTinHoaDon" Role="ThongTinHoaDon" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="HoaDon">
-        <PropertyRef Name="IDHoaDon" />
-      </Principal>
-      <Dependent Role="ThongTinHoaDon">
-        <PropertyRef Name="IDHoaDon" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />

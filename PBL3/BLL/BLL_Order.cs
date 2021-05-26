@@ -9,8 +9,8 @@ namespace PBL3.BLL
 {
     class BLL_Order
     {
-        MVH_08Entities db = new MVH_08Entities();
 
+        MVH_08Entities db = new MVH_08Entities();
         private static BLL_Order _Instance;
         public static BLL_Order Instance
         {
@@ -26,7 +26,7 @@ namespace PBL3.BLL
         }
         private BLL_Order()
         {
-
+            //MVH_08Entities db = new MVH_08Entities();
         }
         public List<MonAn> LoadMenuFood()
         {
@@ -93,11 +93,42 @@ namespace PBL3.BLL
             result = db.Customers.Where(p => p.IDCustomer == d).FirstOrDefault();
             return result;
         }
+        public Customer GetCustomer_IDCustomer(string IDCustomer)
+        {
+            var result = db.Customers.Where(p => p.IDCustomer == IDCustomer).FirstOrDefault();
+            return result;
+        }
         public bool GetIDCustomer(string ID)
         {
             var result = db.Customers.Find(ID);
-            if (result.IDCustomer == ID) return true;
+            if (result != null) return true;
             else return false;
+        }
+        public Ban GetBan(string IDBan)
+        {
+            var result = db.Bans.Where(p => p.IDBan == IDBan).FirstOrDefault();
+            return result;
+        }
+        public HoaDon GetHoaDon(string iDHoaDon)
+        {
+            var result = db.HoaDons.Where(p => p.IDHoaDon == iDHoaDon).FirstOrDefault();
+            return result;
+        }
+        public ThongTinHoaDon GetThongTinTHoaDon(string iDHoaDon)
+        {
+            var result = db.ThongTinHoaDons.Where(p => p.IDHoaDon == iDHoaDon).FirstOrDefault();
+            return result;
+        }
+        public List<Customer> GetCustomers()
+        {
+            var result = db.Customers.Select(p => p).ToList();
+            return result;
+        }
+        public List<string> GetIDThongTinHoaDon()
+        {
+            List<string> result;
+            result = db.ThongTinHoaDons.OrderBy(p => p.IDThongTin).Select(p => p.IDThongTin).ToList();
+            return result;
         }
     }
 }
