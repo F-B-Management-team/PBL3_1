@@ -48,6 +48,7 @@ namespace PBL3.Views
                 }
                 List<string> IDMon = BLL.BLL_Order.Instance.GetMonAn_IDHoaDon(IDHoaDon);
                 List<DatMon> datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
+                txtNote.Text = BLL.BLL_Order.Instance.GetHoaDon(IDHoaDon).Note;
                 MonAn monan = new MonAn();
                 for (int i = 0; i < datmon.Count; i++)
                 {
@@ -416,6 +417,8 @@ namespace PBL3.Views
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
                     }
                     this.loadCustomer();
+                    txtDiscount.ResetText();
+                    txtNote.ResetText();
                     NameCustomer.Clear();
                     PhoneCustomer.Clear();
                     bunifuPanel1.BringToFront();
@@ -529,6 +532,8 @@ namespace PBL3.Views
                     }
 
                     s(numberTable.Text.Substring(6), true);
+                    txtDiscount.ResetText();
+                    txtNote.ResetText();
                     NameCustomer.Clear();
                     PhoneCustomer.Clear();
                     bunifuPanel1.BringToFront();
@@ -625,6 +630,8 @@ namespace PBL3.Views
                     /*Table t = new Table();
                     s = new Status_del(t.LoadStatusTable);*/
                     s(numberTable.Text.Substring(6), false);
+                txtDiscount.ResetText();
+                txtNote.ResetText();
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();
@@ -687,6 +694,8 @@ namespace PBL3.Views
                 }
 
                     s(numberTable.Text.Substring(6), false);
+                txtDiscount.ResetText();
+                txtNote.ResetText();
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();

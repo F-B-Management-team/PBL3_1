@@ -16,7 +16,7 @@ namespace PBL3
         {
             user = username;
             InitializeComponent();
-            Check_Login(true);
+            Check_Login(false);
             
         }
         public void Check_Login(bool check)
