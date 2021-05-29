@@ -53,7 +53,7 @@ namespace PBL3
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FormLogin login = new FormLogin();
-            login.d += new FormLogin.Login_del(Login);
+            login.d = new FormLogin.Login_del(Login);
             login.ShowDialog();
         }
 
@@ -73,7 +73,7 @@ namespace PBL3
         private void btnLogout_Click(object sender, EventArgs e)
         {
             FormLogout logout = new FormLogout();
-            logout.d += new FormLogout.Logout_del(Login);
+            logout.d = new FormLogout.Logout_del(Login);
             logout.ShowDialog();
         }
 
