@@ -160,6 +160,7 @@
     <Compile Include="BLL\BLL_Insert.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Order.cs" />
+    <Compile Include="BLL\BLL_Settings.cs" />
     <Compile Include="BLL\BLL_Table.cs" />
     <Compile Include="BLL\BLL_Update.cs" />
     <Compile Include="Data\Ban.cs">

@@ -64,6 +64,12 @@ namespace PBL3.BLL
             result.IDNguoiDung = IDNguoiDung;
             db.SaveChanges();
         }
+        public void Update_HoaDon_Settings(string IDHoaDon, double total)
+        {
+            var result = db.HoaDons.Where(p => p.IDHoaDon == IDHoaDon).FirstOrDefault();
+            result.TongTien = total;
+            db.SaveChanges();
+        }
         public void SoLuong_DatMon(string IDDatMon, int SoLuong)
         {
             var result = db.DatMons.Where(p => p.IDDatMon == IDDatMon).FirstOrDefault();
@@ -80,6 +86,19 @@ namespace PBL3.BLL
         {
             var result = db.Customers.Where(p => p.IDCustomer == IDCustomer).FirstOrDefault();
             result.Discount = Discount;
+            db.SaveChanges();
+        }
+        public void Update_MonAn(string IDMon, string TenMon, double? GiaMon)
+        {
+            var result = db.MonAns.Where(p => p.IDMon == IDMon).FirstOrDefault();
+            result.TenMon = TenMon;
+            result.Gia = GiaMon;
+            db.SaveChanges();
+        }
+        public void Delete_MonAn_IDMonAn(string IDMon)
+        {
+            var monan = db.MonAns.Where(p => p.IDMon == IDMon).FirstOrDefault();
+            var result = db.MonAns.Remove(monan);
             db.SaveChanges();
         }
     }
