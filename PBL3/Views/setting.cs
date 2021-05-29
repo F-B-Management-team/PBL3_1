@@ -1,4 +1,6 @@
-﻿using PBL3.Data;
+﻿using PBL3.BLL;
+using PBL3.DAL;
+using PBL3.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace PBL3.Views
     public partial class setting : UserControl
     {
         MVH_08Entities db = new MVH_08Entities();
+        public delegate void setting_Del(string IDNguoiDung);
+        public setting_Del d { get; set; }
         public setting()
         {
             InitializeComponent();
@@ -22,13 +26,9 @@ namespace PBL3.Views
             loadStaff();*/
             indicator.Left = bunifuLabel2.Left;
             indicator.Width = bunifuLabel2.Width;
-
-        }
-
-        void loadStaff()
-        {
-            var result = from p in db.ThongTinNguoiDungs select new { p.IDNguoiDung, p.TenNguoiDung, p.GioiTinh, p.NgaySinh, p.PhoneNumber };
-            dataStaff.DataSource = result.ToList();
+            SetCBB();
+            cbbCV.SelectedIndex = 0;
+            SetCBBSort();
         }
         private void bunifuLabel2_Click(object sender, EventArgs e)
         {
@@ -230,6 +230,113 @@ namespace PBL3.Views
             //    bll.bll_update.instance.update_hoadon_settings(i.idhoadon, total);
             //}    
         }
+        public void SetCBB()
+        {
+            string[] cbb = new string[] { "All", "staff", "admin", "manage" };
+            cbbCV.Items.AddRange(cbb);
+        }
+        public void SetCBBSort()
+        {
+            string[] cbbs = new string[] { "TenNguoiDung", "TenDangNhap" };
+            cbbSort.Items.AddRange(cbbs);
+        }
+        public void Tim(string name)
+        {
+            dataStaff.DataSource = BLL_Setting.Instance.TimNV_BLL(name);
+        }
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            switch (cbbCV.Text)
+            {
+                case "All":
+                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    break;
+                case "staff":
+                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    break;
+                case "manage":
+                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    break;
+                case "admin":
+                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    break;
+            }
+        }
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            Tim(txtTim.Text);
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string id = dataStaff.CurrentRow.Cells["IDNguoiDung"].Value.ToString();
+            ThongTinNguoiDung nd = BLL_Setting.Instance.TimNguoiDung(id);
+            TaiKhoan tk = BLL_Setting.Instance.TimTaiKhoan(id);
+            BLL_Setting.Instance.Xoa_BLL(nd, tk);
+            btnShow_Click(sender, e);
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            addStaff1.BringToFront();
+            d = new setting_Del(addStaff1.setid);
+            d("");
+            btnShow_Click(sender, e);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection data = dataStaff.SelectedRows;
+            if (data.Count == 1)
+            {
+                string NguoiDung = data[0].Cells["IDNguoiDung"].Value.ToString();
+                d = new setting_Del(addStaff1.loadEditStaff);
+                addStaff1.BringToFront();
+                d(NguoiDung);
+            }
+        }
+
+        private void btnSX_Click(object sender, EventArgs e)
+        {
+            List<joinTK> joins = new List<joinTK>();
+            switch (cbbSort.Text)
+            {
+
+                case "TenNguoiDung":
+                    switch (cbbCV.Text)
+                    {
+                        case "All":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortName(cbbCV.Text);
+                            break;
+                        case "staff":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortName(cbbCV.Text);
+                            break;
+                        case "manage":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortName(cbbCV.Text);
+                            break;
+                        case "admin":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortName(cbbCV.Text);
+                            break;
+                    }
+                    break;
+                case "TenDangNhap":
+                    switch (cbbCV.Text)
+                    {
+                        case "All":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortNameLogin(cbbCV.Text);
+                            break;
+                        case "staff":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortNameLogin(cbbCV.Text);
+                            break;
+                        case "manage":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortNameLogin(cbbCV.Text);
+                            break;
+                        case "admin":
+                            dataStaff.DataSource = dataStaff.DataSource = BLL.BLL_Setting.Instance.SortNameLogin(cbbCV.Text);
+                            break;
+                    }
+                    break;
+            }
+            //dataStaff.DataSource = BLL_Setting.Instance.loadttsx(cbbCV.Text);
+        }
     }
 }

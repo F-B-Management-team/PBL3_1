@@ -182,6 +182,7 @@
     <Compile Include="BLL\BLL_Settings.cs" />
     <Compile Include="BLL\BLL_Table.cs" />
     <Compile Include="BLL\BLL_Update.cs" />
+    <Compile Include="DAL\joinTK.cs" />
     <Compile Include="Data\Ban.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -233,6 +234,12 @@
     </Compile>
     <Compile Include="Data\ThongTinNguoiDung.cs">
       <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailBill.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +297,9 @@
     <Compile Include="Views\Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DetailBill.resx">
       <DependentUpon>DetailBill.cs</DependentUpon>
     </EmbeddedResource>
