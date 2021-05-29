@@ -175,31 +175,13 @@
         rKQ/bK9LAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnNote.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGoAAAA2CAYAAAAvbQwbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dHBCYNAAABB67aa9JUOJOgFCzAcaeIW5jGw
-        /92+n+M9xnhY13y0zXheOwubj4wKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrC
-        qAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyK
-        MCrCqAijIoyKMCrCqIj/qOu8Z7Cw67x/LK0SJyeUZX0AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnDelete.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGoAAAA2CAYAAAAvbQwbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dHBCYNAAABB67aa9JUOJOgFCzAcaeIW5jGw
-        /92+n+M9xnhY13y0zXheOwubj4wKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrC
-        qAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyK
-        MCrCqAijIoyKMCrCqIj/qOu8Z7Cw67x/LK0SJyeUZX0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnView.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGoAAAA2CAYAAAAvbQwbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dHBCYNAAABB67aa9JUOJOgFCzAcaeIW5jGw
-        /92+n+M9xnhY13y0zXheOwubj4wKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrC
-        qAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyKMCrCqAijIoyK
-        MCrCqAijIoyKMCrCqIj/qOu8Z7Cw67x/LK0SJyeUZX0AAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVHhe7dHBCcMwAMDAzN1puldWKCWxB0gxXcKCexzo
+        r2N+P+cY42Ff69Gx4nm/2Nh6ZFSAURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFG
+        RRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSEURFGRRgVYVSE
+        URFGRRgVYVSEURFGRfxH3ddcwcbua/4APo0ZjzfcDXUAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="entityCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

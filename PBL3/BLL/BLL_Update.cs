@@ -101,5 +101,11 @@ namespace PBL3.BLL
             var result = db.MonAns.Remove(monan);
             db.SaveChanges();
         }
+        public void AddNote_HoaDon(string Note, string IDHoaDon)
+        {
+            var thongtinhoadon = db.ThongTinHoaDons.Where(p => p.IDHoaDon == IDHoaDon).FirstOrDefault();
+            thongtinhoadon.Note = Note;
+            db.SaveChanges();
+        }
     }
 }
