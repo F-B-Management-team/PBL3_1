@@ -288,6 +288,11 @@ namespace PBL3.Views
                     // Customer
                     if (PhoneCustomer.Text != "" && NameCustomer.Text != "")
                     {
+                        if (BLL.BLL_Setting.Instance.ktsdtt(PhoneCustomer.Text) == false)
+                        {
+                            MessageBox.Show("Phone Number not true!!");
+                            return;
+                        }
                         Customer customer = new Customer();
                         customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
                         customer.NameCustomer = NameCustomer.Text;
@@ -315,20 +320,21 @@ namespace PBL3.Views
                         }
 
                         // HoaDon
-                        List<string> l = new List<string>();
                         if (numberTable.Text == "Take out")
                         {
-                            l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
                             int idhoadon = 0;
-                            idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                            string l = BLL_Order.Instance.GetIDHoaDon_TO();
+                            idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
+                            //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                             s.IDHoaDon = "TO" + idhoadon.ToString("000");
                             s.IDBan = "0";
                         }
                         else
                         {
-                            l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
                             int idhoadon = 0;
-                            idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                            string l = BLL_Order.Instance.GetIDHoaDon_TI();
+                            idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
+                            //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                             s.IDHoaDon = "TI" + idhoadon.ToString("000");
                             s.IDBan = numberTable.Text.Substring(6);
                         }
@@ -356,20 +362,24 @@ namespace PBL3.Views
                     else
                     {
                         // HoaDon
-                        List<string> l = new List<string>();
+                        //List<string> l = new List<string>();
                         if (numberTable.Text == "Take out")
                         {
-                            l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
+                           // l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
                             int idhoadon = 0;
-                            idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                            string l = BLL_Order.Instance.GetIDHoaDon_TO();
+                            idhoadon = Convert.ToInt32(l.Substring(2,3)) + 1;
+                            //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                             s.IDHoaDon = "TO" + idhoadon.ToString("000");
                             s.IDBan = "0";
                         }
                         else
                         {
-                            l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
+                            //l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
                             int idhoadon = 0;
-                            idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                            string l = BLL_Order.Instance.GetIDHoaDon_TI();
+                            idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
+                            //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                             s.IDHoaDon = "TI" + idhoadon.ToString("000");
                             s.IDBan = numberTable.Text.Substring(6);
                         }
@@ -448,6 +458,11 @@ namespace PBL3.Views
                     }
                     else
                     {
+                        if (BLL.BLL_Setting.Instance.ktsdtt(PhoneCustomer.Text) == false)
+                        {
+                            MessageBox.Show("Phone Number not true!!");
+                            return;
+                        }
                         customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
                         customer.NameCustomer = NameCustomer.Text;
                         customer.Phone = PhoneCustomer.Text;
@@ -557,8 +572,13 @@ namespace PBL3.Views
             {               
                 HoaDon h = new HoaDon();
                 // Customer
-                if (PhoneCustomer.Text != "" || NameCustomer.Text != "")
+                if (PhoneCustomer.Text != "" && NameCustomer.Text != "" )
                 {
+                    if(BLL.BLL_Setting.Instance.ktsdtt(PhoneCustomer.Text) == false)
+                    {
+                        MessageBox.Show("Phone Number not true!!");
+                        return;
+                    }
                     Customer customer = new Customer();
                     customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
                     customer.NameCustomer = NameCustomer.Text;
@@ -571,12 +591,12 @@ namespace PBL3.Views
                     {
                         BLL.BLL_Insert.Instance.AddCustomer(customer);
                     }
-                    
+
                     // HoaDon
-                    List<string> l = new List<string>();
-                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
                     int idhoadon = 0;
-                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                    string l = BLL_Order.Instance.GetIDHoaDon_TI();
+                    idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
+                    //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                     h.IDHoaDon = "TI" + idhoadon.ToString("000");
                     h.IDBan = numberTable.Text.Substring(6);
                     h.NgayXuat = DateTime.Today;
@@ -592,11 +612,10 @@ namespace PBL3.Views
                 else
                 {
                     // HoaDon
-                    List<string> l = new List<string>();
-                    //HoaDon h = new HoaDon();
-                    l = BLL.BLL_Order.Instance.GetListIDHoaDon_TI();
                     int idhoadon = 0;
-                    idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
+                    string l = BLL_Order.Instance.GetIDHoaDon_TI();
+                    idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
+                    //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                     h.IDHoaDon = "TI" + idhoadon.ToString("000");
                     h.IDBan = numberTable.Text.Substring(6);
                     h.NgayXuat = DateTime.Today;
@@ -647,25 +666,33 @@ namespace PBL3.Views
                 string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                 //Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
                 Customer customer = new Customer();
-                
+
                 if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
                 {
-                    BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text),txtNote.Text);
+                    BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), txtNote.Text);
                 }
                 else
                 {
-                    customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
-                    customer.NameCustomer = NameCustomer.Text;
-                    customer.Phone = PhoneCustomer.Text;
-                    if (BLL.BLL_Order.Instance.GetIDCustomer(customer.IDCustomer) == true)
+                    if (BLL.BLL_Setting.Instance.ktsdtt(PhoneCustomer.Text) == true)
                     {
-                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
+                        customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                        customer.NameCustomer = NameCustomer.Text;
+                        customer.Phone = PhoneCustomer.Text;
+                        if (BLL.BLL_Order.Instance.GetIDCustomer(customer.IDCustomer) == true)
+                        {
+                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
+                        }
+                        else
+                        {
+                            BLL.BLL_Insert.Instance.AddCustomer(customer);
+
+                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
+                        }
                     }
                     else
                     {
-                        BLL.BLL_Insert.Instance.AddCustomer(customer);
-
-                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer,txtNote.Text);
+                        MessageBox.Show("Phone Number not true!!");
+                        return;
                     }
                 }
                 //HoaDon
@@ -747,6 +774,12 @@ namespace PBL3.Views
             {
 
             }
+        }
+
+        private void PhoneCustomer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
