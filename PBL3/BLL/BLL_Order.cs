@@ -47,11 +47,35 @@ namespace PBL3.BLL
             result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TO")).OrderBy(p => p.IDHoaDon).Select(g => g.IDHoaDon).ToList();
             return result;
         }
+        public string GetIDHoaDon_TO()
+        {
+            if(GetListIDHoaDon_TO().Count == 0)
+            {
+                return "00000";
+            }
+            else
+            {
+                List<string> l = GetListIDHoaDon_TO();
+                return l[l.Count - 1];
+            }
+        }
         public List<string> GetListIDHoaDon_TI()
         {
             List<string> result;
             result = db.HoaDons.Where(p => p.IDHoaDon.StartsWith("TI")).OrderBy(p=> p.IDHoaDon).Select(p => p.IDHoaDon).ToList();
             return result;
+        }
+        public string GetIDHoaDon_TI()
+        {
+            if (GetListIDHoaDon_TI().Count == 0)
+            {
+                return "00000";
+            }
+            else
+            {
+                List<string> l = GetListIDHoaDon_TI();
+                return l[l.Count - 1];
+            }
         }
         public List<string> GetIDDatMon()
         {
