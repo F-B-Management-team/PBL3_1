@@ -286,7 +286,7 @@ namespace PBL3.Views
                 {
                     HoaDon s = new HoaDon();
                     // Customer
-                    if (PhoneCustomer.Text != "" || NameCustomer.Text != "")
+                    if (PhoneCustomer.Text != "" && NameCustomer.Text != "")
                     {
                         Customer customer = new Customer();
                         customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
@@ -441,15 +441,16 @@ namespace PBL3.Views
                     string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                     //Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
                     Customer customer = new Customer();
-                    customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
-                    customer.NameCustomer = NameCustomer.Text;
-                    customer.Phone = PhoneCustomer.Text;
+                    
                     if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
                     {
                         BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text),txtNote.Text);
                     }
                     else
                     {
+                        customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                        customer.NameCustomer = NameCustomer.Text;
+                        customer.Phone = PhoneCustomer.Text;
                         if (BLL.BLL_Order.Instance.GetIDCustomer(customer.IDCustomer) == true)
                         {
                             
@@ -646,15 +647,16 @@ namespace PBL3.Views
                 string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                 //Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
                 Customer customer = new Customer();
-                customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
-                customer.NameCustomer = NameCustomer.Text;
-                customer.Phone = PhoneCustomer.Text;
+                
                 if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
                 {
                     BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text),txtNote.Text);
                 }
                 else
                 {
+                    customer.IDCustomer = NameCustomer.Text + PhoneCustomer.Text.Substring(7);
+                    customer.NameCustomer = NameCustomer.Text;
+                    customer.Phone = PhoneCustomer.Text;
                     if (BLL.BLL_Order.Instance.GetIDCustomer(customer.IDCustomer) == true)
                     {
                         BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, false, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
