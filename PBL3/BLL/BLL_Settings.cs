@@ -193,6 +193,23 @@ namespace PBL3.BLL
             return true;
 
         }
+        public bool ktsdtt(string sdt)
+        {
+            if (sdt.Length == 10)
+            {
+                return true;
+            }
+            else return false;
+        }
+        public bool ktsdt(string sdt)
+        {
+            foreach (Char c in sdt)
+            {
+                if (!Char.IsDigit(c))
+                    return true;
+            }
+            return false;
+        }
         public List<ThongTinNguoiDung> load()
         {
             List<ThongTinNguoiDung> litt = new List<ThongTinNguoiDung>();

@@ -104,12 +104,11 @@ namespace PBL3.Views
             radioButtonMale.Checked = false;
             this.SendToBack();
         }
-
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (ID == "")
             {
-                if (txtIDNguoiDung.Text == "" || ((BLL_Setting.Instance.sosanhIDtt(txtIDNguoiDung.Text)) != false) || txtTenDN.Text == "" || txtTenND.Text == "" || txtMK.Text == "" || cbbCVadd.Text == "" || (radioButtonMale.Checked == false && radioButtonFemale.Checked == false))
+                if (txtIDNguoiDung.Text == "" || ((BLL_Setting.Instance.sosanhIDtt(txtIDNguoiDung.Text)) != false)|| BLL_Setting.Instance.ktsdt(txtPhone.Text) != false|| BLL_Setting.Instance.ktsdtt(txtPhone.Text) == false || txtTenDN.Text == "" || txtTenND.Text == "" || txtMK.Text == "" || cbbCVadd.Text == "" || (radioButtonMale.Checked == false && radioButtonFemale.Checked == false))
                 {
                     string message = "Loi";
                     string title = "Loi";

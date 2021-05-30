@@ -1,4 +1,5 @@
-﻿using PBL3.Data;
+﻿using PBL3.BLL;
+using PBL3.Data;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
