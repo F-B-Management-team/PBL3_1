@@ -35,17 +35,28 @@ namespace PBL3.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnRevenue = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DataBill = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.detailBill1 = new PBL3.Views.DetailBill();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.entityCommand2 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.detailBill1 = new PBL3.Views.DetailBill();
+            this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.revenue1 = new PBL3.Views.Revenue();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBill)).BeginInit();
+            this.bunifuPages1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -61,15 +72,51 @@ namespace PBL3.Views
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.btnRevenue);
             this.bunifuPanel1.Controls.Add(this.btnDelete);
             this.bunifuPanel1.Controls.Add(this.DataBill);
             this.bunifuPanel1.Controls.Add(this.bunifuDropdown1);
             this.bunifuPanel1.Controls.Add(this.detailBill1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(0, 3);
+            this.bunifuPanel1.Location = new System.Drawing.Point(6, 3);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(877, 542);
+            this.bunifuPanel1.Size = new System.Drawing.Size(853, 509);
             this.bunifuPanel1.TabIndex = 2;
+            // 
+            // btnRevenue
+            // 
+            this.btnRevenue.ActiveImage = null;
+            this.btnRevenue.AllowAnimations = true;
+            this.btnRevenue.AllowBuffering = false;
+            this.btnRevenue.AllowToggling = false;
+            this.btnRevenue.AllowZooming = true;
+            this.btnRevenue.AllowZoomingOnFocus = false;
+            this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
+            this.btnRevenue.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRevenue.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnRevenue.ErrorImage")));
+            this.btnRevenue.FadeWhenInactive = false;
+            this.btnRevenue.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnRevenue.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenue.Image")));
+            this.btnRevenue.ImageActive = null;
+            this.btnRevenue.ImageLocation = null;
+            this.btnRevenue.ImageMargin = 10;
+            this.btnRevenue.ImageSize = new System.Drawing.Size(132, 68);
+            this.btnRevenue.ImageZoomSize = new System.Drawing.Size(142, 78);
+            this.btnRevenue.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnRevenue.InitialImage")));
+            this.btnRevenue.Location = new System.Drawing.Point(604, 26);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Rotation = 0;
+            this.btnRevenue.ShowActiveImage = true;
+            this.btnRevenue.ShowCursorChanges = true;
+            this.btnRevenue.ShowImageBorders = true;
+            this.btnRevenue.ShowSizeMarkers = false;
+            this.btnRevenue.Size = new System.Drawing.Size(142, 78);
+            this.btnRevenue.TabIndex = 7;
+            this.btnRevenue.ToolTipText = "";
+            this.btnRevenue.WaitOnLoad = false;
+            this.btnRevenue.Zoom = 10;
+            this.btnRevenue.ZoomSpeed = 10;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
             // btnDelete
             // 
@@ -267,6 +314,14 @@ namespace PBL3.Views
             this.bunifuDropdown1.TextLeftMargin = 5;
             this.bunifuDropdown1.SelectedIndexChanged += new System.EventHandler(this.bunifuDropdown1_SelectedIndexChanged);
             // 
+            // detailBill1
+            // 
+            this.detailBill1.Location = new System.Drawing.Point(-11, -7);
+            this.detailBill1.Name = "detailBill1";
+            this.detailBill1.Size = new System.Drawing.Size(867, 513);
+            this.detailBill1.TabIndex = 6;
+            this.detailBill1.Visible = false;
+            // 
             // entityCommand1
             // 
             this.entityCommand1.CommandTimeout = 0;
@@ -288,23 +343,95 @@ namespace PBL3.Views
             this.bunifuElipse2.ElipseRadius = 35;
             this.bunifuElipse2.TargetControl = this;
             // 
-            // detailBill1
+            // bunifuPages1
             // 
-            this.detailBill1.Location = new System.Drawing.Point(3, -6);
-            this.detailBill1.Name = "detailBill1";
-            this.detailBill1.Size = new System.Drawing.Size(877, 542);
-            this.detailBill1.TabIndex = 6;
-            this.detailBill1.Visible = false;
+            this.bunifuPages1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.bunifuPages1.AllowTransitions = true;
+            this.bunifuPages1.Controls.Add(this.tabPage1);
+            this.bunifuPages1.Controls.Add(this.tabPage2);
+            this.bunifuPages1.Location = new System.Drawing.Point(4, 4);
+            this.bunifuPages1.Multiline = true;
+            this.bunifuPages1.Name = "bunifuPages1";
+            this.bunifuPages1.Page = this.tabPage2;
+            this.bunifuPages1.PageIndex = 1;
+            this.bunifuPages1.PageName = "tabPage2";
+            this.bunifuPages1.PageTitle = "tabPage2";
+            this.bunifuPages1.SelectedIndex = 0;
+            this.bunifuPages1.Size = new System.Drawing.Size(870, 550);
+            this.bunifuPages1.TabIndex = 3;
+            animation1.AnimateOnlyDifferences = false;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuPages1.Transition = animation1;
+            this.bunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.bunifuPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(862, 524);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnBack);
+            this.tabPage2.Controls.Add(this.revenue1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(862, 524);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // revenue1
+            // 
+            this.revenue1.Location = new System.Drawing.Point(44, 1);
+            this.revenue1.Name = "revenue1";
+            this.revenue1.Size = new System.Drawing.Size(829, 542);
+            this.revenue1.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::PBL3.Properties.Resources._181571168_246586280576691_8348719016186641510_n;
+            this.btnBack.Location = new System.Drawing.Point(3, 1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(38, 32);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 15;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ManageBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuPanel1);
+            this.Controls.Add(this.bunifuPages1);
             this.Name = "ManageBill";
             this.Size = new System.Drawing.Size(877, 542);
             this.bunifuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataBill)).EndInit();
+            this.bunifuPages1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +447,11 @@ namespace PBL3.Views
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDelete;
         private DetailBill detailBill1;
+        private Bunifu.UI.WinForms.BunifuPages bunifuPages1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Revenue revenue1;
+        private Bunifu.UI.WinForms.BunifuImageButton btnRevenue;
+        private System.Windows.Forms.PictureBox btnBack;
     }
 }

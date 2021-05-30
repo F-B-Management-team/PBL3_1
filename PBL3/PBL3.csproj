@@ -179,6 +179,7 @@
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_ManageBill.cs" />
     <Compile Include="BLL\BLL_Order.cs" />
+    <Compile Include="BLL\BLL_Revenue.cs" />
     <Compile Include="BLL\BLL_Settings.cs" />
     <Compile Include="BLL\BLL_Table.cs" />
     <Compile Include="BLL\BLL_Update.cs" />
@@ -279,6 +280,12 @@
     <Compile Include="Views\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Revenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Revenue.Designer.cs">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -328,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Revenue.resx">
+      <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\setting.resx">
       <DependentUpon>setting.cs</DependentUpon>

@@ -1330,3 +1330,5 @@ C:\Users\rynth\OneDrive\Desktop\4\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.csproj.CoreCom
 C:\Users\rynth\OneDrive\Desktop\4\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 C:\Users\rynth\OneDrive\Desktop\4\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.exe
 C:\Users\rynth\OneDrive\Desktop\4\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.pdb
+C:\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.Views.AddStaff.resources
+C:\PBL3\PBL3_1\PBL3\obj\Debug\PBL3.Views.Revenue.resources

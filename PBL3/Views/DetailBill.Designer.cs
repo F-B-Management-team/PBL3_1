@@ -153,7 +153,7 @@ namespace PBL3.Views
             this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(539, 186);
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(549, 186);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
             this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
@@ -236,7 +236,7 @@ namespace PBL3.Views
             this.savePDF.BorderRadius = 35;
             this.savePDF.Image = ((System.Drawing.Image)(resources.GetObject("savePDF.Image")));
             this.savePDF.IsCircle = true;
-            this.savePDF.Location = new System.Drawing.Point(658, 330);
+            this.savePDF.Location = new System.Drawing.Point(691, 333);
             this.savePDF.Name = "savePDF";
             this.savePDF.Size = new System.Drawing.Size(70, 70);
             this.savePDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -253,7 +253,7 @@ namespace PBL3.Views
             this.bunifuImageButton5.BorderRadius = 36;
             this.bunifuImageButton5.Image = global::PBL3.Properties.Resources.printer;
             this.bunifuImageButton5.IsCircle = true;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(529, 330);
+            this.bunifuImageButton5.Location = new System.Drawing.Point(562, 333);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
             this.bunifuImageButton5.Size = new System.Drawing.Size(73, 73);
             this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -411,10 +411,10 @@ namespace PBL3.Views
             this.bunifuPanel5.Controls.Add(this.bunifuLabel8);
             this.bunifuPanel5.Controls.Add(this.txtTotal);
             this.bunifuPanel5.Controls.Add(this.bunifuPictureBox5);
-            this.bunifuPanel5.Location = new System.Drawing.Point(34, 436);
+            this.bunifuPanel5.Location = new System.Drawing.Point(38, 429);
             this.bunifuPanel5.Name = "bunifuPanel5";
             this.bunifuPanel5.ShowBorders = true;
-            this.bunifuPanel5.Size = new System.Drawing.Size(234, 100);
+            this.bunifuPanel5.Size = new System.Drawing.Size(234, 80);
             this.bunifuPanel5.TabIndex = 11;
             // 
             // bunifuLabel8
@@ -424,7 +424,7 @@ namespace PBL3.Views
             this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel8.Location = new System.Drawing.Point(101, 10);
+            this.bunifuLabel8.Location = new System.Drawing.Point(111, 10);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel8.Size = new System.Drawing.Size(56, 22);
@@ -441,7 +441,7 @@ namespace PBL3.Views
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotal.CursorType = System.Windows.Forms.Cursors.Default;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(79, 42);
+            this.txtTotal.Location = new System.Drawing.Point(69, 38);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTotal.Size = new System.Drawing.Size(136, 33);
@@ -458,7 +458,7 @@ namespace PBL3.Views
             this.bunifuPictureBox5.BorderRadius = 23;
             this.bunifuPictureBox5.Image = global::PBL3.Properties.Resources.sum;
             this.bunifuPictureBox5.IsCircle = true;
-            this.bunifuPictureBox5.Location = new System.Drawing.Point(17, 29);
+            this.bunifuPictureBox5.Location = new System.Drawing.Point(17, 19);
             this.bunifuPictureBox5.Name = "bunifuPictureBox5";
             this.bunifuPictureBox5.Size = new System.Drawing.Size(46, 46);
             this.bunifuPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,10 +477,10 @@ namespace PBL3.Views
             this.bunifuPanel4.Controls.Add(this.bunifuLabel6);
             this.bunifuPanel4.Controls.Add(this.txtDiscount);
             this.bunifuPanel4.Controls.Add(this.bunifuPictureBox4);
-            this.bunifuPanel4.Location = new System.Drawing.Point(289, 436);
+            this.bunifuPanel4.Location = new System.Drawing.Point(293, 429);
             this.bunifuPanel4.Name = "bunifuPanel4";
             this.bunifuPanel4.ShowBorders = true;
-            this.bunifuPanel4.Size = new System.Drawing.Size(234, 100);
+            this.bunifuPanel4.Size = new System.Drawing.Size(234, 80);
             this.bunifuPanel4.TabIndex = 11;
             // 
             // bunifuLabel6
@@ -507,7 +507,7 @@ namespace PBL3.Views
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtDiscount.CursorType = System.Windows.Forms.Cursors.Default;
             this.txtDiscount.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(79, 42);
+            this.txtDiscount.Location = new System.Drawing.Point(69, 38);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDiscount.Size = new System.Drawing.Size(136, 33);
@@ -524,7 +524,7 @@ namespace PBL3.Views
             this.bunifuPictureBox4.BorderRadius = 23;
             this.bunifuPictureBox4.Image = global::PBL3.Properties.Resources.discount;
             this.bunifuPictureBox4.IsCircle = true;
-            this.bunifuPictureBox4.Location = new System.Drawing.Point(17, 29);
+            this.bunifuPictureBox4.Location = new System.Drawing.Point(17, 19);
             this.bunifuPictureBox4.Name = "bunifuPictureBox4";
             this.bunifuPictureBox4.Size = new System.Drawing.Size(46, 46);
             this.bunifuPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -543,10 +543,10 @@ namespace PBL3.Views
             this.bunifuPanel3.Controls.Add(this.bunifuLabel4);
             this.bunifuPanel3.Controls.Add(this.txtToTalpayment);
             this.bunifuPanel3.Controls.Add(this.bunifuPictureBox1);
-            this.bunifuPanel3.Location = new System.Drawing.Point(555, 436);
+            this.bunifuPanel3.Location = new System.Drawing.Point(559, 429);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
-            this.bunifuPanel3.Size = new System.Drawing.Size(234, 100);
+            this.bunifuPanel3.Size = new System.Drawing.Size(234, 80);
             this.bunifuPanel3.TabIndex = 11;
             // 
             // bunifuLabel4
@@ -573,7 +573,7 @@ namespace PBL3.Views
             this.txtToTalpayment.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtToTalpayment.CursorType = System.Windows.Forms.Cursors.Default;
             this.txtToTalpayment.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToTalpayment.Location = new System.Drawing.Point(79, 42);
+            this.txtToTalpayment.Location = new System.Drawing.Point(69, 32);
             this.txtToTalpayment.Name = "txtToTalpayment";
             this.txtToTalpayment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtToTalpayment.Size = new System.Drawing.Size(136, 33);
@@ -590,7 +590,7 @@ namespace PBL3.Views
             this.bunifuPictureBox1.BorderRadius = 23;
             this.bunifuPictureBox1.Image = global::PBL3.Properties.Resources.dollars;
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(17, 29);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(17, 19);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(46, 46);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -816,12 +816,12 @@ namespace PBL3.Views
             this.DataDetail.HeaderBackColor = System.Drawing.Color.Crimson;
             this.DataDetail.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataDetail.HeaderForeColor = System.Drawing.Color.White;
-            this.DataDetail.Location = new System.Drawing.Point(56, 17);
+            this.DataDetail.Location = new System.Drawing.Point(61, 21);
             this.DataDetail.Name = "DataDetail";
             this.DataDetail.RowHeadersVisible = false;
             this.DataDetail.RowTemplate.Height = 40;
             this.DataDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataDetail.Size = new System.Drawing.Size(359, 396);
+            this.DataDetail.Size = new System.Drawing.Size(359, 386);
             this.DataDetail.TabIndex = 0;
             this.DataDetail.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Crimson;
             // 

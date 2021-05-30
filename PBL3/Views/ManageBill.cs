@@ -148,5 +148,15 @@ namespace PBL3.Views
             }
             LoadHoaDon();
         }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.SetPage(1);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.SetPage(0);
+        }
     }
 }
