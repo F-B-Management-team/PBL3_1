@@ -16,10 +16,11 @@ namespace PBL3.Views
         public Revenue()
         {
             InitializeComponent();
-            render_column();
+            //render_column();
+            //LoadTong();
         }
 
-        private void render_column()
+        public void render_column()
         {
             var canvas = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic.Canvas();
             var datapoint = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic.DataPoint(Bunifu.Dataviz.WinForms.BunifuDatavizBasic._type.Bunifu_column);
@@ -27,13 +28,11 @@ namespace PBL3.Views
             for (int i = 6; i >= 0; i--)
             {
                 DateTime dt = DateTime.Today.AddDays(-i);
-                // datapoint.addLabely(new DateTime(date.Value.Year, i, 1).ToString("MMM", CultureInfo.InvariantCulture), records.Where(b => b.IssueDate.Year == date.Value.Year && b.IssueDate.Month == i).Count());
                 datapoint.addLabely(dt.ToString("dd / MM"), Convert.ToString(BLL.BLL_Revenue.Instance.GetTongDoanhThu_NgayXuat(dt)));
             }
 
-            // Add data sets to canvas   
+
             canvas.addData(datapoint);
-            //render canvas   
             bunifuDatavizBasic1.Render(canvas);
 
 
@@ -43,13 +42,9 @@ namespace PBL3.Views
             for (int i = 6; i >= 0; i--)
             {
                 DateTime dt1 = DateTime.Today.AddDays(-i);
-                // datapoint.addLabely(new DateTime(date.Value.Year, i, 1).ToString("MMM", CultureInfo.InvariantCulture), records.Where(b => b.IssueDate.Year == date.Value.Year && b.IssueDate.Month == i).Count());
                 datapoint1.addLabely(dt1.ToString("dd / MM"), Convert.ToString(BLL.BLL_Revenue.Instance.GetTongHoaDon_NgayXuat(dt1)));
             }
-
-            // Add data sets to canvas   
             canvas1.addData(datapoint1);
-            //render canvas   
             bunifuDatavizBasic2.Render(canvas1);
 
 
@@ -72,46 +67,48 @@ namespace PBL3.Views
             //canvas.addData(lost);
 
             //chartYear.Render(canvas);
+
+
+        }
+        public void LoadTong()
+        {
             List<DateTime?> listnx = BLL.BLL_Revenue.Instance.GetNgayXuat();
             Console.WriteLine(listnx.Count);
+
             DateTime today = DateTime.Now;
             double? tdt = 0;
             double? thd = 0;
-            //for (int i = 0; i <= listnx.Count - 1; i++)
-            //{
-            //    int month = Convert.ToDateTime(listnx[i]).Month;
-            //    int monthnow = today.Month;
-            //    if (month == monthnow)
-            //    {
-            //        tdt += BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[i]);
-            //        //thd += BLL.BLL_Revenue.Instance.GetTongHoaDon_NgayXuat(Convert.ToDateTime(listnx[i]));
-            //        thd += 1;
-            //    }
-            //}
-                    for (int i = 1; i < listnx.Count; i++)
+            for (int i = 0; i <= listnx.Count - 1; i++)
+            {
+                int month = Convert.ToDateTime(listnx[i]).Month;
+                int monthnow = today.Month;
+                if (month == monthnow)
+                {
+                    //thd += BLL.BLL_Revenue.Instance.GetTongHoaDon_NgayXuat(Convert.ToDateTime(listnx[i]));
+                    thd += 1;
+                }
+            }
+            //tong tien
+            for (int i = 0; i < listnx.Count - 1; i++)
+            {
+                if (listnx[i] == listnx[i + 1])
+                {
+                    continue;
+                }
+                else
+                {
+                    int month = Convert.ToDateTime(listnx[i]).Month;
+                    int monthnow = today.Month;
+                    if (month == monthnow)
                     {
-                        if (listnx[i-1] == listnx[i])
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            int month = Convert.ToDateTime(listnx[i]).Month;
-                            int monthnow = today.Month;
-                            if (month == monthnow)
-                            {
-                                tdt += BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[i]);
-                                //thd += BLL.BLL_Revenue.Instance.GetTongHoaDon_NgayXuat(Convert.ToDateTime(listnx[i]));
-                                thd += 1;
-                            }
-                        }
+                        tdt += BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[i]);
+                        //thd += BLL.BLL_Revenue.Instance.GetTongHoaDon_NgayXuat(Convert.ToDateTime(listnx[i]));
                     }
+                }
+            }
             Console.WriteLine(tdt);
-            bunifuLabel2.Text = Convert.ToString(tdt)+"VND";
+            bunifuLabel2.Text = Convert.ToString(tdt + BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[listnx.Count - 1])) + "VND";
             bunifuLabel4.Text = Convert.ToString(thd);
-
-
-
         }
     }
 }

@@ -152,6 +152,8 @@ namespace PBL3.Views
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
+            revenue1.LoadTong();
+            revenue1.render_column();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
