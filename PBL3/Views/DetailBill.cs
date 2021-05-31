@@ -17,7 +17,7 @@ namespace PBL3.Views
         public DetailBill()
         {
             InitializeComponent();
-            ColumnDataOrder();
+            
         }
         public void ColumnDataOrder()
         {
@@ -32,7 +32,9 @@ namespace PBL3.Views
         }
         public void LoadDetail(string IDHoaDon, double TienThanhToan)
         {
+            
             DataDetail.Rows.Clear();
+            ColumnDataOrder();
 
             if (BLL.BLL_ManageBill.Instance.GetIDNguoiDUng_IDHoaDon(IDHoaDon) != null)
             {

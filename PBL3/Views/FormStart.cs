@@ -80,6 +80,8 @@ namespace PBL3
         private void btnBill_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(2);
+
+            manageBill1.Setcbb();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

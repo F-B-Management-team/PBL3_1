@@ -19,8 +19,7 @@ namespace PBL3.Views
         public ManageBill()
         {
             InitializeComponent();
-            detailBill1.Visible = false;
-            Setcbb();
+            
         }
         public void loaddata()
         {
@@ -65,7 +64,7 @@ namespace PBL3.Views
                         row = (DataGridViewRow)DataBill.Rows[0].Clone();
                         row.Cells[0].Value = listhd[i].IDHoaDon;
                         row.Cells[1].Value = listhd[i].IDBan;
-                        row.Cells[2].Value = listhd[i].NgayXuat;
+                        row.Cells[2].Value = Convert.ToDateTime(listhd[i].NgayXuat).ToString("dd / MM / yyyy");
                         row.Cells[3].Value = listhd[i].TongTien;
                         row.Cells[4].Value = listtthd.IDNguoiDung;
                         row.Cells[5].Value = listhd[i].IDCustommer;
@@ -94,7 +93,7 @@ namespace PBL3.Views
                         row = (DataGridViewRow)DataBill.Rows[0].Clone();
                         row.Cells[0].Value = listhd[i].IDHoaDon;
                         row.Cells[1].Value = listhd[i].IDBan;
-                        row.Cells[2].Value = listhd[i].NgayXuat;
+                        row.Cells[2].Value = Convert.ToDateTime(listhd[i].NgayXuat).ToString("dd / MM / yyyy");
                         row.Cells[3].Value = listhd[i].TongTien;
                         row.Cells[4].Value = listtthd.IDNguoiDung;
                         row.Cells[5].Value = listhd[i].IDCustommer;
@@ -105,6 +104,7 @@ namespace PBL3.Views
         }
         public void Setcbb()
         {
+            detailBill1.Visible = false;
             foreach (Ban i in BLL.BLL_ManageBill.Instance.GetBan())
             {
                 bunifuDropdown1.Items.Add(new CBB_ManageBill()
@@ -127,6 +127,7 @@ namespace PBL3.Views
                 MB(Bill, TienThanhToan);
 
             }
+
             detailBill1.Visible = true;
             bunifuPanel1.SendToBack();
             detailBill1.BringToFront();

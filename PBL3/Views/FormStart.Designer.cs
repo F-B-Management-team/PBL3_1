@@ -56,12 +56,12 @@ namespace PBL3
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.startMain1 = new PBL3.Views.StartMain();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.table1 = new PBL3.Views.Table();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.manageBill1 = new PBL3.Views.ManageBill();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.setting1 = new PBL3.Views.setting();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,7 +140,7 @@ namespace PBL3
             this.btnLogout.IdleBorderThickness = 1;
             this.btnLogout.IdleFillColor = System.Drawing.Color.Firebrick;
             this.btnLogout.IdleIconLeftImage = null;
-            this.btnLogout.IdleIconRightImage = global::PBL3.Properties.Resources.exit__1_;
+            this.btnLogout.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.IdleIconRightImage")));
             this.btnLogout.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnLogout.IndicateFocus = false;
             this.btnLogout.Location = new System.Drawing.Point(9, 222);
@@ -169,7 +169,7 @@ namespace PBL3
             this.btnLogout.OnIdleState.FillColor = System.Drawing.Color.Firebrick;
             this.btnLogout.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnLogout.OnIdleState.IconLeftImage = null;
-            this.btnLogout.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.exit__1_;
+            this.btnLogout.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.OnIdleState.IconRightImage")));
             this.btnLogout.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
             this.btnLogout.OnPressedState.BorderRadius = 20;
             this.btnLogout.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -240,7 +240,7 @@ namespace PBL3
             this.btnOrder.IdleBorderThickness = 1;
             this.btnOrder.IdleFillColor = System.Drawing.Color.Firebrick;
             this.btnOrder.IdleIconLeftImage = null;
-            this.btnOrder.IdleIconRightImage = global::PBL3.Properties.Resources.choices;
+            this.btnOrder.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnOrder.IdleIconRightImage")));
             this.btnOrder.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnOrder.IndicateFocus = false;
             this.btnOrder.Location = new System.Drawing.Point(9, 295);
@@ -269,7 +269,7 @@ namespace PBL3
             this.btnOrder.OnIdleState.FillColor = System.Drawing.Color.Firebrick;
             this.btnOrder.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnOrder.OnIdleState.IconLeftImage = null;
-            this.btnOrder.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.choices;
+            this.btnOrder.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnOrder.OnIdleState.IconRightImage")));
             this.btnOrder.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
             this.btnOrder.OnPressedState.BorderRadius = 20;
             this.btnOrder.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -332,7 +332,7 @@ namespace PBL3
             this.btnSetting.IdleBorderThickness = 1;
             this.btnSetting.IdleFillColor = System.Drawing.Color.Firebrick;
             this.btnSetting.IdleIconLeftImage = null;
-            this.btnSetting.IdleIconRightImage = global::PBL3.Properties.Resources.settings;
+            this.btnSetting.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.IdleIconRightImage")));
             this.btnSetting.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnSetting.IndicateFocus = false;
             this.btnSetting.Location = new System.Drawing.Point(9, 486);
@@ -361,7 +361,7 @@ namespace PBL3
             this.btnSetting.OnIdleState.FillColor = System.Drawing.Color.Firebrick;
             this.btnSetting.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnSetting.OnIdleState.IconLeftImage = null;
-            this.btnSetting.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.settings;
+            this.btnSetting.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.OnIdleState.IconRightImage")));
             this.btnSetting.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
             this.btnSetting.OnPressedState.BorderRadius = 20;
             this.btnSetting.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -424,7 +424,7 @@ namespace PBL3
             this.btnBill.IdleBorderThickness = 1;
             this.btnBill.IdleFillColor = System.Drawing.Color.Firebrick;
             this.btnBill.IdleIconLeftImage = null;
-            this.btnBill.IdleIconRightImage = global::PBL3.Properties.Resources.payment;
+            this.btnBill.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnBill.IdleIconRightImage")));
             this.btnBill.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnBill.IndicateFocus = false;
             this.btnBill.Location = new System.Drawing.Point(9, 355);
@@ -453,7 +453,7 @@ namespace PBL3
             this.btnBill.OnIdleState.FillColor = System.Drawing.Color.Firebrick;
             this.btnBill.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnBill.OnIdleState.IconLeftImage = null;
-            this.btnBill.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.payment;
+            this.btnBill.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnBill.OnIdleState.IconRightImage")));
             this.btnBill.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
             this.btnBill.OnPressedState.BorderRadius = 20;
             this.btnBill.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -516,7 +516,7 @@ namespace PBL3
             this.btnLogin.IdleBorderThickness = 1;
             this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.IdleIconLeftImage = null;
-            this.btnLogin.IdleIconRightImage = global::PBL3.Properties.Resources.enter__1_;
+            this.btnLogin.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.IdleIconRightImage")));
             this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnLogin.IndicateFocus = false;
             this.btnLogin.Location = new System.Drawing.Point(9, 222);
@@ -545,7 +545,7 @@ namespace PBL3
             this.btnLogin.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogin.OnIdleState.IconLeftImage = null;
-            this.btnLogin.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.enter__1_;
+            this.btnLogin.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.OnIdleState.IconRightImage")));
             this.btnLogin.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
             this.btnLogin.OnPressedState.BorderRadius = 20;
             this.btnLogin.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -565,7 +565,7 @@ namespace PBL3
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PBL3.Properties.Resources.fast_food__1_;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 19);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -652,7 +652,7 @@ namespace PBL3
             this.bunifuButton2.IdleBorderThickness = 1;
             this.bunifuButton2.IdleFillColor = System.Drawing.Color.DarkRed;
             this.bunifuButton2.IdleIconLeftImage = null;
-            this.bunifuButton2.IdleIconRightImage = global::PBL3.Properties.Resources.fast_food__2_;
+            this.bunifuButton2.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.IdleIconRightImage")));
             this.bunifuButton2.IndicateFocus = true;
             this.bunifuButton2.Location = new System.Drawing.Point(9, 2);
             this.bunifuButton2.Margin = new System.Windows.Forms.Padding(2);
@@ -680,7 +680,7 @@ namespace PBL3
             this.bunifuButton2.OnIdleState.FillColor = System.Drawing.Color.DarkRed;
             this.bunifuButton2.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton2.OnIdleState.IconLeftImage = null;
-            this.bunifuButton2.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.fast_food__2_;
+            this.bunifuButton2.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.OnIdleState.IconRightImage")));
             this.bunifuButton2.OnPressedState.BorderColor = System.Drawing.Color.DarkRed;
             this.bunifuButton2.OnPressedState.BorderRadius = 1;
             this.bunifuButton2.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -742,7 +742,7 @@ namespace PBL3
             this.bunifuButton1.IdleBorderThickness = 1;
             this.bunifuButton1.IdleFillColor = System.Drawing.Color.DarkRed;
             this.bunifuButton1.IdleIconLeftImage = null;
-            this.bunifuButton1.IdleIconRightImage = global::PBL3.Properties.Resources.remove;
+            this.bunifuButton1.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.IdleIconRightImage")));
             this.bunifuButton1.IndicateFocus = true;
             this.bunifuButton1.Location = new System.Drawing.Point(924, 6);
             this.bunifuButton1.Margin = new System.Windows.Forms.Padding(2);
@@ -770,7 +770,7 @@ namespace PBL3
             this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.DarkRed;
             this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnIdleState.IconLeftImage = null;
-            this.bunifuButton1.OnIdleState.IconRightImage = global::PBL3.Properties.Resources.remove;
+            this.bunifuButton1.OnIdleState.IconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.OnIdleState.IconRightImage")));
             this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.DarkRed;
             this.bunifuButton1.OnPressedState.BorderRadius = 1;
             this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -804,10 +804,10 @@ namespace PBL3
             this.bunifuPages1.Location = new System.Drawing.Point(69, 36);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage4;
-            this.bunifuPages1.PageIndex = 3;
-            this.bunifuPages1.PageName = "tabPage4";
-            this.bunifuPages1.PageTitle = "tabPage4";
+            this.bunifuPages1.Page = this.tabPage3;
+            this.bunifuPages1.PageIndex = 2;
+            this.bunifuPages1.PageName = "tabPage3";
+            this.bunifuPages1.PageTitle = "tabPage3";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(890, 568);
             this.bunifuPages1.TabIndex = 7;
@@ -840,6 +840,15 @@ namespace PBL3
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // startMain1
+            // 
+            this.startMain1.BackColor = System.Drawing.Color.White;
+            this.startMain1.Location = new System.Drawing.Point(5, 4);
+            this.startMain1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startMain1.Name = "startMain1";
+            this.startMain1.Size = new System.Drawing.Size(884, 538);
+            this.startMain1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.table1);
@@ -850,6 +859,14 @@ namespace PBL3
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // table1
+            // 
+            this.table1.Location = new System.Drawing.Point(0, 2);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(876, 540);
+            this.table1.t = null;
+            this.table1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -862,6 +879,14 @@ namespace PBL3
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // manageBill1
+            // 
+            this.manageBill1.Location = new System.Drawing.Point(1, 0);
+            this.manageBill1.MB = null;
+            this.manageBill1.Name = "manageBill1";
+            this.manageBill1.Size = new System.Drawing.Size(877, 542);
+            this.manageBill1.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.setting1);
@@ -873,32 +898,9 @@ namespace PBL3
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // startMain1
-            // 
-            this.startMain1.BackColor = System.Drawing.Color.White;
-            this.startMain1.Location = new System.Drawing.Point(5, 4);
-            this.startMain1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.startMain1.Name = "startMain1";
-            this.startMain1.Size = new System.Drawing.Size(884, 538);
-            this.startMain1.TabIndex = 0;
-            // 
-            // table1
-            // 
-            this.table1.Location = new System.Drawing.Point(0, 2);
-            this.table1.Name = "table1";
-            this.table1.Size = new System.Drawing.Size(876, 540);
-            this.table1.t = null;
-            this.table1.TabIndex = 0;
-            // 
-            // manageBill1
-            // 
-            this.manageBill1.Location = new System.Drawing.Point(4, 4);
-            this.manageBill1.Name = "manageBill1";
-            this.manageBill1.Size = new System.Drawing.Size(877, 542);
-            this.manageBill1.TabIndex = 0;
-            // 
             // setting1
             // 
+            this.setting1.d = null;
             this.setting1.Location = new System.Drawing.Point(6, -3);
             this.setting1.Name = "setting1";
             this.setting1.Size = new System.Drawing.Size(877, 542);
@@ -955,9 +957,10 @@ namespace PBL3
         private System.Windows.Forms.TabPage tabPage2;
         private Views.Table table1;
         private System.Windows.Forms.TabPage tabPage3;
-        private Views.ManageBill manageBill1;
+
         private System.Windows.Forms.TabPage tabPage4;
         private Views.setting setting1;
+        private Views.ManageBill manageBill1;
     }
 }
 
