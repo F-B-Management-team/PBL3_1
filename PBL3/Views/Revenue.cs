@@ -73,7 +73,6 @@ namespace PBL3.Views
         public void LoadTong()
         {
             List<DateTime?> listnx = BLL.BLL_Revenue.Instance.GetNgayXuat();
-            Console.WriteLine(listnx.Count);
 
             DateTime today = DateTime.Now;
             double? tdt = 0;
@@ -106,7 +105,6 @@ namespace PBL3.Views
                     }
                 }
             }
-            Console.WriteLine(tdt);
             bunifuLabel2.Text = Convert.ToString(tdt + BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[listnx.Count - 1])) + "VND";
             bunifuLabel4.Text = Convert.ToString(thd);
         }

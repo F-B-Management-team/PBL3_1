@@ -131,6 +131,7 @@ namespace PBL3.Views
         {
             bunifuPanel1.Visible = true;
             bunifuPanel1.BringToFront();
+            
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
