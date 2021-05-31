@@ -57,9 +57,8 @@ namespace PBL3.Views
                 if ((bool)(listhd[i].TrangThai == true))
                 {
                     //double total = 0;
-                    List<ThongTinHoaDon> listtthd = BLL.BLL_ManageBill.Instance.GetThongTinHoaDon_IDHoaDon(listhd[i].IDHoaDon);
-                    for (int j = 0; j < listtthd.Count; j++)
-                    {
+                    ThongTinHoaDon listtthd = BLL.BLL_ManageBill.Instance.GetThongTinHoaDonz_IDHoaDon(listhd[i].IDHoaDon);
+                    
                         //    total = Convert.ToDouble(total + listtthd[j].GiaMon * listtthd[j].SoLuong);
                         //}
                         DataGridViewRow row = (DataGridViewRow)DataBill.Rows[0].Clone();
@@ -68,12 +67,12 @@ namespace PBL3.Views
                         row.Cells[1].Value = listhd[i].IDBan;
                         row.Cells[2].Value = listhd[i].NgayXuat;
                         row.Cells[3].Value = listhd[i].TongTien;
-                        row.Cells[4].Value = listtthd[j].IDNguoiDung;
+                        row.Cells[4].Value = listtthd.IDNguoiDung;
                         row.Cells[5].Value = listhd[i].IDCustommer;
                         DataBill.Rows.Add(row);
                     }
                 }
-            }
+            
 
         }
         public void LoadHoaDon_IDBan(string IDBan)
@@ -87,9 +86,8 @@ namespace PBL3.Views
                 if ((bool)(listhd[i].TrangThai == true))
                 {
                     //double total = 0;
-                    List<ThongTinHoaDon> listtthd = BLL.BLL_ManageBill.Instance.GetThongTinHoaDon_IDHoaDon(listhd[i].IDHoaDon);
-                    for (int j = 0; j < listtthd.Count; j++)
-                    {
+                    ThongTinHoaDon listtthd = BLL.BLL_ManageBill.Instance.GetThongTinHoaDonz_IDHoaDon(listhd[i].IDHoaDon);
+                    
                         //    total = Convert.ToDouble(total + listtthd[j].GiaMon * listtthd[j].SoLuong);
                         //}
                         DataGridViewRow row = (DataGridViewRow)DataBill.Rows[0].Clone();
@@ -98,10 +96,10 @@ namespace PBL3.Views
                         row.Cells[1].Value = listhd[i].IDBan;
                         row.Cells[2].Value = listhd[i].NgayXuat;
                         row.Cells[3].Value = listhd[i].TongTien;
-                        row.Cells[4].Value = listtthd[j].IDNguoiDung;
+                        row.Cells[4].Value = listtthd.IDNguoiDung;
                         row.Cells[5].Value = listhd[i].IDCustommer;
                         DataBill.Rows.Add(row);
-                    }
+                    
                 }
             }
         }
@@ -162,5 +160,7 @@ namespace PBL3.Views
         {
             bunifuPages1.SetPage(0);
         }
+
+
     }
 }

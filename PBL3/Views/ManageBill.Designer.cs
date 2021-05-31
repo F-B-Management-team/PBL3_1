@@ -38,6 +38,8 @@ namespace PBL3.Views
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnRevenue = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DataBill = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -49,9 +51,10 @@ namespace PBL3.Views
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.revenue1 = new PBL3.Views.Revenue();
             this.btnBack = new System.Windows.Forms.PictureBox();
+            this.revenue1 = new PBL3.Views.Revenue();
             this.bunifuPanel1.SuspendLayout();
+            this.bunifuShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBill)).BeginInit();
             this.bunifuPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -72,7 +75,7 @@ namespace PBL3.Views
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.btnRevenue);
+            this.bunifuPanel1.Controls.Add(this.bunifuShadowPanel1);
             this.bunifuPanel1.Controls.Add(this.btnDelete);
             this.bunifuPanel1.Controls.Add(this.DataBill);
             this.bunifuPanel1.Controls.Add(this.bunifuDropdown1);
@@ -82,6 +85,45 @@ namespace PBL3.Views
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(853, 509);
             this.bunifuPanel1.TabIndex = 2;
+            // 
+            // bunifuShadowPanel1
+            // 
+            this.bunifuShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuShadowPanel1.BorderRadius = 20;
+            this.bunifuShadowPanel1.BorderThickness = 1;
+            this.bunifuShadowPanel1.Controls.Add(this.bunifuLabel1);
+            this.bunifuShadowPanel1.Controls.Add(this.btnRevenue);
+            this.bunifuShadowPanel1.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.bunifuShadowPanel1.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.bunifuShadowPanel1.Location = new System.Drawing.Point(623, 11);
+            this.bunifuShadowPanel1.Name = "bunifuShadowPanel1";
+            this.bunifuShadowPanel1.PanelColor = System.Drawing.Color.Moccasin;
+            this.bunifuShadowPanel1.PanelColor2 = System.Drawing.Color.Moccasin;
+            this.bunifuShadowPanel1.ShadowColor = System.Drawing.Color.Firebrick;
+            this.bunifuShadowPanel1.ShadowDept = 2;
+            this.bunifuShadowPanel1.ShadowDepth = 5;
+            this.bunifuShadowPanel1.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.bunifuShadowPanel1.ShadowTopLeftVisible = false;
+            this.bunifuShadowPanel1.Size = new System.Drawing.Size(160, 80);
+            this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.bunifuShadowPanel1.TabIndex = 8;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel1.Location = new System.Drawing.Point(16, 8);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(131, 21);
+            this.bunifuLabel1.TabIndex = 0;
+            this.bunifuLabel1.Text = "Thống Kê Số Liệu";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnRevenue
             // 
@@ -96,21 +138,22 @@ namespace PBL3.Views
             this.btnRevenue.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnRevenue.ErrorImage")));
             this.btnRevenue.FadeWhenInactive = false;
             this.btnRevenue.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnRevenue.Font = new System.Drawing.Font("Arial Black", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenue.Image")));
             this.btnRevenue.ImageActive = null;
             this.btnRevenue.ImageLocation = null;
             this.btnRevenue.ImageMargin = 10;
-            this.btnRevenue.ImageSize = new System.Drawing.Size(132, 68);
-            this.btnRevenue.ImageZoomSize = new System.Drawing.Size(142, 78);
+            this.btnRevenue.ImageSize = new System.Drawing.Size(54, 33);
+            this.btnRevenue.ImageZoomSize = new System.Drawing.Size(64, 43);
             this.btnRevenue.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnRevenue.InitialImage")));
-            this.btnRevenue.Location = new System.Drawing.Point(604, 26);
+            this.btnRevenue.Location = new System.Drawing.Point(51, 28);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Rotation = 0;
             this.btnRevenue.ShowActiveImage = true;
             this.btnRevenue.ShowCursorChanges = true;
             this.btnRevenue.ShowImageBorders = true;
             this.btnRevenue.ShowSizeMarkers = false;
-            this.btnRevenue.Size = new System.Drawing.Size(142, 78);
+            this.btnRevenue.Size = new System.Drawing.Size(64, 43);
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.ToolTipText = "";
             this.btnRevenue.WaitOnLoad = false;
@@ -165,7 +208,7 @@ namespace PBL3.Views
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(757, 383);
+            this.btnDelete.Location = new System.Drawing.Point(223, 64);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDelete.OnDisabledState.BorderRadius = 1;
@@ -199,7 +242,7 @@ namespace PBL3.Views
             this.btnDelete.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDelete.OnPressedState.IconLeftImage = null;
             this.btnDelete.OnPressedState.IconRightImage = null;
-            this.btnDelete.Size = new System.Drawing.Size(106, 54);
+            this.btnDelete.Size = new System.Drawing.Size(68, 26);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -259,12 +302,12 @@ namespace PBL3.Views
             this.DataBill.HeaderBackColor = System.Drawing.Color.Crimson;
             this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataBill.HeaderForeColor = System.Drawing.Color.White;
-            this.DataBill.Location = new System.Drawing.Point(41, 131);
+            this.DataBill.Location = new System.Drawing.Point(47, 106);
             this.DataBill.Name = "DataBill";
             this.DataBill.RowHeadersVisible = false;
             this.DataBill.RowTemplate.Height = 40;
             this.DataBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataBill.Size = new System.Drawing.Size(675, 366);
+            this.DataBill.Size = new System.Drawing.Size(760, 409);
             this.DataBill.TabIndex = 0;
             this.DataBill.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Crimson;
             this.DataBill.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBill_CellContentDoubleClick);
@@ -274,7 +317,7 @@ namespace PBL3.Views
             this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuDropdown1.BackgroundColor = System.Drawing.Color.LightSalmon;
             this.bunifuDropdown1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDropdown1.BorderRadius = 1;
+            this.bunifuDropdown1.BorderRadius = 12;
             this.bunifuDropdown1.Color = System.Drawing.Color.Silver;
             this.bunifuDropdown1.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
             this.bunifuDropdown1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -305,9 +348,9 @@ namespace PBL3.Views
             this.bunifuDropdown1.Items.AddRange(new object[] {
             "ALL"});
             this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(41, 59);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(47, 59);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.Size = new System.Drawing.Size(260, 32);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(146, 32);
             this.bunifuDropdown1.TabIndex = 1;
             this.bunifuDropdown1.Text = "Ban";
             this.bunifuDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -352,10 +395,10 @@ namespace PBL3.Views
             this.bunifuPages1.Location = new System.Drawing.Point(4, 4);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage2;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "tabPage2";
-            this.bunifuPages1.PageTitle = "tabPage2";
+            this.bunifuPages1.Page = this.tabPage1;
+            this.bunifuPages1.PageIndex = 0;
+            this.bunifuPages1.PageName = "tabPage1";
+            this.bunifuPages1.PageTitle = "tabPage1";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(870, 550);
             this.bunifuPages1.TabIndex = 3;
@@ -400,13 +443,6 @@ namespace PBL3.Views
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // revenue1
-            // 
-            this.revenue1.Location = new System.Drawing.Point(44, 1);
-            this.revenue1.Name = "revenue1";
-            this.revenue1.Size = new System.Drawing.Size(829, 542);
-            this.revenue1.TabIndex = 0;
-            // 
             // btnBack
             // 
             this.btnBack.Image = global::PBL3.Properties.Resources._181571168_246586280576691_8348719016186641510_n;
@@ -419,6 +455,13 @@ namespace PBL3.Views
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // revenue1
+            // 
+            this.revenue1.Location = new System.Drawing.Point(44, 1);
+            this.revenue1.Name = "revenue1";
+            this.revenue1.Size = new System.Drawing.Size(829, 542);
+            this.revenue1.TabIndex = 0;
+            // 
             // ManageBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +470,8 @@ namespace PBL3.Views
             this.Name = "ManageBill";
             this.Size = new System.Drawing.Size(877, 542);
             this.bunifuPanel1.ResumeLayout(false);
+            this.bunifuShadowPanel1.ResumeLayout(false);
+            this.bunifuShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBill)).EndInit();
             this.bunifuPages1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -453,5 +498,7 @@ namespace PBL3.Views
         private Revenue revenue1;
         private Bunifu.UI.WinForms.BunifuImageButton btnRevenue;
         private System.Windows.Forms.PictureBox btnBack;
+        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }

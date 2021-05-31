@@ -53,7 +53,7 @@ namespace PBL3.Views
             // bunifuCards1
             // 
             this.bunifuCards1.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCards1.BorderRadius = 5;
+            this.bunifuCards1.BorderRadius = 20;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
             this.bunifuCards1.Controls.Add(this.bunifuLabel2);
@@ -64,7 +64,7 @@ namespace PBL3.Views
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(230, 176);
+            this.bunifuCards1.Size = new System.Drawing.Size(216, 151);
             this.bunifuCards1.TabIndex = 0;
             // 
             // bunifuLabel2
@@ -73,14 +73,14 @@ namespace PBL3.Views
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(94, 88);
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.Location = new System.Drawing.Point(90, 72);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(91, 21);
+            this.bunifuLabel2.Size = new System.Drawing.Size(101, 21);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.Text = "bunifuLabel2";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPictureBox1
@@ -88,13 +88,13 @@ namespace PBL3.Views
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 1;
+            this.bunifuPictureBox1.BorderRadius = 34;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(12, 63);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(5, 50);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(69, 69);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuPictureBox1.TabIndex = 2;
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
@@ -105,11 +105,11 @@ namespace PBL3.Views
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(63, 18);
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(36, 11);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(141, 25);
+            this.bunifuLabel1.Size = new System.Drawing.Size(150, 25);
             this.bunifuLabel1.TabIndex = 1;
             this.bunifuLabel1.Text = "Tổng Doanh Thu ";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -118,7 +118,7 @@ namespace PBL3.Views
             // bunifuCards2
             // 
             this.bunifuCards2.BackColor = System.Drawing.Color.Moccasin;
-            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BorderRadius = 20;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
             this.bunifuCards2.Controls.Add(this.bunifuLabel4);
@@ -129,7 +129,7 @@ namespace PBL3.Views
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(230, 176);
+            this.bunifuCards2.Size = new System.Drawing.Size(216, 151);
             this.bunifuCards2.TabIndex = 0;
             // 
             // bunifuLabel4
@@ -138,14 +138,14 @@ namespace PBL3.Views
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(94, 92);
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel4.Location = new System.Drawing.Point(114, 74);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(91, 21);
+            this.bunifuLabel4.Size = new System.Drawing.Size(26, 29);
             this.bunifuLabel4.TabIndex = 2;
-            this.bunifuLabel4.Text = "bunifuLabel4";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel4.Text = "hd";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel3
@@ -154,11 +154,11 @@ namespace PBL3.Views
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(82, 25);
+            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel3.Location = new System.Drawing.Point(46, 15);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(122, 25);
+            this.bunifuLabel3.Size = new System.Drawing.Size(132, 25);
             this.bunifuLabel3.TabIndex = 1;
             this.bunifuLabel3.Text = "Tổng Hóa Đơn";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -169,20 +169,20 @@ namespace PBL3.Views
             this.bunifuPictureBox2.AllowFocused = false;
             this.bunifuPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox2.AutoSizeHeight = true;
-            this.bunifuPictureBox2.BorderRadius = 1;
+            this.bunifuPictureBox2.BorderRadius = 34;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(12, 72);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(5, 59);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(69, 69);
-            this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuPictureBox2.TabIndex = 2;
             this.bunifuPictureBox2.TabStop = false;
             this.bunifuPictureBox2.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // bunifuCards3
             // 
-            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BackColor = System.Drawing.Color.DarkSalmon;
             this.bunifuCards3.BorderRadius = 5;
             this.bunifuCards3.BottomSahddow = true;
             this.bunifuCards3.color = System.Drawing.Color.Tomato;
@@ -213,7 +213,9 @@ namespace PBL3.Views
             0,
             0,
             0});
+            this.bunifuDatavizBasic2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.bunifuDatavizBasic2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuDatavizBasic2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuDatavizBasic2.Location = new System.Drawing.Point(6, 9);
             this.bunifuDatavizBasic2.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuDatavizBasic2.Name = "bunifuDatavizBasic2";
@@ -224,7 +226,7 @@ namespace PBL3.Views
             // 
             // bunifuCards4
             // 
-            this.bunifuCards4.BackColor = System.Drawing.Color.White;
+            this.bunifuCards4.BackColor = System.Drawing.Color.DarkSalmon;
             this.bunifuCards4.BorderRadius = 5;
             this.bunifuCards4.BottomSahddow = true;
             this.bunifuCards4.color = System.Drawing.Color.Tomato;
@@ -255,7 +257,9 @@ namespace PBL3.Views
             0,
             0,
             0});
+            this.bunifuDatavizBasic1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.bunifuDatavizBasic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuDatavizBasic1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuDatavizBasic1.Location = new System.Drawing.Point(7, 9);
             this.bunifuDatavizBasic1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuDatavizBasic1.Name = "bunifuDatavizBasic1";
@@ -268,6 +272,7 @@ namespace PBL3.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Cornsilk;
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);
