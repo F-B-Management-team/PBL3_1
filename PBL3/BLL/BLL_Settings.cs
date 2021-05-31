@@ -244,6 +244,19 @@ namespace PBL3.BLL
             }
             return null;
         }
+        public HoaDon timid(string id)
+        {
+            foreach (HoaDon i in db.HoaDons.ToList())
+            {
+                if (i.IDNguoiDung == id)
+                {
+                    i.IDNguoiDung = null;
+                    //return i;
+                }
+            }
+            return null;
+            db.SaveChanges();
+        }
         public void Xoa_BLL(ThongTinNguoiDung nd, TaiKhoan tk)
         {
             db.TaiKhoans.Remove(tk);
