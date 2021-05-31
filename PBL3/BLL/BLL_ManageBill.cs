@@ -136,5 +136,10 @@ namespace PBL3.BLL
             result = db.HoaDons.Where(p => p.IDBan == IDBan).ToList();
             return result;
         }
+        public string GetNote_IDHoaDon(string IDHoaDon)
+        {
+            string result = db.ThongTinHoaDons.Where(p => p.IDHoaDon == IDHoaDon).Select(p=>p.Note).FirstOrDefault();
+            return result;
+        }
     }
 }

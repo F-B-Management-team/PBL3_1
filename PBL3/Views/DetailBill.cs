@@ -131,7 +131,7 @@ namespace PBL3.Views
         {
             bunifuPanel1.Visible = true;
             bunifuPanel1.BringToFront();
-            
+            textboxNote.Text = BLL.BLL_ManageBill.Instance.GetNote_IDHoaDon(textboxIDBILL.Text);
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
