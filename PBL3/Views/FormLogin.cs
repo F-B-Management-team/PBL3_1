@@ -33,7 +33,7 @@ namespace PBL3.Views
             }
             else
             {
-                MessageBox.Show("?");
+                MessageBox.Show("Đăng nhập sai!");
                 Check = false;
             }
         }

@@ -30,8 +30,8 @@ namespace PBL3.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -79,7 +79,7 @@ namespace PBL3.Views
             this.btnOk.AutoSizeLeftIcon = true;
             this.btnOk.AutoSizeRightIcon = true;
             this.btnOk.BackColor = System.Drawing.Color.Transparent;
-            this.btnOk.BackColor1 = System.Drawing.Color.Firebrick;
+            this.btnOk.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.btnOk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOk.BackgroundImage")));
             this.btnOk.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnOk.ButtonText = "Login";
@@ -98,7 +98,7 @@ namespace PBL3.Views
             this.btnOk.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnOk.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnOk.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.ForeColor = System.Drawing.Color.White;
+            this.btnOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOk.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOk.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnOk.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -108,10 +108,10 @@ namespace PBL3.Views
             this.btnOk.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.btnOk.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnOk.IconSize = 25;
-            this.btnOk.IdleBorderColor = System.Drawing.Color.Firebrick;
+            this.btnOk.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.btnOk.IdleBorderRadius = 1;
             this.btnOk.IdleBorderThickness = 1;
-            this.btnOk.IdleFillColor = System.Drawing.Color.Firebrick;
+            this.btnOk.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.btnOk.IdleIconLeftImage = null;
             this.btnOk.IdleIconRightImage = null;
             this.btnOk.IndicateFocus = false;
@@ -134,12 +134,12 @@ namespace PBL3.Views
             this.btnOk.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnOk.onHoverState.IconLeftImage = null;
             this.btnOk.onHoverState.IconRightImage = null;
-            this.btnOk.OnIdleState.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnOk.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.btnOk.OnIdleState.BorderRadius = 1;
             this.btnOk.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnOk.OnIdleState.BorderThickness = 1;
-            this.btnOk.OnIdleState.FillColor = System.Drawing.Color.Firebrick;
-            this.btnOk.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnOk.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.btnOk.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnOk.OnIdleState.IconLeftImage = null;
             this.btnOk.OnIdleState.IconRightImage = null;
             this.btnOk.OnPressedState.BorderColor = System.Drawing.Color.Firebrick;
@@ -237,6 +237,7 @@ namespace PBL3.Views
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
