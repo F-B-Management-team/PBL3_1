@@ -189,10 +189,10 @@ namespace PBL3
             // 
             // User
             // 
-            this.User.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User.Location = new System.Drawing.Point(3, 71);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(64, 23);
+            this.User.Size = new System.Drawing.Size(64, 149);
             this.User.TabIndex = 5;
             // 
             // btnOrder

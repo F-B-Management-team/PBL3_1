@@ -2,6 +2,8 @@
 using PBL3.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PBL3.Views
@@ -302,9 +304,9 @@ namespace PBL3.Views
                             /*int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount ;
                             BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
                             Console.WriteLine(BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount);*/
-                            for(int i = 0; i < dataCustomer.Rows.Count; i++)
+                            for (int i = 0; i < dataCustomer.Rows.Count; i++)
                             {
-                                if(dataCustomer.Rows[i].Cells["IDCustomer"].Value.ToString() == customer.IDCustomer)
+                                if (dataCustomer.Rows[i].Cells["IDCustomer"].Value.ToString() == customer.IDCustomer)
                                 {
                                     dataCustomer.Rows[i].Cells["Discount"].Value = Convert.ToInt32(dataCustomer.Rows[i].Cells["Discount"].Value) + 1;
                                     BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, Convert.ToInt32(dataCustomer.Rows[i].Cells["Discount"].Value));
@@ -341,14 +343,14 @@ namespace PBL3.Views
                         s.NgayXuat = DateTime.Today;
                         s.TrangThai = true;
                         float t = float.Parse(txtTotal.Text);
-                        if(txtDiscount.Text == "10%")
+                        if (txtDiscount.Text == "10%")
                         {
-                              // Nếu đạt chỉ tiêu discount => Tính tiền và reset Discount của khách hàng
+                            // Nếu đạt chỉ tiêu discount => Tính tiền và reset Discount của khách hàng
                             for (int i = 0; i < dataCustomer.Rows.Count; i++)
                             {
                                 if (dataCustomer.Rows[i].Cells["IDCustomer"].Value.ToString() == customer.IDCustomer)
                                 {
-                                    dataCustomer.Rows[i].Cells["Discount"].Value = Convert.ToInt32(dataCustomer.Rows[i].Cells["Discount"].Value) - 10; 
+                                    dataCustomer.Rows[i].Cells["Discount"].Value = Convert.ToInt32(dataCustomer.Rows[i].Cells["Discount"].Value) - 10;
                                     BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, Convert.ToInt32(dataCustomer.Rows[i].Cells["Discount"].Value));
                                 }
                             }
@@ -365,10 +367,10 @@ namespace PBL3.Views
                         //List<string> l = new List<string>();
                         if (numberTable.Text == "Take out")
                         {
-                           // l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
+                            // l = BLL.BLL_Order.Instance.GetListIDHoaDon_TO();
                             int idhoadon = 0;
                             string l = BLL_Order.Instance.GetIDHoaDon_TO();
-                            idhoadon = Convert.ToInt32(l.Substring(2,3)) + 1;
+                            idhoadon = Convert.ToInt32(l.Substring(2, 3)) + 1;
                             //idhoadon = Convert.ToInt32(l[l.Count - 1].Substring(2, 3)) + 1;
                             s.IDHoaDon = "TO" + idhoadon.ToString("000");
                             s.IDBan = "0";
@@ -427,6 +429,8 @@ namespace PBL3.Views
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(s.IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
                     }
+                    GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), (Convert.ToDouble(txtTotal.Text)).ToString());
+
                     this.loadCustomer();
                     txtDiscount.ResetText();
                     txtNote.ResetText();
@@ -451,10 +455,10 @@ namespace PBL3.Views
                     string IDHoaDon = BLL.BLL_Order.Instance.GetIDHoaDon_IDTable(IDBan);
                     //Customer customer = BLL.BLL_Order.Instance.GetCustomer_IDHoaDon(IDHoaDon);
                     Customer customer = new Customer();
-                    
+
                     if (NameCustomer.Text == "" && PhoneCustomer.Text == "")
                     {
-                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text),txtNote.Text);
+                        BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), txtNote.Text);
                     }
                     else
                     {
@@ -468,7 +472,7 @@ namespace PBL3.Views
                         customer.Phone = PhoneCustomer.Text;
                         if (BLL.BLL_Order.Instance.GetIDCustomer(customer.IDCustomer) == true)
                         {
-                            
+
                             /*int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
                             BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);*/
                             for (int i = 0; i < dataCustomer.Rows.Count; i++)
@@ -496,10 +500,10 @@ namespace PBL3.Views
                         else
                         {
                             BLL.BLL_Insert.Instance.AddCustomer(customer);
-                            int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount ;
+                            int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
                             BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
                             float total = float.Parse(txtTotal.Text);
-                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer,txtNote.Text);
+                            BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
                         }
                     }
                     //HoaDon
@@ -546,25 +550,28 @@ namespace PBL3.Views
                         thongTinHoaDon.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
-                    }
 
-                    s(numberTable.Text.Substring(6), true);
-                    txtDiscount.ResetText();
-                    txtNote.ResetText();
-                    NameCustomer.Clear();
-                    PhoneCustomer.Clear();
-                    bunifuPanel1.BringToFront();
-                    txtTotal.ResetText();
-                    dataOder.Rows.Clear();
-                    this.Visible = false;
+                        GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), Convert.ToDouble(txtTotal.Text).ToString());
+                        s(numberTable.Text.Substring(6), true);
+                        txtDiscount.ResetText();
+                        txtNote.ResetText();
+                        NameCustomer.Clear();
+                        PhoneCustomer.Clear();
+                        bunifuPanel1.BringToFront();
+                        txtTotal.ResetText();
+                        dataOder.Rows.Clear();
+                        this.Visible = false;
+                    }
                 }
+
+
             }
+            //catch(Exception m)
+            //{
+            //MessageBox.Show(m.Message);
+            //}
+
         }
-        //catch(Exception m)
-        //{
-        //MessageBox.Show(m.Message);
-        //}
-    
             
         private void btnDone_Click(object sender, EventArgs e)
         {
@@ -775,7 +782,50 @@ namespace PBL3.Views
 
             }
         }
+        public void GenerateReport(string ID , DateTime Ngayxuat,string Ban,string Nhanvien,string discount,string Tongtien)
+        {
+            bunifuReports1.Clear();
 
+            bunifuReports1.AddLineBreak();
+
+            bunifuReports1.AddImage(Image.FromFile("C:\\PBL3_1\\PBL3\\Resources\\180478677_479136336763688_337598169216810801_n1.jpg"), "width=200px");
+
+            bunifuReports1.AddLineBreak();
+            
+            bunifuReports1.AddString("Số Hóa Đơn:  " + ID);
+
+            bunifuReports1.AddLineBreak();
+            bunifuReports1.AddLineBreak();
+            bunifuReports1.AddHorizontalRule();
+            bunifuReports1.AddLineBreak();
+
+            DataTable header = new DataTable();
+
+            header.Columns.Add("Ngày Xuất");
+            header.Columns.Add("Bàn Ăn");
+            header.Columns.Add("Nhân Viên");
+
+            header.Rows.Add(new object[] { Convert.ToString(Ngayxuat), Ban, Nhanvien });
+
+            bunifuReports1.AddDataTable(header, "width=480px border=2");
+            bunifuReports1.AddHorizontalRule();
+            bunifuReports1.AddDatagridView(dataOder, "width=100% border=2");
+            bunifuReports1.AddLineBreak();
+
+            DataTable sumary = new DataTable();
+            sumary.Columns.Add("Tiền Bàn");
+            sumary.Columns.Add(txtTotal.Text);
+
+            sumary.Rows.Add(new object[] { "Giảm Giá", discount });
+            sumary.Rows.Add(new object[] { "VAT", 0 });
+            sumary.Rows.Add(new object[] { "Thành Tiền", Tongtien });
+
+
+
+            bunifuReports1.AddDataTable(sumary, "width=480px border=2");
+
+            bunifuReports1.ShowPrintPreviewDialog();
+        }
         private void PhoneCustomer_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

@@ -166,7 +166,7 @@ namespace PBL3.BLL
             result = db.ThongTinHoaDons.OrderBy(p => p.IDThongTin).Select(p => p.IDThongTin).ToList();
             return result;
         }
-        public string GetIDThonTinHoaDon_Last()
+        public string GetIDThongTinHoaDon_Last()
         {
             if (GetIDThongTinHoaDon().Count == 0)
             {
