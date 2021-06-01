@@ -476,6 +476,7 @@
       <DependentUpon>Data.edmx</DependentUpon>
       <LastGenOutput>Data.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\fast food family.png" />
     <None Include="Resources\sum.png" />
     <None Include="Resources\sigma.png" />
     <None Include="Resources\discount.png" />

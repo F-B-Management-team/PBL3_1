@@ -151,7 +151,7 @@ namespace PBL3.Views
 
             //
 
-            List<HoaDon> listhd = BLL.BLL_Setting.Instance.GetListHoaDon();
+            /*List<HoaDon> listhd = BLL.BLL_Setting.Instance.GetListHoaDon();
             for (int i = 0; i < listhd.Count; i++)
             {
                 if (listhd[i].TrangThai == false)
@@ -169,7 +169,7 @@ namespace PBL3.Views
                 {
                     //silence
                 }
-            }
+            }*/
         }
 
         private void EditFood_Click(object sender, EventArgs e)
@@ -197,9 +197,10 @@ namespace PBL3.Views
                 BLL.BLL_Update.Instance.Update_MonAn(du, DU.TenMon, DU.Gia);
             }
             dataDrink.DataSource = BLL.BLL_Setting.Instance.LoadMenuDrink();
+            BLL.BLL_Order.Instance.LoadMenuDrink();
+            BLL.BLL_Order.Instance.LoadMenuFood();
 
-
-            List<HoaDon> listhd = BLL.BLL_Setting.Instance.GetListHoaDon();
+            /*List<HoaDon> listhd = BLL.BLL_Setting.Instance.GetListHoaDon();
             for (int i = 0; i < listhd.Count; i++)
             {
                 if (listhd[i].TrangThai == false)
@@ -217,7 +218,7 @@ namespace PBL3.Views
                 {
                     //silence
                 }
-            }
+            }*/
             //list<hoadon> listhd = bll.bll_setting.instance.getlisthoadon();
             //foreach(hoadon i in listhd)
             //{

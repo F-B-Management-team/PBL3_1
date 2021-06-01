@@ -147,7 +147,7 @@ namespace PBL3.Views
 
             bunifuReports1.AddLineBreak();
 
-            bunifuReports1.AddImage(Image.FromFile("C:\\PBL3_1\\PBL3\\Resources\\180478677_479136336763688_337598169216810801_n1.jpg"), "width=200px");
+            //bunifuReports1.AddImage(Image.FromFile("C:\\PBL3_1\\PBL3\\Resources\\180478677_479136336763688_337598169216810801_n1.jpg"), "width=200px");
 
             bunifuReports1.AddLineBreak();
             bunifuReports1.AddString("Số Hóa Đơn:  " + textboxIDBILL.Text);

@@ -273,16 +273,14 @@ namespace PBL3.Views
             }
             txtTotal.Text = (total).ToString();
         }
-        public bool TextChange(string before, string after)
+        public string ToTalBill()
         {
-            if (before == after)
+            double total = 0;
+            for (int i = 0; i < dataOder.Rows.Count; i++)
             {
-                return false;
+                total = total + Convert.ToDouble(dataOder.Rows[i].Cells["Gia"].Value);
             }
-            else
-            {
-                return true;
-            }
+            return total.ToString();
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -440,7 +438,25 @@ namespace PBL3.Views
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(s.IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
                     }
-                    //GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), (Convert.ToDouble(txtTotal.Text)).ToString());
+                    string message = "Thông Báo";
+                    string title = "Bạn có muốn in hóa đơn ?";
+                    MessageBoxButtons button = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(title, message, button);
+                    if (result == DialogResult.Yes)
+                    {
+                        if (txtDiscount.Text == "" || txtDiscount.Text == "0%")
+                        {
+                            GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), "0", ToTalBill());
+                        }
+                        else
+                        {
+                            GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), BLL_Order.Instance.Discount(ToTalBill()), ToTalBill());
+                        }
+                    }
+                    else
+                    {
+
+                    }
 
                     this.loadCustomer();
                     txtDiscount.ResetText();
@@ -564,8 +580,28 @@ namespace PBL3.Views
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
 
-                        //GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), Convert.ToDouble(txtTotal.Text).ToString());
-                        s(numberTable.Text.Substring(6), true);
+                    }
+                    string message = "Thông Báo";
+                    string title = "Bạn có muốn in hóa đơn ?";
+                    MessageBoxButtons button = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(title, message, button);
+                    if (result == DialogResult.Yes)
+                    {
+                        if (txtDiscount.Text == "" || txtDiscount.Text == "0%")
+                        {
+                            GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), txtTenNguoiDung.Text.ToString(), "0", ToTalBill());
+                        }
+                        else
+                        {
+                            GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), txtTenNguoiDung.Text.ToString(), BLL_Order.Instance.Discount(ToTalBill()), ToTalBill());
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                    //GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), Convert.ToDouble(txtTotal.Text).ToString());
+                    s(numberTable.Text.Substring(6), true);
                         txtDiscount.ResetText();
                         txtNote.ResetText();
                         NameCustomer.Clear();
@@ -576,10 +612,8 @@ namespace PBL3.Views
                         txtTotal.ResetText();
                         dataOder.Rows.Clear();
                         this.Visible = false;
-                    }
+                    
                 }
-
-
             }
             //catch(Exception m)
             //{
@@ -759,6 +793,7 @@ namespace PBL3.Views
                 dataOder.Rows.Clear();
                 this.Visible = false;
             }
+
         }
 
         private void btnDiscount_Click(object sender, EventArgs e)
@@ -807,7 +842,7 @@ namespace PBL3.Views
 
             bunifuReports1.AddLineBreak();
 
-            bunifuReports1.AddImage(Image.FromFile("C:\\PBL3_1\\PBL3\\Resources\\180478677_479136336763688_337598169216810801_n1.jpg"), "width=200px");
+            //bunifuReports1.AddImage(Image.FromFile("C:\\PBL3_1\\PBL3\\Resources\\180478677_479136336763688_337598169216810801_n1.jpg"), "width=200px");
 
             bunifuReports1.AddLineBreak();
             
@@ -833,11 +868,11 @@ namespace PBL3.Views
 
             DataTable sumary = new DataTable();
             sumary.Columns.Add("Tiền Bàn");
-            sumary.Columns.Add(txtTotal.Text);
+            sumary.Columns.Add(Tongtien);
 
             sumary.Rows.Add(new object[] { "Giảm Giá", discount });
             sumary.Rows.Add(new object[] { "VAT", 0 });
-            sumary.Rows.Add(new object[] { "Thành Tiền", Tongtien });
+            sumary.Rows.Add(new object[] { "Thành Tiền", txtTotal.Text });
 
 
 

@@ -26,7 +26,7 @@ namespace PBL3.BLL
         }
         private BLL_Order()
         {
-            //MVH_08Entities db = new MVH_08Entities();
+
         }
         public List<MonAn> LoadMenuFood()
         {
@@ -177,6 +177,11 @@ namespace PBL3.BLL
                 List<string> l = GetIDThongTinHoaDon();
                 return l[l.Count - 1];
             }
+        }
+        public string Discount(string ToTal)
+        {
+            string d;
+            return d = (Convert.ToDouble(ToTal) * (0.1)).ToString();
         }
     }
 }
