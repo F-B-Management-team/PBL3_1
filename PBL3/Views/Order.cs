@@ -396,15 +396,15 @@ namespace PBL3.Views
 
 
                     // DatMon
-                    List<string> tt = BLL.BLL_Order.Instance.GetIDThongTinHoaDon();
+                    string tt = BLL.BLL_Order.Instance.GetIDThongTinHoaDon_Last();
                     for (int i = 0; i < dataOder.Rows.Count - 1; i++)
                     {
-                        List<string> d = new List<string>();
+                        //List<string> d = new List<string>();
                         DatMon datmon = new DatMon();
-                        d = BLL.BLL_Order.Instance.GetIDDatMon();
+                        string d = BLL.BLL_Order.Instance.GetIDDatMon_Last();
                         //d.Sort();
                         int iddatmon = 0;
-                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0)) + 1;
+                        iddatmon = Convert.ToInt32(d.Substring(0)) + 1;
                         datmon.IDDatMon = iddatmon.ToString("00000");
                         datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
                         datmon.IDHoaDon = s.IDHoaDon;
@@ -414,7 +414,7 @@ namespace PBL3.Views
 
                         ThongTinHoaDon thongTinHoaDon = new ThongTinHoaDon();
                         int idThongTin = 0;
-                        idThongTin = Convert.ToInt32(tt[tt.Count - 1].Substring(0)) + 1 + i;
+                        idThongTin = Convert.ToInt32(tt.Substring(0)) + 1 + i;
                         thongTinHoaDon.IDThongTin = idThongTin.ToString("00000");
                         thongTinHoaDon.IDHoaDon = s.IDHoaDon;
                         thongTinHoaDon.LoaiBan = BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan;
@@ -509,9 +509,9 @@ namespace PBL3.Views
                     BLL.BLL_Update.Instance.Status_Table(IDBan, true);
 
                     //Datmon
-                    List<string> d = new List<string>();
-                    d = BLL.BLL_Order.Instance.GetIDDatMon();
-                    List<string> t = BLL.BLL_Order.Instance.GetIDThongTinHoaDon();
+                    //List<string> d = new List<string>();
+                    string d = BLL.BLL_Order.Instance.GetIDDatMon_Last();
+                    string t = BLL.BLL_Order.Instance.GetIDThongTinHoaDon_Last();
                     List<DatMon> before_datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
                     for (int i = 0; i < before_datmon.Count; i++)
                     {
@@ -523,7 +523,7 @@ namespace PBL3.Views
                         DatMon datmon = new DatMon();
                         //d = BLL.BLL_Order.Instance.GetIDDatMon();
                         int iddatmon = 0;
-                        iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0)) + 1 + i;
+                        iddatmon = Convert.ToInt32(d.Substring(0)) + 1 + i;
                         datmon.IDDatMon = iddatmon.ToString("00000");
                         Console.WriteLine(datmon.IDDatMon);
                         datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
@@ -534,7 +534,7 @@ namespace PBL3.Views
                         //ThongTinOrder
                         ThongTinHoaDon thongTinHoaDon = new ThongTinHoaDon();
                         int idThongTin = 0;
-                        idThongTin = Convert.ToInt32(t[t.Count - 1].Substring(0)) + 1 + i;
+                        idThongTin = Convert.ToInt32(t.Substring(0)) + 1 + i;
                         thongTinHoaDon.IDThongTin = idThongTin.ToString("00000");
                         thongTinHoaDon.IDHoaDon = IDHoaDon;
                         thongTinHoaDon.LoaiBan = BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan;
@@ -635,12 +635,12 @@ namespace PBL3.Views
                 // DatMon
                 for (int i = 0; i < dataOder.Rows.Count - 1; i++)
                 {
-                    List<string> d = new List<string>();
+                    //List<string> d = new List<string>();
                     DatMon datmon = new DatMon();
-                    d = BLL.BLL_Order.Instance.GetIDDatMon();
+                    string d = BLL.BLL_Order.Instance.GetIDDatMon_Last();
                     //d.Sort();
                     int iddatmon = 0;
-                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0)) + 1;
+                    iddatmon = Convert.ToInt32(d.Substring(0)) + 1;
                     datmon.IDDatMon = iddatmon.ToString("00000");
                     datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
                     Console.WriteLine(h.IDHoaDon);
@@ -702,8 +702,8 @@ namespace PBL3.Views
                 BLL.BLL_Update.Instance.Status_Table(IDBan, false);
 
                 //dat mon
-                List<string> d = new List<string>();
-                d = BLL.BLL_Order.Instance.GetIDDatMon();
+                //List<string> d = new List<string>();
+                string d = BLL.BLL_Order.Instance.GetIDDatMon_Last();
                 List<DatMon> before_datmon = BLL.BLL_Order.Instance.GetDatMon_IDHoaDon(IDHoaDon);
                 for (int i = 0; i < before_datmon.Count; i++)
                 {
@@ -715,7 +715,7 @@ namespace PBL3.Views
                     DatMon datmon = new DatMon();
                     //d = BLL.BLL_Order.Instance.GetIDDatMon();
                     int iddatmon = 0;
-                    iddatmon = Convert.ToInt32(d[d.Count - 1].Substring(0)) + 1 +i;
+                    iddatmon = Convert.ToInt32(d.Substring(0)) + 1 +i;
                     datmon.IDDatMon = iddatmon.ToString("00000");
                     datmon.IDMon = Convert.ToString(dataOder.Rows[i].Cells["IDMon"].Value);
                     datmon.IDHoaDon = IDHoaDon;

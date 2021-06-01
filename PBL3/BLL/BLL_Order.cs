@@ -83,6 +83,18 @@ namespace PBL3.BLL
             result = db.DatMons.OrderBy(p =>p.IDDatMon).Select(p => p.IDDatMon).ToList();
             return result;
         }
+        public string GetIDDatMon_Last()
+        {
+            if (GetIDDatMon().Count == 0)
+            {
+                return "00000";
+            }
+            else
+            {
+                List<string> l = GetIDDatMon();
+                return l[l.Count - 1];
+            }
+        }
         public string GetIDHoaDon_IDTable(string IDTable)
         {
             string result;
@@ -153,6 +165,18 @@ namespace PBL3.BLL
             List<string> result;
             result = db.ThongTinHoaDons.OrderBy(p => p.IDThongTin).Select(p => p.IDThongTin).ToList();
             return result;
+        }
+        public string GetIDThonTinHoaDon_Last()
+        {
+            if (GetIDThongTinHoaDon().Count == 0)
+            {
+                return "00000";
+            }
+            else
+            {
+                List<string> l = GetIDThongTinHoaDon();
+                return l[l.Count - 1];
+            }
         }
     }
 }
