@@ -65,6 +65,9 @@ namespace PBL3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bunifuPages1.SetPage(1);
+            table1.BringToFront();
+            table1.order1.SendToBack();
+            table1.order1.Visible = false;
             table1.LoadStatusBan();
             d = new User_del(table1.order1.SetNguoiDung);
             d(User.Text); 

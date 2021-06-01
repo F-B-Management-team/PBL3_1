@@ -121,8 +121,9 @@ namespace PBL3.Views
             order1.Visible = true;
             this.SendToBack();
             order1.BringToFront();
-            order1.loadFood();
-            order1.loadDrink();
+            //order1.loadFood();
+            //order1.loadDrink();
+            order1.FormOrderStart();
             order1.loadCustomer();
             t = new Table.Table_del(order1.statusOder);
             t(((Bunifu.UI.WinForms.BunifuButton.BunifuButton)sender).Text, statusTable);
@@ -148,8 +149,9 @@ namespace PBL3.Views
             order1.Visible = true;
             this.SendToBack();
             order1.BringToFront();
-            order1.loadFood();
-            order1.loadDrink();
+            //order1.loadFood();
+            //order1.loadDrink();
+            order1.FormOrderStart();
             order1.loadCustomer();
             t = new Table.Table_del(order1.statusOder);
             if(statusTable == false)

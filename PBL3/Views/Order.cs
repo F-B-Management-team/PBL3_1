@@ -32,6 +32,14 @@ namespace PBL3.Views
                 btnDone.Visible = true;
             }
         }
+        public void FormOrderStart()
+        {
+            bunifuPanel1.BringToFront();
+            bunifuPanel2.SendToBack();
+            bunifuPanel3.SendToBack();
+            dataFood.DataSource = "";
+            dataDrink.DataSource = "";
+        }
         public void SetDataOrder_statusFalse()
         {
             if (statusorder == false)
@@ -133,6 +141,9 @@ namespace PBL3.Views
             this.Visible = false;
             dataOder.Rows.Clear();
             txtTotal.ResetText();
+            bunifuPanel1.BringToFront();
+            bunifuPanel2.SendToBack();
+            bunifuPanel3.SendToBack();
         }
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
@@ -142,7 +153,7 @@ namespace PBL3.Views
             //bunifuPanel2.Visible = false;
             bunifuPanel2.BringToFront();
             bunifuTransition1.ShowSync(bunifuPanel2);
-            //loadFood();
+            loadFood();
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)
@@ -152,7 +163,7 @@ namespace PBL3.Views
             //bunifuPanel3.Visible = false;
             bunifuPanel3.BringToFront();
             bunifuTransition1.ShowSync(bunifuPanel3);
-            //loadDrink();
+            loadDrink();
         }
 
         private void MenuFood_Click(object sender, EventArgs e)
@@ -429,7 +440,7 @@ namespace PBL3.Views
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(s.IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
                     }
-                    GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), (Convert.ToDouble(txtTotal.Text)).ToString());
+                    //GenerateReport((s.IDHoaDon).ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(s.IDBan).LoaiBan).ToString(), (BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text)).ToString(), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), (Convert.ToDouble(txtTotal.Text)).ToString());
 
                     this.loadCustomer();
                     txtDiscount.ResetText();
@@ -437,6 +448,8 @@ namespace PBL3.Views
                     NameCustomer.Clear();
                     PhoneCustomer.Clear();
                     bunifuPanel1.BringToFront();
+                    bunifuPanel2.SendToBack();
+                    bunifuPanel3.SendToBack();
                     txtTotal.ResetText();
                     dataOder.Rows.Clear();
                     this.Visible = false;
@@ -551,13 +564,15 @@ namespace PBL3.Views
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(IDHoaDon).IDCustommer;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
 
-                        GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), Convert.ToDouble(txtTotal.Text).ToString());
+                        //GenerateReport(IDHoaDon.ToString(), DateTime.Now, (BLL.BLL_Order.Instance.GetBan(IDBan).LoaiBan).ToString(), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), (Convert.ToDouble(txtDiscount.Text) * Convert.ToDouble(txtTotal.Text)).ToString(), Convert.ToDouble(txtTotal.Text).ToString());
                         s(numberTable.Text.Substring(6), true);
                         txtDiscount.ResetText();
                         txtNote.ResetText();
                         NameCustomer.Clear();
                         PhoneCustomer.Clear();
                         bunifuPanel1.BringToFront();
+                        bunifuPanel2.SendToBack();
+                        bunifuPanel3.SendToBack();
                         txtTotal.ResetText();
                         dataOder.Rows.Clear();
                         this.Visible = false;
@@ -663,6 +678,8 @@ namespace PBL3.Views
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();
+                bunifuPanel2.SendToBack();
+                bunifuPanel3.SendToBack();
                 txtTotal.ResetText();
                 dataOder.Rows.Clear();
                 this.Visible = false;
@@ -736,6 +753,8 @@ namespace PBL3.Views
                 NameCustomer.Clear();
                 PhoneCustomer.Clear();
                 bunifuPanel1.BringToFront();
+                bunifuPanel2.SendToBack();
+                bunifuPanel3.SendToBack();
                 txtTotal.ResetText();
                 dataOder.Rows.Clear();
                 this.Visible = false;
