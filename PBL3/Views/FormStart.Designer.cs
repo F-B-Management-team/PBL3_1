@@ -89,10 +89,10 @@ namespace PBL3
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 44);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(73, 568);
+            this.panel1.Size = new System.Drawing.Size(97, 699);
             this.panel1.TabIndex = 0;
             // 
             // btnLogout
@@ -143,8 +143,8 @@ namespace PBL3
             this.btnLogout.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.IdleIconRightImage")));
             this.btnLogout.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnLogout.IndicateFocus = false;
-            this.btnLogout.Location = new System.Drawing.Point(9, 222);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(12, 273);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.OnDisabledState.BorderColor = System.Drawing.Color.Firebrick;
             this.btnLogout.OnDisabledState.BorderRadius = 20;
@@ -178,7 +178,7 @@ namespace PBL3
             this.btnLogout.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLogout.OnPressedState.IconLeftImage = null;
             this.btnLogout.OnPressedState.IconRightImage = null;
-            this.btnLogout.Size = new System.Drawing.Size(54, 55);
+            this.btnLogout.Size = new System.Drawing.Size(72, 68);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -190,9 +190,10 @@ namespace PBL3
             // User
             // 
             this.User.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User.Location = new System.Drawing.Point(3, 71);
+            this.User.Location = new System.Drawing.Point(4, 87);
+            this.User.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(64, 149);
+            this.User.Size = new System.Drawing.Size(85, 183);
             this.User.TabIndex = 5;
             // 
             // btnOrder
@@ -243,8 +244,8 @@ namespace PBL3
             this.btnOrder.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnOrder.IdleIconRightImage")));
             this.btnOrder.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnOrder.IndicateFocus = false;
-            this.btnOrder.Location = new System.Drawing.Point(9, 295);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOrder.Location = new System.Drawing.Point(12, 363);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.OnDisabledState.BorderColor = System.Drawing.Color.Firebrick;
             this.btnOrder.OnDisabledState.BorderRadius = 20;
@@ -278,7 +279,7 @@ namespace PBL3
             this.btnOrder.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnOrder.OnPressedState.IconLeftImage = null;
             this.btnOrder.OnPressedState.IconRightImage = null;
-            this.btnOrder.Size = new System.Drawing.Size(54, 55);
+            this.btnOrder.Size = new System.Drawing.Size(72, 68);
             this.btnOrder.TabIndex = 4;
             this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnOrder.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -335,8 +336,8 @@ namespace PBL3
             this.btnSetting.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnSetting.IdleIconRightImage")));
             this.btnSetting.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnSetting.IndicateFocus = false;
-            this.btnSetting.Location = new System.Drawing.Point(9, 486);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSetting.Location = new System.Drawing.Point(12, 598);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.OnDisabledState.BorderColor = System.Drawing.Color.Firebrick;
             this.btnSetting.OnDisabledState.BorderRadius = 20;
@@ -370,7 +371,7 @@ namespace PBL3
             this.btnSetting.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSetting.OnPressedState.IconLeftImage = null;
             this.btnSetting.OnPressedState.IconRightImage = null;
-            this.btnSetting.Size = new System.Drawing.Size(54, 55);
+            this.btnSetting.Size = new System.Drawing.Size(72, 68);
             this.btnSetting.TabIndex = 3;
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSetting.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -427,8 +428,8 @@ namespace PBL3
             this.btnBill.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnBill.IdleIconRightImage")));
             this.btnBill.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnBill.IndicateFocus = false;
-            this.btnBill.Location = new System.Drawing.Point(9, 355);
-            this.btnBill.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBill.Location = new System.Drawing.Point(12, 437);
+            this.btnBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBill.Name = "btnBill";
             this.btnBill.OnDisabledState.BorderColor = System.Drawing.Color.Firebrick;
             this.btnBill.OnDisabledState.BorderRadius = 20;
@@ -462,7 +463,7 @@ namespace PBL3
             this.btnBill.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnBill.OnPressedState.IconLeftImage = null;
             this.btnBill.OnPressedState.IconRightImage = null;
-            this.btnBill.Size = new System.Drawing.Size(54, 55);
+            this.btnBill.Size = new System.Drawing.Size(72, 68);
             this.btnBill.TabIndex = 2;
             this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBill.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -519,8 +520,8 @@ namespace PBL3
             this.btnLogin.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.IdleIconRightImage")));
             this.btnLogin.ImeMode = System.Windows.Forms.ImeMode.On;
             this.btnLogin.IndicateFocus = false;
-            this.btnLogin.Location = new System.Drawing.Point(9, 222);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Location = new System.Drawing.Point(12, 273);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnDisabledState.BorderColor = System.Drawing.Color.Firebrick;
             this.btnLogin.OnDisabledState.BorderRadius = 20;
@@ -554,7 +555,7 @@ namespace PBL3
             this.btnLogin.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLogin.OnPressedState.IconLeftImage = null;
             this.btnLogin.OnPressedState.IconRightImage = null;
-            this.btnLogin.Size = new System.Drawing.Size(54, 55);
+            this.btnLogin.Size = new System.Drawing.Size(72, 68);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -566,10 +567,10 @@ namespace PBL3
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 23);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(93, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -590,9 +591,9 @@ namespace PBL3
             this.panel2.Controls.Add(this.bunifuButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 36);
+            this.panel2.Size = new System.Drawing.Size(1283, 44);
             this.panel2.TabIndex = 6;
             // 
             // label2
@@ -600,10 +601,9 @@ namespace PBL3
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(32, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(43, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 15);
+            this.label2.Size = new System.Drawing.Size(140, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Food and Beverage";
             // 
@@ -654,8 +654,8 @@ namespace PBL3
             this.bunifuButton2.IdleIconLeftImage = null;
             this.bunifuButton2.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.IdleIconRightImage")));
             this.bunifuButton2.IndicateFocus = true;
-            this.bunifuButton2.Location = new System.Drawing.Point(9, 2);
-            this.bunifuButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuButton2.Location = new System.Drawing.Point(12, 2);
+            this.bunifuButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuButton2.Name = "bunifuButton2";
             this.bunifuButton2.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton2.OnDisabledState.BorderRadius = 1;
@@ -689,7 +689,7 @@ namespace PBL3
             this.bunifuButton2.OnPressedState.ForeColor = System.Drawing.Color.DarkRed;
             this.bunifuButton2.OnPressedState.IconLeftImage = null;
             this.bunifuButton2.OnPressedState.IconRightImage = null;
-            this.bunifuButton2.Size = new System.Drawing.Size(27, 30);
+            this.bunifuButton2.Size = new System.Drawing.Size(36, 37);
             this.bunifuButton2.TabIndex = 6;
             this.bunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -744,8 +744,8 @@ namespace PBL3
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.IdleIconRightImage")));
             this.bunifuButton1.IndicateFocus = true;
-            this.bunifuButton1.Location = new System.Drawing.Point(924, 6);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuButton1.Location = new System.Drawing.Point(1232, 7);
+            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 1;
@@ -779,7 +779,7 @@ namespace PBL3
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(27, 30);
+            this.bunifuButton1.Size = new System.Drawing.Size(36, 37);
             this.bunifuButton1.TabIndex = 5;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -801,7 +801,8 @@ namespace PBL3
             this.bunifuPages1.Controls.Add(this.tabPage2);
             this.bunifuPages1.Controls.Add(this.tabPage3);
             this.bunifuPages1.Controls.Add(this.tabPage4);
-            this.bunifuPages1.Location = new System.Drawing.Point(69, 36);
+            this.bunifuPages1.Location = new System.Drawing.Point(92, 44);
+            this.bunifuPages1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
             this.bunifuPages1.Page = this.tabPage3;
@@ -809,7 +810,7 @@ namespace PBL3
             this.bunifuPages1.PageName = "tabPage3";
             this.bunifuPages1.PageTitle = "tabPage3";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(890, 568);
+            this.bunifuPages1.Size = new System.Drawing.Size(1187, 699);
             this.bunifuPages1.TabIndex = 7;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -833,9 +834,10 @@ namespace PBL3
             // 
             this.tabPage1.Controls.Add(this.startMain1);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(882, 542);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1179, 670);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -843,19 +845,20 @@ namespace PBL3
             // startMain1
             // 
             this.startMain1.BackColor = System.Drawing.Color.White;
-            this.startMain1.Location = new System.Drawing.Point(5, 4);
-            this.startMain1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startMain1.Location = new System.Drawing.Point(7, 5);
+            this.startMain1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMain1.Name = "startMain1";
-            this.startMain1.Size = new System.Drawing.Size(884, 538);
+            this.startMain1.Size = new System.Drawing.Size(1179, 662);
             this.startMain1.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.table1);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(882, 542);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1179, 670);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -863,8 +866,9 @@ namespace PBL3
             // table1
             // 
             this.table1.Location = new System.Drawing.Point(0, 2);
+            this.table1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.table1.Name = "table1";
-            this.table1.Size = new System.Drawing.Size(876, 540);
+            this.table1.Size = new System.Drawing.Size(1168, 665);
             this.table1.t = null;
             this.table1.TabIndex = 0;
             // 
@@ -872,9 +876,10 @@ namespace PBL3
             // 
             this.tabPage3.Controls.Add(this.manageBill1);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(882, 542);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1179, 670);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -882,18 +887,20 @@ namespace PBL3
             // manageBill1
             // 
             this.manageBill1.Location = new System.Drawing.Point(1, 0);
+            this.manageBill1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.manageBill1.MB = null;
             this.manageBill1.Name = "manageBill1";
-            this.manageBill1.Size = new System.Drawing.Size(877, 542);
+            this.manageBill1.Size = new System.Drawing.Size(1169, 667);
             this.manageBill1.TabIndex = 0;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.setting1);
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(882, 542);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1179, 670);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -901,23 +908,25 @@ namespace PBL3
             // setting1
             // 
             this.setting1.d = null;
-            this.setting1.Location = new System.Drawing.Point(6, -3);
+            this.setting1.Location = new System.Drawing.Point(8, -4);
+            this.setting1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.setting1.Name = "setting1";
-            this.setting1.Size = new System.Drawing.Size(877, 542);
+            this.setting1.Size = new System.Drawing.Size(1169, 667);
             this.setting1.TabIndex = 0;
             // 
             // FormStart
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(962, 604);
+            this.ClientSize = new System.Drawing.Size(1283, 743);
             this.Controls.Add(this.bunifuPages1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start";

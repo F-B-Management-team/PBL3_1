@@ -32,6 +32,7 @@ namespace PBL3.Views
         }
         private void bunifuLabel2_Click(object sender, EventArgs e)
         {
+            
             indicator.Left = bunifuLabel2.Left;
             indicator.Width = bunifuLabel2.Width;
             bunifuPages1.SetPage(0);

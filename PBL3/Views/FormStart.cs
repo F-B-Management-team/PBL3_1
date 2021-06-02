@@ -82,14 +82,37 @@ namespace PBL3
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            bunifuPages1.SetPage(2);
+            string idnd = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(User.Text);
+            string cv = BLL.BLL_Login.Instance.GetChucVu_IDNguoiDung(idnd);
+            if (cv == "admin" || cv == "manage")
+            {
+                    bunifuPages1.SetPage(2);
 
-            manageBill1.Setcbb();
+                    manageBill1.Setcbb();
+            }
+            else
+            {
+                string a = "Error";
+                string b = "Không thể truy cập. Vui lòng liên hệ Admin";
+                MessageBox.Show(b, a, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            bunifuPages1.SetPage(3);
+            string idnd = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(User.Text);
+            string cv = BLL.BLL_Login.Instance.GetChucVu_IDNguoiDung(idnd);
+            if(cv == "admin")
+            {
+                bunifuPages1.SetPage(3);
+            }    
+            else
+            {
+                string a = "Error";
+                string b = "Không thể truy cập. Vui lòng liên hệ Admin";
+                MessageBox.Show(b, a, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
     }
 }

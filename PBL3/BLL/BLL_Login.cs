@@ -60,5 +60,10 @@ namespace PBL3.BLL
             var result = db.ThongTinNguoiDungs.Where(p => p.TenNguoiDung == TenNguoiDung).Select(p => p.IDNguoiDung).FirstOrDefault();
             return result;
         }
+        public string GetChucVu_IDNguoiDung(string IDNguoiDung)
+        {
+            var result = db.TaiKhoans.Where(p => p.IDNguoiDung == IDNguoiDung).Select(p => p.Chucvu).FirstOrDefault();
+            return result;
+        }
     }
 }
