@@ -341,5 +341,19 @@ namespace PBL3.Views
             }
             //dataStaff.DataSource = BLL_Setting.Instance.loadttsx(cbbCV.Text);
         }
+        public void TimCus(string namecs)
+        {
+            dataCus.DataSource = BLL_Setting.Instance.TimCus_BLL(namecs);
+        }
+        private void btnTimCus_Click(object sender, EventArgs e)
+        {
+            TimCus(txtTenCus.Text);
+        }
+
+        private void btnXemCus_Click(object sender, EventArgs e)
+        {
+            dataCus.DataSource = BLL_Setting.Instance.LoadCus();
+            dataCus.Columns["HoaDons"].Visible = false;
+        }
     }
 }

@@ -257,6 +257,42 @@ namespace PBL3.BLL
             return null;
             db.SaveChanges();
         }
+        public List<Customer> LoadCus()
+        {
+            List<Customer> list = new List<Customer>();
+            var result = (from cus in db.Customers select new { cus.IDCustomer, cus.NameCustomer, cus.Phone, cus.Discount }).ToList();
+            foreach (var i in result)
+            {
+                Customer j = new Customer();
+                {
+                    j.IDCustomer = i.IDCustomer;
+                    j.NameCustomer = i.NameCustomer;
+                    j.Phone = i.Phone;
+                    j.Discount = i.Discount;
+                }
+                list.Add(j);
+            }
+            return list;
+        }
+        public List<Customer> TimCus_BLL(string cs)
+        {
+            var result = (from cus in db.Customers
+                          where (cus.NameCustomer.Contains(cs))
+                          select new
+                          {
+                              IDCustomer = cus.IDCustomer,
+                              NameCustomer = cus.NameCustomer,
+                              Phone = cus.Phone,
+                              Discount = cus.Discount,
+                          }).AsEnumerable().Select(x => new Customer
+                          {
+                              IDCustomer = x.IDCustomer,
+                              NameCustomer = x.NameCustomer,
+                              Phone = x.Phone,
+                              Discount = x.Discount,
+                          }).ToList();
+            return result;
+        }
         public void Xoa_BLL(ThongTinNguoiDung nd, TaiKhoan tk)
         {
             db.TaiKhoans.Remove(tk);
