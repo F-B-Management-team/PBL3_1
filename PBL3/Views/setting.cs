@@ -274,9 +274,16 @@ namespace PBL3.Views
             string id = dataStaff.CurrentRow.Cells["IDNguoiDung"].Value.ToString();
             ThongTinNguoiDung nd = BLL_Setting.Instance.TimNguoiDung(id);
             TaiKhoan tk = BLL_Setting.Instance.TimTaiKhoan(id);
-            BLL_Setting.Instance.timid(id);
-            BLL_Setting.Instance.Xoa_BLL(nd, tk);
-            btnShow_Click(sender, e);
+            if (tk.Chucvu == "admin")
+            {
+                MessageBox.Show("Không thể xóa admin");
+            }
+            else
+            {
+                BLL_Setting.Instance.timid(id);
+                BLL_Setting.Instance.Xoa_BLL(nd, tk);
+                btnShow_Click(sender, e);
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
