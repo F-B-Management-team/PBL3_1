@@ -192,7 +192,7 @@ namespace PBL3.Views
             this.bunifuLabel6.Location = new System.Drawing.Point(456, 121);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(51, 15);
+            this.bunifuLabel6.Size = new System.Drawing.Size(50, 15);
             this.bunifuLabel6.TabIndex = 8;
             this.bunifuLabel6.Text = "Giới Tính:";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -207,7 +207,7 @@ namespace PBL3.Views
             this.bunifuLabel2.Location = new System.Drawing.Point(100, 121);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(86, 15);
+            this.bunifuLabel2.Size = new System.Drawing.Size(85, 15);
             this.bunifuLabel2.TabIndex = 7;
             this.bunifuLabel2.Text = "Tên Đăng Nhập:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -222,7 +222,7 @@ namespace PBL3.Views
             this.bunifuLabel5.Location = new System.Drawing.Point(456, 76);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(91, 15);
+            this.bunifuLabel5.Size = new System.Drawing.Size(90, 15);
             this.bunifuLabel5.TabIndex = 13;
             this.bunifuLabel5.Text = "Tên Người Dùng:";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -436,7 +436,7 @@ namespace PBL3.Views
             this.txtPhone.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtPhone.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtPhone.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtPhone.BorderRadius = 1;
+            this.txtPhone.BorderRadius = 12;
             this.txtPhone.BorderThickness = 1;
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -510,7 +510,7 @@ namespace PBL3.Views
             this.txtMK.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtMK.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtMK.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtMK.BorderRadius = 1;
+            this.txtMK.BorderRadius = 12;
             this.txtMK.BorderThickness = 1;
             this.txtMK.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtMK.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -584,7 +584,7 @@ namespace PBL3.Views
             this.txtTenDN.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtTenDN.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtTenDN.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtTenDN.BorderRadius = 1;
+            this.txtTenDN.BorderRadius = 12;
             this.txtTenDN.BorderThickness = 1;
             this.txtTenDN.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTenDN.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -658,7 +658,7 @@ namespace PBL3.Views
             this.txtTenND.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtTenND.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtTenND.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtTenND.BorderRadius = 1;
+            this.txtTenND.BorderRadius = 12;
             this.txtTenND.BorderThickness = 1;
             this.txtTenND.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTenND.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -732,7 +732,7 @@ namespace PBL3.Views
             this.txtIDNguoiDung.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtIDNguoiDung.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.txtIDNguoiDung.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtIDNguoiDung.BorderRadius = 1;
+            this.txtIDNguoiDung.BorderRadius = 12;
             this.txtIDNguoiDung.BorderThickness = 1;
             this.txtIDNguoiDung.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtIDNguoiDung.Cursor = System.Windows.Forms.Cursors.IBeam;

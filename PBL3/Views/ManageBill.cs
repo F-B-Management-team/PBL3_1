@@ -127,7 +127,7 @@ namespace PBL3.Views
                 MB(Bill, TienThanhToan);
 
             }
-
+            //DataBill.Visible = false;
             detailBill1.Visible = true;
             bunifuPanel1.SendToBack();
             detailBill1.BringToFront();

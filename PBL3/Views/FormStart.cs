@@ -87,7 +87,7 @@ namespace PBL3
             if (cv == "admin" || cv == "manage")
             {
                     bunifuPages1.SetPage(2);
-
+                    manageBill1.bunifuDropdown1.Items.Clear();
                     manageBill1.Setcbb();
             }
             else

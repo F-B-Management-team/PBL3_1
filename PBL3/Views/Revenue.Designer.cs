@@ -142,7 +142,7 @@ namespace PBL3.Views
             this.bunifuLabel4.Location = new System.Drawing.Point(114, 74);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(26, 29);
+            this.bunifuLabel4.Size = new System.Drawing.Size(26, 31);
             this.bunifuLabel4.TabIndex = 2;
             this.bunifuLabel4.Text = "hd";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -272,7 +272,7 @@ namespace PBL3.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);

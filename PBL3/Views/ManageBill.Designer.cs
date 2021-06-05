@@ -44,7 +44,6 @@ namespace PBL3.Views
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DataBill = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.detailBill1 = new PBL3.Views.DetailBill();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.entityCommand2 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -52,6 +51,7 @@ namespace PBL3.Views
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnBack = new System.Windows.Forms.PictureBox();
+            this.detailBill1 = new PBL3.Views.DetailBill();
             this.revenue1 = new PBL3.Views.Revenue();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuShadowPanel1.SuspendLayout();
@@ -302,12 +302,12 @@ namespace PBL3.Views
             this.DataBill.HeaderBackColor = System.Drawing.Color.Crimson;
             this.DataBill.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataBill.HeaderForeColor = System.Drawing.Color.White;
-            this.DataBill.Location = new System.Drawing.Point(47, 106);
+            this.DataBill.Location = new System.Drawing.Point(47, 100);
             this.DataBill.Name = "DataBill";
             this.DataBill.RowHeadersVisible = false;
             this.DataBill.RowTemplate.Height = 40;
             this.DataBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataBill.Size = new System.Drawing.Size(760, 409);
+            this.DataBill.Size = new System.Drawing.Size(760, 400);
             this.DataBill.TabIndex = 0;
             this.DataBill.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Crimson;
             this.DataBill.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBill_CellContentDoubleClick);
@@ -356,14 +356,6 @@ namespace PBL3.Views
             this.bunifuDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.bunifuDropdown1.TextLeftMargin = 5;
             this.bunifuDropdown1.SelectedIndexChanged += new System.EventHandler(this.bunifuDropdown1_SelectedIndexChanged);
-            // 
-            // detailBill1
-            // 
-            this.detailBill1.Location = new System.Drawing.Point(-11, -7);
-            this.detailBill1.Name = "detailBill1";
-            this.detailBill1.Size = new System.Drawing.Size(867, 513);
-            this.detailBill1.TabIndex = 6;
-            this.detailBill1.Visible = false;
             // 
             // entityCommand1
             // 
@@ -455,8 +447,17 @@ namespace PBL3.Views
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // detailBill1
+            // 
+            this.detailBill1.Location = new System.Drawing.Point(-11, -7);
+            this.detailBill1.Name = "detailBill1";
+            this.detailBill1.Size = new System.Drawing.Size(867, 513);
+            this.detailBill1.TabIndex = 6;
+            this.detailBill1.Visible = false;
+            // 
             // revenue1
             // 
+            this.revenue1.BackColor = System.Drawing.Color.Cornsilk;
             this.revenue1.Location = new System.Drawing.Point(44, 1);
             this.revenue1.Name = "revenue1";
             this.revenue1.Size = new System.Drawing.Size(829, 542);
@@ -486,7 +487,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuDataGridView DataBill;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
-        private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand2;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
@@ -500,5 +500,6 @@ namespace PBL3.Views
         private System.Windows.Forms.PictureBox btnBack;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        public Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
     }
 }

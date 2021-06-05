@@ -51,13 +51,6 @@ namespace PBL3.Views
             dataDrink.Columns[5].Visible = false;
         }
 
-        private void bunifuLabel10_Click(object sender, EventArgs e)
-        {
-            indicator.Left = bunifuLabel10.Left;
-            indicator.Width = bunifuLabel10.Width;
-            bunifuPages1.SetPage(3);
-        }
-
         private void bunifuLabel4_Click(object sender, EventArgs e)
         {
             indicator.Left = bunifuLabel4.Left;
