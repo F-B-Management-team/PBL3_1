@@ -831,13 +831,17 @@ namespace PBL3.Views
                     {
                         if (dataCustomer.Rows[i].Cells["IDCustomer"].Value.ToString() == customer.IDCustomer)
                         {
-                            if((int)dataCustomer.Rows[i].Cells["Discount"].Value >= 9)
+                            if (BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount == null)
+                            {
+                                customer.Discount = 0;
+                            }
+                            else if ((int)dataCustomer.Rows[i].Cells["Discount"].Value >= 9)
                             {
                                 txtDiscount.Text = "10%";
                                 string t = Convert.ToString(float.Parse(txtTotal.Text) * (1 - 0.1));
                                 txtTotal.Text = t;
                             }
-                            if((int)dataCustomer.Rows[i].Cells["Discount"].Value < 9)
+                            else if((int)dataCustomer.Rows[i].Cells["Discount"].Value < 9)
                             {
                                 txtDiscount.Text = "0%";
                             }
@@ -846,6 +850,7 @@ namespace PBL3.Views
                 }
                 else
                 {
+                    
                     BLL.BLL_Insert.Instance.AddCustomer(customer);
                 }
             }
