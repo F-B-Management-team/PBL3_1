@@ -130,7 +130,7 @@ namespace PBL3.Views
             }
             else
             {
-                BLL_Setting.Instance.update_BLL(txtIDNguoiDung.Text, txtTenDN.Text, radioButtonMale.Checked, Convert.ToDateTime(dateTimePicker1.Value), txtTenDN.Text, txtMK.Text, cbbCVadd.Text);
+                BLL_Setting.Instance.update_BLL(txtIDNguoiDung.Text, txtTenDN.Text, radioButtonMale.Checked, Convert.ToDateTime(dateTimePicker1.Value), txtTenDN.Text, txtMK.Text, cbbCVadd.Text,txtPhone.Text);
                 txtIDNguoiDung.Clear();
                 txtMK.Clear();
                 txtPhone.Clear();

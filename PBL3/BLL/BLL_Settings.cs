@@ -326,7 +326,7 @@ namespace PBL3.BLL
             db.TaiKhoans.Add(tk);
             db.SaveChanges();
         }
-        public void update_BLL(string IDNguoiDung, string TenNguoiDung, bool GioiTinh, DateTime NgaySinh, string TenDangNhap, string MatKHau, string ChucVu)
+        public void update_BLL(string IDNguoiDung, string TenNguoiDung, bool GioiTinh, DateTime NgaySinh, string TenDangNhap, string MatKHau, string ChucVu, string phone)
         {
             var resultnd = db.ThongTinNguoiDungs.Where(p => p.IDNguoiDung == IDNguoiDung).FirstOrDefault();
             var resulttk = db.TaiKhoans.Where(p => p.IDNguoiDung == IDNguoiDung).FirstOrDefault();
@@ -334,6 +334,7 @@ namespace PBL3.BLL
             resultnd.TenNguoiDung = TenNguoiDung;
             resultnd.GioiTinh = GioiTinh;
             resultnd.NgaySinh = NgaySinh;
+            resultnd.PhoneNumber = phone;
 
             resulttk.TenDangNhap = TenDangNhap;
             resulttk.MatKhau = MatKHau;

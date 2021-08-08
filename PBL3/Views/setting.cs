@@ -32,21 +32,38 @@ namespace PBL3.Views
         }
         private void bunifuLabel2_Click(object sender, EventArgs e)
         {
-            
+
             indicator.Left = bunifuLabel2.Left;
             indicator.Width = bunifuLabel2.Width;
             bunifuPages1.SetPage(0);
         }
-
+        public void LoadFood()
+        {
+            dataFood.DataSource = BLL_Setting.Instance.LoadMenuFood();
+            dataFood.Columns[0].HeaderText = "ID Món";
+            dataFood.Columns[1].HeaderText = "ID Danh Mục";
+            dataFood.Columns[2].HeaderText = "Tên Món";
+            dataFood.Columns[3].HeaderText = "Giá";
+        }
+        public void LoadDrink()
+        {
+            dataDrink.DataSource = BLL_Setting.Instance.LoadMenuDrink();
+            dataDrink.Columns[0].HeaderText = "ID Món";
+            dataDrink.Columns[1].HeaderText = "ID Danh Mục";
+            dataDrink.Columns[2].HeaderText = "Tên Món";
+            dataDrink.Columns[3].HeaderText = "Giá";
+        }
         private void bunifuLabel3_Click(object sender, EventArgs e)
         {
             indicator.Left = bunifuLabel3.Left;
             indicator.Width = bunifuLabel3.Width;
             bunifuPages1.SetPage(1);
-            dataFood.DataSource = BLL.BLL_Setting.Instance.LoadMenuFood();
+            //dataFood.DataSource = BLL.BLL_Setting.Instance.LoadMenuFood();
+            LoadFood();
             dataFood.Columns[4].Visible = false;
             dataFood.Columns[5].Visible = false;
-            dataDrink.DataSource = BLL.BLL_Setting.Instance.LoadMenuDrink();
+            //dataDrink.DataSource = BLL.BLL_Setting.Instance.LoadMenuDrink();
+            LoadDrink();
             dataDrink.Columns[4].Visible = false;
             dataDrink.Columns[5].Visible = false;
         }
@@ -239,21 +256,33 @@ namespace PBL3.Views
         {
             dataStaff.DataSource = BLL_Setting.Instance.TimNV_BLL(name);
         }
+        public void LoadNV(string tt)
+        {
+            dataStaff.DataSource = BLL_Setting.Instance.Loadtt(tt);
+            dataStaff.Columns[0].HeaderText = "ID Người Dùng";
+            dataStaff.Columns[1].HeaderText = "Tện Người Dùng";
+            dataStaff.Columns[2].HeaderText = "Giới Tính";
+            dataStaff.Columns[3].HeaderText = "Ngày Sinh";
+            dataStaff.Columns[4].HeaderText = "Số Điện Thoại";
+            dataStaff.Columns[5].HeaderText = "Tên Đăng Nhập";
+            dataStaff.Columns[6].HeaderText = "Mật Khảu";
+            dataStaff.Columns[7].HeaderText = "Chức Vụ";
+        }
         private void btnShow_Click(object sender, EventArgs e)
         {
             switch (cbbCV.Text)
             {
                 case "All":
-                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    LoadNV(cbbCV.Text);
                     break;
                 case "staff":
-                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    LoadNV(cbbCV.Text);
                     break;
                 case "manage":
-                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    LoadNV(cbbCV.Text);
                     break;
                 case "admin":
-                    dataStaff.DataSource = BLL_Setting.Instance.Loadtt(cbbCV.Text);
+                    LoadNV(cbbCV.Text);
                     break;
             }
         }
@@ -349,10 +378,18 @@ namespace PBL3.Views
         {
             TimCus(txtTenCus.Text);
         }
-
-        private void btnXemCus_Click(object sender, EventArgs e)
+        public void LoadCustomer()
         {
             dataCus.DataSource = BLL_Setting.Instance.LoadCus();
+            dataCus.Columns[0].HeaderText = "ID Khách Hàng";
+            dataCus.Columns[1].HeaderText = "Tên Khách Hàng";
+            dataCus.Columns[2].HeaderText = "Số Điện Thoại";
+            dataCus.Columns[3].HeaderText = "Discount";
+        }
+        private void btnXemCus_Click(object sender, EventArgs e)
+        {
+            //dataCus.DataSource = BLL_Setting.Instance.LoadCus();
+            LoadCustomer();
             dataCus.Columns["HoaDons"].Visible = false;
         }
     }
