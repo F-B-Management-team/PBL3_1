@@ -444,6 +444,7 @@ namespace PBL3.Views
                         thongTinHoaDon.GiaMon = BLL.BLL_Order.Instance.GetMonAn_IDMon(datmon.IDMon).Gia;
                         thongTinHoaDon.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(s.IDHoaDon).IDCustommer;
+                        thongTinHoaDon.Note = txtNote.Text;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
                     }
                     string message = "Thông Báo";
@@ -594,6 +595,7 @@ namespace PBL3.Views
                         thongTinHoaDon.GiaMon = BLL.BLL_Order.Instance.GetMonAn_IDMon(datmon.IDMon).Gia;
                         thongTinHoaDon.IDNguoiDung = BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text);
                         thongTinHoaDon.IDCustommer = BLL.BLL_Order.Instance.GetHoaDon(IDHoaDon).IDCustommer;
+                        thongTinHoaDon.Note = txtNote.Text;
                         BLL.BLL_Insert.Instance.AddThongTinHoaDon(thongTinHoaDon);
 
                     }

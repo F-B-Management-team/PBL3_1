@@ -104,6 +104,7 @@ namespace PBL3.Views
         }
         public void Setcbb()
         {
+            bunifuDropdown1.Items.Add("ALL");
             detailBill1.Visible = false;
             foreach (Ban i in BLL.BLL_ManageBill.Instance.GetBan())
             {
