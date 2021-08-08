@@ -84,6 +84,7 @@ namespace PBL3.Views
             {
                 if ((bool)(listhd[i].TrangThai == true))
                 {
+                    //Console.WriteLine(listhd[i].IDHoaDon);
                     //double total = 0;
                     ThongTinHoaDon listtthd = BLL.BLL_ManageBill.Instance.GetThongTinHoaDonz_IDHoaDon(listhd[i].IDHoaDon);
                     
@@ -98,7 +99,6 @@ namespace PBL3.Views
                         row.Cells[4].Value = listtthd.IDNguoiDung;
                         row.Cells[5].Value = listhd[i].IDCustommer;
                         DataBill.Rows.Add(row);
-                    
                 }
             }
         }

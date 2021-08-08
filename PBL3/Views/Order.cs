@@ -325,8 +325,18 @@ namespace PBL3.Views
                         else
                         {
                             BLL.BLL_Insert.Instance.AddCustomer(customer);
-                            int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
-                            BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            //int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
+                            if(BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount == null )
+                            {
+                                int discount = 0;
+                                BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            }
+                            else
+                            {
+                                int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
+                                BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            }
+                            //BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
                             Console.WriteLine(BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount);
                         }
 
@@ -402,8 +412,6 @@ namespace PBL3.Views
                         s.Note = txtNote.Text;
                         BLL.BLL_Insert.Instance.AddHoaDon(s);
                     }
-
-
 
 
                     // DatMon
@@ -529,8 +537,16 @@ namespace PBL3.Views
                         else
                         {
                             BLL.BLL_Insert.Instance.AddCustomer(customer);
-                            int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
-                            BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            if(BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount == null)
+                            {
+                                int discount = 0;
+                                BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            }
+                            else
+                            {
+                                int discount = (int)BLL.BLL_Order.Instance.GetCustomer_IDCustomer(customer.IDCustomer).Discount;
+                                BLL.BLL_Update.Instance.Update_Customer(customer.IDCustomer, discount + 1);
+                            }
                             float total = float.Parse(txtTotal.Text);
                             BLL.BLL_Update.Instance.Update_HoaDon(IDHoaDon, true, DateTime.Today, float.Parse(txtTotal.Text), BLL.BLL_Login.Instance.GetIDNguoiDung_tnd(txtTenNguoiDung.Text), customer.IDCustomer, txtNote.Text);
                         }
