@@ -51,6 +51,7 @@ namespace PBL3.Views
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnBack = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.detailBill1 = new PBL3.Views.DetailBill();
             this.revenue1 = new PBL3.Views.Revenue();
             this.bunifuPanel1.SuspendLayout();
@@ -202,16 +203,16 @@ namespace PBL3.Views
             this.btnDelete.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnDelete.IconSize = 25;
             this.btnDelete.IdleBorderColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.IdleBorderRadius = 1;
+            this.btnDelete.IdleBorderRadius = 25;
             this.btnDelete.IdleBorderThickness = 1;
             this.btnDelete.IdleFillColor = System.Drawing.Color.LightSalmon;
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(223, 64);
+            this.btnDelete.Location = new System.Drawing.Point(223, 59);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnDelete.OnDisabledState.BorderRadius = 1;
+            this.btnDelete.OnDisabledState.BorderRadius = 25;
             this.btnDelete.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnDelete.OnDisabledState.BorderThickness = 1;
             this.btnDelete.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -219,7 +220,7 @@ namespace PBL3.Views
             this.btnDelete.OnDisabledState.IconLeftImage = null;
             this.btnDelete.OnDisabledState.IconRightImage = null;
             this.btnDelete.onHoverState.BorderColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.onHoverState.BorderRadius = 1;
+            this.btnDelete.onHoverState.BorderRadius = 25;
             this.btnDelete.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnDelete.onHoverState.BorderThickness = 1;
             this.btnDelete.onHoverState.FillColor = System.Drawing.Color.Firebrick;
@@ -227,7 +228,7 @@ namespace PBL3.Views
             this.btnDelete.onHoverState.IconLeftImage = null;
             this.btnDelete.onHoverState.IconRightImage = null;
             this.btnDelete.OnIdleState.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.OnIdleState.BorderRadius = 1;
+            this.btnDelete.OnIdleState.BorderRadius = 25;
             this.btnDelete.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnDelete.OnIdleState.BorderThickness = 1;
             this.btnDelete.OnIdleState.FillColor = System.Drawing.Color.LightSalmon;
@@ -235,14 +236,14 @@ namespace PBL3.Views
             this.btnDelete.OnIdleState.IconLeftImage = null;
             this.btnDelete.OnIdleState.IconRightImage = null;
             this.btnDelete.OnPressedState.BorderColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.OnPressedState.BorderRadius = 1;
+            this.btnDelete.OnPressedState.BorderRadius = 25;
             this.btnDelete.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnDelete.OnPressedState.BorderThickness = 1;
             this.btnDelete.OnPressedState.FillColor = System.Drawing.Color.Firebrick;
             this.btnDelete.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDelete.OnPressedState.IconLeftImage = null;
             this.btnDelete.OnPressedState.IconRightImage = null;
-            this.btnDelete.Size = new System.Drawing.Size(68, 26);
+            this.btnDelete.Size = new System.Drawing.Size(78, 31);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -447,6 +448,11 @@ namespace PBL3.Views
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 15;
+            this.bunifuElipse3.TargetControl = this.DataBill;
+            // 
             // detailBill1
             // 
             this.detailBill1.Location = new System.Drawing.Point(-11, -7);
@@ -501,5 +507,6 @@ namespace PBL3.Views
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         public Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }

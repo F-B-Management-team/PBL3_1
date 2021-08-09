@@ -105,7 +105,8 @@ namespace PBL3.Views
                     }
                 }
             }
-            bunifuLabel2.Text = Convert.ToString(tdt + BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[listnx.Count - 1])) + "VND";
+            //bunifuLabel2.Text = Convert.ToString(tdt + BLL.BLL_Revenue.Instance.GetTongDoanhThuThang_NgayXuat(listnx[listnx.Count - 1])) + "VND";
+            bunifuLabel2.Text = Convert.ToString(tdt) + "VND";
             bunifuLabel4.Text = Convert.ToString(thd);
         }
     }

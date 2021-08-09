@@ -34,7 +34,7 @@ namespace PBL3.BLL
             //if (NgayXuat == db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Select(p => p.NgayXuat).FirstOrDefault())
             {
                 List<double?> result = new List<double?>();
-                result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Select(p => p.TongTien).ToList();
+                result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Where(p=>p.TrangThai==true).Select(p => p.TongTien).ToList();
 
                 for (int i = 0; i <= result.Count - 1; i++)
                 {
@@ -53,7 +53,7 @@ namespace PBL3.BLL
         public int GetTongHoaDon_NgayXuat(DateTime NgayXuat)
         {
             List<string> result = new List<string>();
-            result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Select(p => p.IDHoaDon).ToList();
+            result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Where(p => p.TrangThai == true).Select(p => p.IDHoaDon).ToList();
             int total = result.Count;
             return total;
         }
@@ -63,7 +63,7 @@ namespace PBL3.BLL
             //if (NgayXuat == db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Select(p => p.NgayXuat).FirstOrDefault())
             {
                 List<double?> result = new List<double?>();
-                result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Select(p => p.TongTien).ToList();
+                result = db.HoaDons.Where(p => p.NgayXuat == NgayXuat).Where(p=>p.TrangThai==true).Select(p => p.TongTien).ToList();
 
                 for (int i = 0; i <= result.Count - 1; i++)
                 {
@@ -73,6 +73,7 @@ namespace PBL3.BLL
                     }
                     else
                     {
+                        Console.WriteLine(result[i]);
                         total = total + Convert.ToDouble(result[i]);
                     }
                 }
@@ -82,7 +83,7 @@ namespace PBL3.BLL
         public List<DateTime?> GetNgayXuat()
         {
             List<DateTime?> result = new List<DateTime?>();
-            result = db.HoaDons.Select(p => p.NgayXuat).ToList();
+            result = db.HoaDons.Where(p=>p.TrangThai==true).Select(p => p.NgayXuat).ToList();
             return result;
         }
     }

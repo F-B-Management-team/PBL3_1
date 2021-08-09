@@ -86,6 +86,8 @@ namespace PBL3.Views
             this.bunifuReports1 = new Bunifu.Reports.BunifuReports(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.savePDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
@@ -1059,6 +1061,16 @@ namespace PBL3.Views
             animation1.TransparencyCoeff = 0F;
             this.bunifuTransition1.DefaultAnimation = animation1;
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 15;
+            this.bunifuElipse2.TargetControl = this.bunifuPanel1;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 15;
+            this.bunifuElipse3.TargetControl = this.DataDetail;
+            // 
             // DetailBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1123,5 +1135,7 @@ namespace PBL3.Views
         private Bunifu.Reports.BunifuReports bunifuReports1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private Bunifu.UI.WinForms.BunifuTransition bunifuTransition1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }

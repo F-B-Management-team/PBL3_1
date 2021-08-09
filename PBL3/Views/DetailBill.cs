@@ -32,7 +32,7 @@ namespace PBL3.Views
         }
         public void LoadDetail(string IDHoaDon, double TienThanhToan)
         {
-            
+            bunifuDatePicker1.Enabled = false;
             DataDetail.Rows.Clear();
             ColumnDataOrder();
 
