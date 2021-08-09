@@ -205,6 +205,7 @@ namespace PBL3.Views
             this.dataTable.Size = new System.Drawing.Size(207, 232);
             this.dataTable.TabIndex = 59;
             this.dataTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dataTable.Visible = false;
             // 
             // pictureBox16
             // 
