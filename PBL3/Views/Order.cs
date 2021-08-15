@@ -139,6 +139,9 @@ namespace PBL3.Views
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            txtNote.Clear();
+            NameCustomer.Clear();
+            PhoneCustomer.Clear();
             dataOder.Rows.Clear();
             txtTotal.ResetText();
             bunifuPanel1.BringToFront();
